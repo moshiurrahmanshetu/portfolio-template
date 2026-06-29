@@ -1,0 +1,1061 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services & Specialties | Reeni - Premium Personal Portfolio & Agency HTML Template</title>
+  <meta name="description" content="Explore commercial engineering services offered by Reeni Core — UI Implementation, Frontend Development, Laravel Backend Systems, REST APIs, and Performance Optimization." />
+  <meta name="keywords" content="web development services, laravel developer hire, frontend engineering consultant, ui ux implementation studio, themeforest portfolio html" />
+  <meta name="author" content="Reeni ThemeCore" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <!-- Reeni Design System CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="overflow-hidden">
+
+  <!-- Custom Cursor Physics Engine -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-outline"></div>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress"></div>
+
+  <!-- Cinematic Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <span class="preloader-logo font-display">REENI.SERVICES</span>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar"></div>
+      </div>
+      <div class="preloader-percentage">0%</div>
+    </div>
+  </div>
+
+  <!-- Page Transition Layer -->
+  <div class="page-transition-layer"></div>
+
+  <!-- ============================================================================
+       01. STICKY TOP NAVIGATION BAR
+       ============================================================================ -->
+  <header class="navbar-reeni sticky-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-reeni font-display">REENI<span>.</span></a>
+      
+      <!-- Desktop Navigation Menu (Multi-Page Architecture) -->
+      <nav class="d-none d-lg-flex align-items-center gap-1">
+        <a href="index.html" class="nav-link-reeni">Foundation</a>
+        <a href="about.html" class="nav-link-reeni">About</a>
+        <a href="services.html" class="nav-link-reeni active">Services</a>
+        <a href="portfolio.html" class="nav-link-reeni">Portfolio</a>
+        <a href="pricing.html" class="nav-link-reeni">Pricing</a>
+        <a href="blog.html" class="nav-link-reeni">Blog</a>
+        <a href="contact.html" class="nav-link-reeni">Contact</a>
+      </nav>
+
+      <!-- Action & Theme Switcher Controls -->
+      <div class="d-flex align-items-center gap-3">
+        <button class="theme-switch-btn" aria-label="Toggle Dark/Light Mode" title="Switch Theme">
+          <i class="bi bi-sun-fill icon-sun text-warning"></i>
+          <i class="bi bi-moon-stars-fill icon-moon text-primary"></i>
+        </button>
+        <a href="contact.html" class="btn-reeni btn-reeni-primary btn-reeni-sm btn-shine d-none d-md-inline-flex">
+          <i class="bi bi-send-fill"></i> Let's Talk
+        </a>
+        <button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni" aria-label="Toggle Mobile Menu">
+          <i class="bi bi-list fs-1 text-main"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================================
+       02. OFFCANVAS MOBILE NAVIGATION
+       ============================================================================ -->
+  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni" aria-labelledby="offcanvasReeniLabel">
+    <div class="offcanvas-header d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-reeni font-display mb-0" id="offcanvasReeniLabel">REENI<span>.</span>CORE</a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close Mobile Menu"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <ul class="mobile-nav-list mb-0">
+        <li><a href="index.html" class="mobile-nav-link">Foundation Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Me</a></li>
+        <li><a href="services.html" class="mobile-nav-link active">Services & Specialties</a></li>
+        <li><a href="resume.html" class="mobile-nav-link">Experience & CV</a></li>
+        <li><a href="portfolio.html" class="mobile-nav-link">Portfolio Case Studies</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Pricing Packages</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Editorial Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact Studio</a></li>
+      </ul>
+      <div class="mt-4 pt-4 border-top border-secondary border-opacity-25">
+        <span class="small text-muted text-uppercase fw-bold letter-spacing-1 d-block mb-3">Connect With Me</span>
+        <div class="social-icons">
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+          <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================================
+         03. SECTION 1: PREMIUM PAGE BANNER
+         ============================================================================ -->
+    <section class="page-banner pt-section pb-section position-relative overflow-hidden grid-lines-bg text-center" id="services-hero">
+      <!-- Ambient Parallax Glowing Orbs -->
+      <div class="ambient-bg">
+        <div class="blur-glow blur-glow-1"></div>
+        <div class="blur-glow blur-glow-2"></div>
+        <div class="floating-shape" style="top: 15%; left: 10%; animation-duration: 8s;"><i class="bi bi-cpu fs-2 text-warning"></i></div>
+        <div class="floating-shape" style="bottom: 22%; right: 12%; animation-duration: 10s;"><i class="bi bi-lightning-charge fs-2 text-accent"></i></div>
+      </div>
+
+      <div class="container position-relative z-1" data-aos="fade-up" data-aos-duration="1000">
+        <div class="badge-reeni mx-auto mb-3 d-inline-flex align-items-center gap-2">
+          <span class="status-pulse"></span>
+          <span>Commercial Studio Offerings</span>
+        </div>
+        <h1 class="display-3 fw-bold font-display tracking-tight text-main mb-3">
+          Engineering Services & <span class="text-accent">Specialties</span>
+        </h1>
+        <p class="lead-reeni mx-auto mb-4" style="max-width: 700px;">
+          From pristine frontend UI architectures to hyper-scalable backend Laravel MVC systems built for uncompromising commercial speed.
+        </p>
+        <ul class="breadcrumb-reeni justify-content-center">
+          <li><a href="index.html">Foundation</a></li>
+          <li class="separator">/</li>
+          <li class="active">Services & Offerings</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         04. SECTION 2: SERVICES INTRODUCTION
+         ============================================================================ -->
+    <section class="py-section container position-relative" id="services-introduction">
+      <div class="row align-items-center g-5">
+        
+        <!-- Introduction Text Column -->
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+          <span class="section-subtitle mb-2">STUDIO CAPABILITIES</span>
+          <h2 class="section-title font-display mb-4">Delivering High-Impact Digital Assets With <span class="text-accent">Zero Compromise</span></h2>
+          
+          <p class="lead-reeni mb-4">
+            In today's competitive landscape, your digital software must execute with lightning speed while captivating users with refined visual interactions. I provide end-to-end full-stack consulting tailored to commercial founders and agencies.
+          </p>
+          <p class="text-muted mb-4">
+            Whether you are launching a flagship SaaS platform, revamping a legacy corporate web suite, or preparing an elite HTML5 package for ThemeForest distribution, my services guarantee modular scalability, strict W3C standards compliance, and sub-second asset hydration.
+          </p>
+
+          <!-- Core Value Proposition Checklist -->
+          <ul class="list-unstyled d-flex flex-column gap-3 mb-5">
+            <li class="d-flex align-items-center gap-3 fw-medium text-main">
+              <span class="card-icon-wrap mb-0 bg-accent bg-opacity-10 text-accent p-2 border-radius-sm" style="width:36px;height:36px;font-size:1rem;"><i class="bi bi-check2-all"></i></span>
+              <span>100% In-House Architectural Execution (No Outsourcing)</span>
+            </li>
+            <li class="d-flex align-items-center gap-3 fw-medium text-main">
+              <span class="card-icon-wrap mb-0 bg-accent bg-opacity-10 text-accent p-2 border-radius-sm" style="width:36px;height:36px;font-size:1rem;"><i class="bi bi-check2-all"></i></span>
+              <span>Obsessive Micro-Animation & Hardware-Accelerated Physics</span>
+            </li>
+            <li class="d-flex align-items-center gap-3 fw-medium text-main">
+              <span class="card-icon-wrap mb-0 bg-accent bg-opacity-10 text-accent p-2 border-radius-sm" style="width:36px;height:36px;font-size:1rem;"><i class="bi bi-check2-all"></i></span>
+              <span>Rigorous Security Auditing & Core Vitals Optimization</span>
+            </li>
+          </ul>
+
+          <div class="d-flex flex-wrap align-items-center gap-3">
+            <div class="magnetic-wrap">
+              <a href="#premium-services-grid" class="btn-reeni btn-reeni-primary btn-shine btn-reeni-lg">
+                <i class="bi bi-grid-fill"></i> Explore Specialties
+              </a>
+            </div>
+            <div class="magnetic-wrap">
+              <a href="contact.html" class="btn-reeni btn-reeni-outline btn-shine btn-reeni-lg">
+                <i class="bi bi-calendar-event-fill"></i> Schedule Studio Call
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Visual Showcase Column -->
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+          <div class="position-relative mx-auto" style="max-width: 520px;">
+            <div class="hover-tilt">
+              <div class="hover-tilt-inner img-zoom-wrap card-glass p-3 border-radius-xl shadow-lg position-relative overflow-hidden">
+                <img src="assets/images/about/about-main.jpg" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1000&q=80'" alt="Engineering Code Structure" class="border-radius-lg w-100 object-fit-cover" style="aspect-ratio: 16/11;" />
+                <div class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75 backdrop-blur border-top border-secondary border-opacity-25 d-flex align-items-center justify-content-between">
+                  <div>
+                    <span class="fw-bold font-display text-white d-block fs-5">Full-Stack Symphony</span>
+                    <span class="small font-mono text-accent">HTML5 • Bootstrap 5 • Laravel • JS</span>
+                  </div>
+                  <span class="badge bg-accent text-dark fw-bold px-3 py-2">Verified</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Code Quality Badge -->
+            <div class="hero-floating-card hero-floating-card-1" style="top: -8%; right: -2%;">
+              <div class="card-icon-wrap mb-0 bg-success bg-opacity-10 text-success border-success border-opacity-25" style="width: 48px; height: 48px; font-size: 1.4rem;"><i class="bi bi-shield-check"></i></div>
+              <div>
+                <span class="d-block fw-bold font-display text-main fs-5 mb-0">W3C Strict</span>
+                <span class="small text-muted d-block" style="font-size: 0.75rem;">Zero Validation Errors</span>
+              </div>
+            </div>
+
+            <!-- Floating Performance Badge -->
+            <div class="hero-floating-card hero-floating-card-2" style="bottom: -8%; left: -2%;">
+              <div class="card-icon-wrap mb-0 bg-warning bg-opacity-10 text-warning border-warning border-opacity-25" style="width: 48px; height: 48px; font-size: 1.4rem;"><i class="bi bi-speedometer2"></i></div>
+              <div>
+                <span class="d-block fw-bold font-display text-main fs-5 mb-0">100/100 Vitals</span>
+                <span class="small text-muted d-block" style="font-size: 0.75rem;">Lighthouse Verified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         05. SECTION 3: PREMIUM SERVICES GRID (8 PREMIUM SERVICE CARDS)
+         ============================================================================ -->
+    <section class="py-section bg-subtle grid-lines-bg border-top border-bottom border-secondary border-opacity-25" id="premium-services-grid">
+      <div class="container">
+        
+        <div class="text-center mx-auto mb-5 pb-3" style="max-width: 760px;" data-aos="fade-up">
+          <span class="section-subtitle mb-2">COMMERCIAL SPECIALTIES</span>
+          <h2 class="section-title font-display">Architectural <span class="text-accent">Services Grid</span></h2>
+          <p class="lead-reeni mt-3">Eight bespoke service tracks engineered to transform complex commercial visions into ThemeForest-quality digital realities.</p>
+        </div>
+
+        <div class="row g-4">
+          
+          <!-- Service 1: UI Implementation -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-grid-card card-glass">
+              <div>
+                <div class="service-card-icon"><i class="bi bi-vector-pen"></i></div>
+                <h3 class="h4 font-display mb-2">UI Implementation</h3>
+                <p class="text-muted small">Converting complex Figma and Adobe XD prototypes into pixel-perfect, responsive HTML5 markup with fluid typography.</p>
+                <ul class="service-feature-list">
+                  <li><i class="bi bi-check-circle-fill"></i> Figma Token Extraction</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Pixel-Perfect Margins</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Fluid Clamp Sizing</li>
+                </ul>
+              </div>
+              <a href="contact.html" class="btn-reeni btn-reeni-outline btn-reeni-sm btn-shine w-100 mt-3">
+                <span>Learn More</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 2: Frontend Development -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+            <div class="service-grid-card card-glass">
+              <div>
+                <div class="service-card-icon"><i class="bi bi-window-desktop"></i></div>
+                <h3 class="h4 font-display mb-2">Frontend Development</h3>
+                <p class="text-muted small">Building modern client-side architectures utilizing modular Vanilla ES6+ JavaScript, custom DOM observers, and hardware physics.</p>
+                <ul class="service-feature-list">
+                  <li><i class="bi bi-check-circle-fill"></i> Vanilla JS ES6+ Modules</li>
+                  <li><i class="bi bi-check-circle-fill"></i> AOS Scroll Reveals</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Zero jQuery Bloat</li>
+                </ul>
+              </div>
+              <a href="contact.html" class="btn-reeni btn-reeni-outline btn-reeni-sm btn-shine w-100 mt-3">
+                <span>Learn More</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 3: Backend Development -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-grid-card card-glass">
+              <div>
+                <div class="service-card-icon"><i class="bi bi-hdd-rack-fill"></i></div>
+                <h3 class="h4 font-display mb-2">Backend Development</h3>
+                <p class="text-muted small">Architecting secure server-side logic, distributed database schemas, and session authentication mechanisms in robust PHP 8+.</p>
+                <ul class="service-feature-list">
+                  <li><i class="bi bi-check-circle-fill"></i> Object-Oriented PHP 8+</li>
+                  <li><i class="bi bi-check-circle-fill"></i> PDO Database Security</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Session Encryption</li>
+                </ul>
+              </div>
+              <a href="contact.html" class="btn-reeni btn-reeni-outline btn-reeni-sm btn-shine w-100 mt-3">
+                <span>Learn More</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 4: Laravel Development -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="250">
+            <div class="service-grid-card card-glass">
+              <div>
+                <div class="service-card-icon"><i class="bi bi-box"></i></div>
+                <h3 class="h4 font-display mb-2">Laravel Development</h3>
+                <p class="text-muted small">Engineering enterprise SaaS web applications utilizing Laravel MVC, Eloquent ORM relationships, and background queue workers.</p>
+                <ul class="service-feature-list">
+                  <li><i class="bi bi-check-circle-fill"></i> Eloquent ORM Models</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Redis Queue Processing</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Artisan Automation</li>
+                </ul>
+              </div>
+              <a href="contact.html" class="btn-reeni btn-reeni-outline btn-reeni-sm btn-shine w-100 mt-3">
+                <span>Learn More</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 5: REST API Development -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-grid-card card-glass">
+              <div>
+                <div class="service-card-icon"><i class="bi bi-hdd-network"></i></div>
+                <h3 class="h4 font-display mb-2">REST API Development</h3>
+                <p class="text-muted small">Designing hyper-fast RESTful API endpoints with JWT authentication, JSON schema validation, and third-party webhook bridges.</p>
+                <ul class="service-feature-list">
+                  <li><i class="bi bi-check-circle-fill"></i> JWT Bearer Tokens</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Rate Limiting Protections</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Swagger Documentation</li>
+                </ul>
+              </div>
+              <a href="contact.html" class="btn-reeni btn-reeni-outline btn-reeni-sm btn-shine w-100 mt-3">
+                <span>Learn More</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 6: Responsive Website -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+            <div class="service-grid-card card-glass">
+              <div>
+                <div class="service-card-icon"><i class="bi bi-phone-landscape"></i></div>
+                <h3 class="h4 font-display mb-2">Responsive Website</h3>
+                <p class="text-muted small">Creating fluid cross-device web suites that reflow seamlessly across 4K displays, laptop viewports, iPads, and mobile screens.</p>
+                <ul class="service-feature-list">
+                  <li><i class="bi bi-check-circle-fill"></i> Mobile-First Bootstrap 5</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Touch Target Hygiene</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Adaptive Offcanvas Nav</li>
+                </ul>
+              </div>
+              <a href="contact.html" class="btn-reeni btn-reeni-outline btn-reeni-sm btn-shine w-100 mt-3">
+                <span>Learn More</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 7: Website Optimization -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-grid-card card-glass">
+              <div>
+                <div class="service-card-icon"><i class="bi bi-lightning-charge"></i></div>
+                <h3 class="h4 font-display mb-2">Website Optimization</h3>
+                <p class="text-muted small">Conducting rigorous code audits to eliminate render-blocking assets, compress media payloads, and achieve 100/100 Lighthouse scores.</p>
+                <ul class="service-feature-list">
+                  <li><i class="bi bi-check-circle-fill"></i> Critical CSS Extraction</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Lazy Asset Hydration</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Brotli Compression</li>
+                </ul>
+              </div>
+              <a href="contact.html" class="btn-reeni btn-reeni-outline btn-reeni-sm btn-shine w-100 mt-3">
+                <span>Learn More</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 8: Bug Fix & Maintenance -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="250">
+            <div class="service-grid-card card-glass">
+              <div>
+                <div class="service-card-icon"><i class="bi bi-bug-fill"></i></div>
+                <h3 class="h4 font-display mb-2">Bug Fix & Maintenance</h3>
+                <p class="text-muted small">Providing rapid emergency triage, legacy codebase refactoring, security patching, and continuous server monitoring packages.</p>
+                <ul class="service-feature-list">
+                  <li><i class="bi bi-check-circle-fill"></i> 24-Hour Emergency SLAs</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Memory Leak Triage</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Continuous Updates</li>
+                </ul>
+              </div>
+              <a href="contact.html" class="btn-reeni btn-reeni-outline btn-reeni-sm btn-shine w-100 mt-3">
+                <span>Learn More</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         06. SECTION 4: MY DEVELOPMENT PROCESS (6-STEP AESTHETIC PROCESS)
+         ============================================================================ -->
+    <section class="py-section container" id="my-development-process">
+      
+      <div class="text-center mx-auto mb-5 pb-3" style="max-width: 740px;" data-aos="fade-up">
+        <span class="section-subtitle mb-2">STRUCTURED MILESTONES</span>
+        <h2 class="section-title font-display">My Development <span class="text-accent">Process</span></h2>
+        <p class="lead-reeni mt-3">A transparent, six-phase lifecycle ensuring meticulous creative alignment and punctual commercial handover.</p>
+      </div>
+
+      <div class="row g-4 position-relative">
+        
+        <!-- Step 1 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="process-step-card">
+            <span class="process-number-badge">STEP // 01</span>
+            <div class="card-icon-wrap mb-3"><i class="bi bi-chat-left-dots-fill"></i></div>
+            <h3 class="h4 font-display mb-2">01. Discussion</h3>
+            <p class="text-muted small mb-0">Deep-dive consultation to understand core commercial objectives, target audience demographics, feature requirements, and technical constraints.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+          <div class="process-step-card">
+            <span class="process-number-badge">STEP // 02</span>
+            <div class="card-icon-wrap mb-3"><i class="bi bi-diagram-3-fill"></i></div>
+            <h3 class="h4 font-display mb-2">02. Planning</h3>
+            <p class="text-muted small mb-0">Architecting database schemas, sitemap hierarchies, Agile sprint schedules, and selecting exact frontend/backend technology stacks.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="process-step-card">
+            <span class="process-number-badge">STEP // 03</span>
+            <div class="card-icon-wrap mb-3"><i class="bi bi-palette2"></i></div>
+            <h3 class="h4 font-display mb-2">03. UI Design</h3>
+            <p class="text-muted small mb-0">Crafting high-fidelity interactive wireframes and visual design systems in Figma, establishing exact color tokens, typography, and motion feel.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="process-step-card">
+            <span class="process-number-badge">STEP // 04</span>
+            <div class="card-icon-wrap mb-3"><i class="bi bi-code-slash"></i></div>
+            <h3 class="h4 font-display mb-2">04. Development</h3>
+            <p class="text-muted small mb-0">Writing semantic HTML5 markup, modular Sass styles, eloquent Laravel models, and custom vanilla JavaScript physics engines.</p>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+          <div class="process-step-card">
+            <span class="process-number-badge">STEP // 05</span>
+            <div class="card-icon-wrap mb-3"><i class="bi bi-shield-check"></i></div>
+            <h3 class="h4 font-display mb-2">05. Testing</h3>
+            <p class="text-muted small mb-0">Rigorously auditing responsive breakpoints across real mobile viewports, auditing security vulnerabilities, and tuning Core Web Vitals.</p>
+          </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="process-step-card border-accent bg-accent bg-opacity-10">
+            <span class="process-number-badge text-accent">STEP // 06</span>
+            <div class="card-icon-wrap mb-3 bg-accent text-dark"><i class="bi bi-rocket-takeoff-fill"></i></div>
+            <h3 class="h4 font-display text-main mb-2">06. Deployment</h3>
+            <p class="text-main opacity-85 small mb-0">Executing zero-downtime container deployment, configuring SSL encryption, setting up automated CI/CD backup loops, and client handover.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         07. SECTION 5: TECHNOLOGIES I USE (PREMIUM ICON GRID)
+         ============================================================================ -->
+    <section class="py-section bg-subtle grid-lines-bg border-top border-bottom border-secondary border-opacity-25" id="technologies-i-use">
+      <div class="container">
+        
+        <div class="text-center mx-auto mb-5 pb-3" style="max-width: 720px;" data-aos="fade-up">
+          <span class="section-subtitle mb-2">ENGINEERING TOOLCHAIN</span>
+          <h2 class="section-title font-display">Technologies <span class="text-accent">I Use</span></h2>
+          <p class="lead-reeni mt-3">Enterprise-grade HTML5, CSS3, JavaScript, and PHP frameworks chosen for uncompromising stability and commercial performance.</p>
+        </div>
+
+        <div class="row g-3 g-md-4">
+          <!-- HTML5 -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="50">
+            <div class="tool-item-card" title="HTML5 Semantic W3C Standards">
+              <i class="bi bi-filetype-html text-warning"></i>
+              <span class="tool-item-name">HTML5</span>
+            </div>
+          </div>
+
+          <!-- CSS3 -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+            <div class="tool-item-card" title="CSS3 & Fluid Clamp Styling">
+              <i class="bi bi-filetype-css text-info"></i>
+              <span class="tool-item-name">CSS3</span>
+            </div>
+          </div>
+
+          <!-- Bootstrap 5 -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="150">
+            <div class="tool-item-card" title="Bootstrap 5 Responsive Grid System">
+              <i class="bi bi-bootstrap-fill text-primary"></i>
+              <span class="tool-item-name">Bootstrap 5</span>
+            </div>
+          </div>
+
+          <!-- JavaScript -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+            <div class="tool-item-card" title="Vanilla JavaScript ES6+ Modular Physics">
+              <i class="bi bi-filetype-js text-warning"></i>
+              <span class="tool-item-name">JavaScript</span>
+            </div>
+          </div>
+
+          <!-- PHP -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="250">
+            <div class="tool-item-card" title="PHP 8+ Server Architecture">
+              <i class="bi bi-filetype-php text-primary"></i>
+              <span class="tool-item-name">PHP</span>
+            </div>
+          </div>
+
+          <!-- Laravel -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
+            <div class="tool-item-card" title="Laravel Enterprise SaaS Framework">
+              <i class="bi bi-box text-danger"></i>
+              <span class="tool-item-name">Laravel</span>
+            </div>
+          </div>
+
+          <!-- MySQL -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="350">
+            <div class="tool-item-card" title="MySQL Relational Data Engine">
+              <i class="bi bi-database text-success"></i>
+              <span class="tool-item-name">MySQL</span>
+            </div>
+          </div>
+
+          <!-- REST API -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="400">
+            <div class="tool-item-card" title="RESTful API Engineering & Webhooks">
+              <i class="bi bi-hdd-network text-info"></i>
+              <span class="tool-item-name">REST API</span>
+            </div>
+          </div>
+
+          <!-- Git -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="450">
+            <div class="tool-item-card" title="Git Version Control Hygiene">
+              <i class="bi bi-git text-danger"></i>
+              <span class="tool-item-name">Git VCS</span>
+            </div>
+          </div>
+
+          <!-- GitHub -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="500">
+            <div class="tool-item-card" title="GitHub Actions CI/CD Pipelines">
+              <i class="bi bi-github text-main"></i>
+              <span class="tool-item-name">GitHub</span>
+            </div>
+          </div>
+
+          <!-- VS Code -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="550">
+            <div class="tool-item-card" title="Visual Studio Code Editor Workspace">
+              <i class="bi bi-laptop text-accent"></i>
+              <span class="tool-item-name">VS Code</span>
+            </div>
+          </div>
+
+          <!-- Figma -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="600">
+            <div class="tool-item-card" title="Figma Interface Design & Token Management">
+              <i class="bi bi-vector-pen text-warning"></i>
+              <span class="tool-item-name">Figma</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         08. SECTION 6: WHY CHOOSE ME (PREMIUM FEATURE CARDS)
+         ============================================================================ -->
+    <section class="py-section container" id="why-choose-me">
+      
+      <div class="text-center mx-auto mb-5 pb-3" style="max-width: 760px;" data-aos="fade-up">
+        <span class="section-subtitle mb-2">COMMERCIAL ASSURANCE</span>
+        <h2 class="section-title font-display">Why Choose <span class="text-accent">My Studio</span></h2>
+        <p class="lead-reeni mt-3">Eight core pillars of engineering assurance verifying commercial reliability and aesthetic differentiation.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Reason 1 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-reeni p-4 h-100">
+            <div class="card-icon-wrap mb-3"><i class="bi bi-layers-fill"></i></div>
+            <h3 class="h5 font-display mb-2">Clean Architecture</h3>
+            <p class="text-muted small mb-0">Strict separation of concerns, modular BEM stylesheet structures, and pristine object-oriented backend controllers.</p>
+          </div>
+        </div>
+
+        <!-- Reason 2 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+          <div class="card-reeni p-4 h-100">
+            <div class="card-icon-wrap mb-3"><i class="bi bi-phone-fill"></i></div>
+            <h3 class="h5 font-display mb-2">Responsive Design</h3>
+            <p class="text-muted small mb-0">Thoroughly audited touch targets, fluid clamp calculations, and mobile-first Bootstrap 5 reflows.</p>
+          </div>
+        </div>
+
+        <!-- Reason 3 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-reeni p-4 h-100">
+            <div class="card-icon-wrap mb-3"><i class="bi bi-search"></i></div>
+            <h3 class="h5 font-display mb-2">SEO Friendly</h3>
+            <p class="text-muted small mb-0">Semantic heading hierarchies, OpenGraph schema markup, clean URLs, and zero render-blocking JavaScript.</p>
+          </div>
+        </div>
+
+        <!-- Reason 4 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="250">
+          <div class="card-reeni p-4 h-100">
+            <div class="card-icon-wrap mb-3"><i class="bi bi-lightning-fill"></i></div>
+            <h3 class="h5 font-display mb-2">Fast Performance</h3>
+            <p class="text-muted small mb-0">Sub-second asset hydration, gzip payload compression, and verified 100/100 Google Lighthouse scores.</p>
+          </div>
+        </div>
+
+        <!-- Reason 5 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-reeni p-4 h-100">
+            <div class="card-icon-wrap mb-3"><i class="bi bi-stars"></i></div>
+            <h3 class="h5 font-display mb-2">Modern UI</h3>
+            <p class="text-muted small mb-0">Luxury dark mode color depth, subtle glassmorphic blur layers, and cinematic custom cursor physics.</p>
+          </div>
+        </div>
+
+        <!-- Reason 6 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+          <div class="card-reeni p-4 h-100">
+            <div class="card-icon-wrap mb-3"><i class="bi bi-recycle"></i></div>
+            <h3 class="h5 font-display mb-2">Reusable Code</h3>
+            <p class="text-muted small mb-0">Zero duplicate styles, global CSS design variables, and self-contained reusable JavaScript module components.</p>
+          </div>
+        </div>
+
+        <!-- Reason 7 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-reeni p-4 h-100">
+            <div class="card-icon-wrap mb-3"><i class="bi bi-graph-up-arrow"></i></div>
+            <h3 class="h5 font-display mb-2">Scalable Development</h3>
+            <p class="text-muted small mb-0">Built ready for multi-tenant database scaling, internationalization localization, and enterprise cloud hosting.</p>
+          </div>
+        </div>
+
+        <!-- Reason 8 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="250">
+          <div class="card-reeni p-4 h-100">
+            <div class="card-icon-wrap mb-3"><i class="bi bi-browsers"></i></div>
+            <h3 class="h5 font-display mb-2">Cross Browser</h3>
+            <p class="text-muted small mb-0">Verified compatibility across Safari, Chrome, Firefox, Edge, and mobile WebKit rendering engines.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================================
+         09. SECTION 7: SERVICE STATISTICS (ANIMATED COUNTERS)
+         ============================================================================ -->
+    <section class="py-5 bg-subtle grid-lines-bg border-top border-bottom border-secondary border-opacity-25" id="service-statistics">
+      <div class="container py-4">
+        <div class="row g-4 text-center">
+          
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="50">
+            <div class="p-3">
+              <div class="stat-number text-accent mb-1" data-stat-count="240" data-stat-suffix="+">0</div>
+              <span class="small fw-bold text-uppercase text-main letter-spacing-1 d-block">Projects Delivered</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+            <div class="p-3 border-start border-secondary border-opacity-25">
+              <div class="stat-number text-main mb-1" data-stat-count="180" data-stat-suffix="+">0</div>
+              <span class="small fw-bold text-uppercase text-main letter-spacing-1 d-block">Happy Clients</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="150">
+            <div class="p-3 border-start border-secondary border-opacity-25">
+              <div class="stat-number text-accent mb-1" data-stat-count="15" data-stat-suffix="+">0</div>
+              <span class="small fw-bold text-uppercase text-main letter-spacing-1 d-block">Years Experience</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+            <div class="p-3 border-start border-secondary border-opacity-25">
+              <div class="stat-number text-main mb-1" data-stat-count="4850" data-stat-suffix="+">0</div>
+              <span class="small fw-bold text-uppercase text-main letter-spacing-1 d-block">Cups of Coffee</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="250">
+            <div class="p-3 border-start border-secondary border-opacity-25">
+              <div class="stat-number text-accent mb-1" data-stat-count="12500" data-stat-suffix="+">0</div>
+              <span class="small fw-bold text-uppercase text-main letter-spacing-1 d-block">Support Hours</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
+            <div class="p-3 border-start border-secondary border-opacity-25">
+              <div class="stat-number text-main mb-1" data-stat-count="980" data-stat-suffix="k">0</div>
+              <span class="small fw-bold text-uppercase text-main letter-spacing-1 d-block">Lines of Code</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         10. SECTION 8: FREQUENTLY ASKED QUESTIONS (BEAUTIFUL ACCORDION - 8 QUESTIONS)
+         ============================================================================ -->
+    <section class="py-section container" id="frequently-asked-questions">
+      
+      <div class="text-center mx-auto mb-5 pb-3" style="max-width: 740px;" data-aos="fade-up">
+        <span class="section-subtitle mb-2">COMMERCIAL TRANSPARENCY</span>
+        <h2 class="section-title font-display">Frequently Asked <span class="text-accent">Questions</span></h2>
+        <p class="lead-reeni mt-3">Answers to common studio engagement, licensing, technical architecture, and support inquiries.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-9">
+          
+          <div class="accordion accordion-reeni" id="servicesAccordion" data-aos="fade-up" data-aos-delay="100">
+            
+            <!-- Q1 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <span class="me-3 text-accent"><i class="bi bi-question-circle-fill"></i></span> What is your standard project engagement timeline?
+                </button>
+              </h3>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#servicesAccordion">
+                <div class="accordion-body">
+                  Typical commercial engagements range from 2 to 6 weeks depending on functional complexity. A boutique HTML5 portfolio or agency template typically requires 2–3 weeks of design sprint and markup development, while full-stack Laravel SaaS applications take 4–6 weeks including database modeling, API testing, and deployment.
+                </div>
+              </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <span class="me-3 text-accent"><i class="bi bi-question-circle-fill"></i></span> Do you provide custom HTML5/JavaScript code without framework bloat?
+                </button>
+              </h3>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#servicesAccordion">
+                <div class="accordion-body">
+                  Yes, absolutely. My static HTML template packages are engineered in strict W3C HTML5 and pure Vanilla ES6+ JavaScript. I intentionally avoid bloated legacy libraries like jQuery or overly complex SPA compilers when clients request lightweight, ultra-fast commercial web templates.
+                </div>
+              </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <span class="me-3 text-accent"><i class="bi bi-question-circle-fill"></i></span> How do you handle responsive testing across different devices?
+                </button>
+              </h3>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#servicesAccordion">
+                <div class="accordion-body">
+                  Every template undergoes multi-tier physical device testing. I verify fluid grid reflows, typography scaling, touch target dimensions (adhering strictly to 44px minimum touch targets), and retina graphic rendering across real iPhones, iPads, Android flagship handsets, and 4K ultra-wide monitors.
+                </div>
+              </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  <span class="me-3 text-accent"><i class="bi bi-question-circle-fill"></i></span> What is your payment structure and milestone schedule?
+                </button>
+              </h3>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#servicesAccordion">
+                <div class="accordion-body">
+                  Standard commercial projects operate on a 50/50 milestone schedule: 50% upfront deposit upon contract signing to reserve studio sprint capacity, and 50% final balance upon delivery and client acceptance on our staging server before final codebase handover.
+                </div>
+              </div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  <span class="me-3 text-accent"><i class="bi bi-question-circle-fill"></i></span> Can you integrate backend APIs and Laravel MVC architectures?
+                </button>
+              </h3>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#servicesAccordion">
+                <div class="accordion-body">
+                  Certainly. Beyond static UI engineering, I am a Senior Full-Stack Architect specializing in Laravel PHP 8+ backend ecosystems. I architect secure RESTful API endpoints, Stripe payment webhooks, MySQL database join schemas, and automated queue jobs.
+                </div>
+              </div>
+            </div>
+
+            <!-- Q6 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  <span class="me-3 text-accent"><i class="bi bi-question-circle-fill"></i></span> Do you offer post-launch maintenance and bug fixing support?
+                </button>
+              </h3>
+              <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#servicesAccordion">
+                <div class="accordion-body">
+                  Yes! All custom development engagements include 30 days of complimentary post-launch bug triage and warranty support. For long-term peace of mind, I also offer dedicated monthly retainer packages covering continuous updates, server patching, and performance monitoring.
+                </div>
+              </div>
+            </div>
+
+            <!-- Q7 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingSeven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                  <span class="me-3 text-accent"><i class="bi bi-question-circle-fill"></i></span> Are your templates optimized for Envato ThemeForest submission standards?
+                </button>
+              </h3>
+              <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#servicesAccordion">
+                <div class="accordion-body">
+                  Yes. As an Envato ThemeForest Elite Author, all my HTML5 template structures strictly obey Envato review mandates. This includes clean W3C HTML validation, properly formatted documentation files, layered source assets, and zero licensing infringements.
+                </div>
+              </div>
+            </div>
+
+            <!-- Q8 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingEight">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                  <span class="me-3 text-accent"><i class="bi bi-question-circle-fill"></i></span> How do we initiate collaboration or request a custom proposal?
+                </button>
+              </h3>
+              <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#servicesAccordion">
+                <div class="accordion-body">
+                  Simply navigate to our <a href="contact.html" class="text-accent fw-bold text-decoration-none">Contact Studio</a> page or send a direct dispatch to hello@reeni.studio outlining your project scope, reference URLs, and desired launch dates. I respond to all commercial inquiries within 24 business hours.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================================
+         11. SECTION 9: TESTIMONIALS PREVIEW (REUSING PREVIOUS TESTIMONIAL DESIGN)
+         ============================================================================ -->
+    <section class="py-section bg-subtle grid-lines-bg border-top border-bottom border-secondary border-opacity-25" id="services-testimonials">
+      <div class="container">
+        
+        <div class="text-center mx-auto mb-5 pb-3" style="max-width: 720px;" data-aos="fade-up">
+          <span class="section-subtitle mb-2">CLIENT TESTIMONIALS</span>
+          <h2 class="section-title font-display">Endorsed By <span class="text-accent">Global Founders</span></h2>
+          <p class="lead-reeni mt-3">Hear what commercial clients and creative directors say about our engineering velocity and UI design aesthetics.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Testimonial 1 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-card">
+              <span class="testimonial-quote-icon font-display">“</span>
+              <div>
+                <div class="rating-stars mb-3"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p class="text-muted small mb-4">"Reeni Core engineered our fintech SaaS web architecture from the ground up. The combination of clean Laravel MVC logic and fluid vanilla JavaScript animations resulted in a 35% conversion increase on launch day."</p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-3 border-top border-secondary border-opacity-25">
+                <img src="assets/images/testimonials/client-1.jpg" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'" alt="Elena Rostova" class="testimonial-avatar" />
+                <div>
+                  <span class="d-block fw-bold font-heading text-main mb-0">Elena Rostova</span>
+                  <span class="small text-muted" style="font-size: 0.8rem;">VP Product @ PaySphere Berlin</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-card">
+              <span class="testimonial-quote-icon font-display">“</span>
+              <div>
+                <div class="rating-stars mb-3"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p class="text-muted small mb-4">"The UI implementation and code cleanliness are unmatched. We imported Reeni's HTML5 foundation into our agency workflow and saved hundreds of hours. W3C validation passed with zero errors on turn one."</p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-3 border-top border-secondary border-opacity-25">
+                <img src="assets/images/testimonials/client-2.jpg" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'" alt="Marcus Vance" class="testimonial-avatar" />
+                <div>
+                  <span class="d-block fw-bold font-heading text-main mb-0">Marcus Vance</span>
+                  <span class="small text-muted" style="font-size: 0.8rem;">Founder @ Apex Digital London</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="col-md-6 col-lg-4 offset-md-3 offset-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <div class="testimonial-card">
+              <span class="testimonial-quote-icon font-display">“</span>
+              <div>
+                <div class="rating-stars mb-3"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p class="text-muted small mb-4">"Working with Reeni on our REST API gateway and payment webhook bridge was effortless. Meticulous documentation, 100/100 Lighthouse performance metrics, and punctual delivery ahead of schedule."</p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-3 border-top border-secondary border-opacity-25">
+                <img src="assets/images/testimonials/client-3.jpg" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80'" alt="Sophia Chen" class="testimonial-avatar" />
+                <div>
+                  <span class="d-block fw-bold font-heading text-main mb-0">Sophia Chen</span>
+                  <span class="small text-muted" style="font-size: 0.8rem;">Lead Architect @ CloudScale Zurich</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         12. SECTION 10: CALL TO ACTION BANNER
+         ============================================================================ -->
+    <section class="py-section container" id="services-cta">
+      <div class="card-reeni p-5 text-center position-relative overflow-hidden grid-lines-bg border-accent" data-aos="zoom-in" style="background: radial-gradient(circle at center, rgba(var(--accent-rgb), 0.15), transparent 80%);">
+        
+        <div class="ambient-bg z-0">
+          <div class="blur-glow blur-glow-1" style="opacity: 0.4;"></div>
+        </div>
+
+        <div class="position-relative z-1 mx-auto" style="max-width: 760px;">
+          <div class="badge-reeni mx-auto mb-3">✦ Ready To Build Your Digital Legacy?</div>
+          <h2 class="display-4 fw-bold font-display text-main tracking-tight mb-4">
+            Let's Engineer Something <span class="text-accent">Extraordinary</span> Together
+          </h2>
+          <p class="lead-reeni mb-5">
+            Whether you need a bespoke ThemeForest HTML5 template architecture or a high-concurrency Laravel SaaS backend, studio sprint capacity is currently open for next month.
+          </p>
+
+          <div class="d-flex flex-wrap align-items-center justify-content-center gap-4">
+            <div class="magnetic-wrap">
+              <a href="contact.html" class="btn-reeni btn-reeni-primary btn-shine btn-reeni-lg px-5">
+                <i class="bi bi-send-fill"></i> Hire Me Studio
+              </a>
+            </div>
+            <div class="magnetic-wrap">
+              <a href="pricing.html" class="btn-reeni btn-reeni-outline btn-shine btn-reeni-lg px-5">
+                <i class="bi bi-tags-fill"></i> View Pricing Packages
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================================
+       13. REUSABLE SHARED FOOTER
+       ============================================================================ -->
+  <footer class="footer-reeni">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Footer Brand Widget -->
+        <div class="col-lg-4">
+          <a href="index.html" class="navbar-brand-reeni font-display d-block mb-3">REENI<span>.</span>CORE</a>
+          <p class="text-muted small mb-4" style="max-width: 320px;">
+            Commercial ThemeForest personal portfolio and agency HTML5 foundation. W3C valid markup, Bootstrap 5 responsive hierarchy, and custom vanilla JavaScript physics.
+          </p>
+          <div class="social-icons">
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+            <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+          </div>
+        </div>
+
+        <!-- Footer Navigation Links 1 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Foundation Home</a></li>
+            <li><a href="about.html">About Reeni</a></li>
+            <li><a href="services.html">Services & Specialties</a></li>
+            <li><a href="resume.html">Experience & CV</a></li>
+            <li><a href="portfolio.html">Featured Works</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Navigation Links 2 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="blog.html">Editorial Journal</a></li>
+            <li><a href="contact.html">Help & Studio FAQ</a></li>
+            <li><a href="contact.html">Privacy Policy</a></li>
+            <li><a href="contact.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Newsletter Subscription -->
+        <div class="col-md-6 col-lg-4">
+          <h4 class="footer-widget-title">Subscribe Studio</h4>
+          <p class="text-muted small mb-4">Receive monthly dispatches on modern CSS architecture, vanilla JS physics, and ThemeForest releases.</p>
+          <form class="search-box mb-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Reeni Core Dispatches!');">
+            <input type="email" class="form-control-reeni" placeholder="Enter your email..." aria-label="Email Address for Newsletter" required />
+            <button type="submit" class="search-btn" aria-label="Subscribe"><i class="bi bi-arrow-right-short fs-3"></i></button>
+          </form>
+          <span class="small text-muted d-block" style="font-size: 0.75rem;">🔒 Zero spam guarantee. Unsubscribe at any time.</span>
+        </div>
+
+      </div>
+
+      <!-- Footer Copyright Bottom -->
+      <div class="footer-bottom">
+        <div>
+          <span>© 2026 Reeni ThemeCore Foundation. Crafted for commercial ThemeForest distribution.</span>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Privacy Policy</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Terms of Service</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Support Studio</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================================
+       14. BACK TO TOP BUTTON (WITH CIRCULAR SCROLL PROGRESS RING)
+       ============================================================================ -->
+  <button id="back-to-top" aria-label="Back to Top of Page">
+    <svg class="progress-ring" width="52" height="52">
+      <circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" />
+    </svg>
+    <i class="bi bi-arrow-up position-relative z-1"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS (Popper Included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Reeni Core Physics & Interactions JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

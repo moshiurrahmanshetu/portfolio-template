@@ -1,0 +1,1186 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | Reeni - Premium Personal Portfolio & Agency HTML Template</title>
+  <meta name="description" content="Discover the professional story, engineering career, skills, and creative philosophy of Reeni Core — Senior Full-Stack Architect & UI/UX Product Designer." />
+  <meta name="keywords" content="about portfolio, architect biography, resume timeline, full stack engineer cv, themeforest portfolio html" />
+  <meta name="author" content="Reeni ThemeCore" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <!-- Reeni Design System CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="overflow-hidden">
+
+  <!-- Custom Cursor Physics Engine -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-outline"></div>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress"></div>
+
+  <!-- Cinematic Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <span class="preloader-logo font-display">REENI.ABOUT</span>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar"></div>
+      </div>
+      <div class="preloader-percentage">0%</div>
+    </div>
+  </div>
+
+  <!-- Page Transition Layer -->
+  <div class="page-transition-layer"></div>
+
+  <!-- ============================================================================
+       01. STICKY TOP NAVIGATION BAR
+       ============================================================================ -->
+  <header class="navbar-reeni sticky-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-reeni font-display">REENI<span>.</span></a>
+      
+      <!-- Desktop Navigation Menu (Multi-Page Architecture) -->
+      <nav class="d-none d-lg-flex align-items-center gap-1">
+        <a href="index.html" class="nav-link-reeni">Foundation</a>
+        <a href="about.html" class="nav-link-reeni active">About</a>
+        <a href="services.html" class="nav-link-reeni">Services</a>
+        <a href="portfolio.html" class="nav-link-reeni">Portfolio</a>
+        <a href="pricing.html" class="nav-link-reeni">Pricing</a>
+        <a href="blog.html" class="nav-link-reeni">Blog</a>
+        <a href="contact.html" class="nav-link-reeni">Contact</a>
+      </nav>
+
+      <!-- Action & Theme Switcher Controls -->
+      <div class="d-flex align-items-center gap-3">
+        <button class="theme-switch-btn" aria-label="Toggle Dark/Light Mode" title="Switch Theme">
+          <i class="bi bi-sun-fill icon-sun text-warning"></i>
+          <i class="bi bi-moon-stars-fill icon-moon text-primary"></i>
+        </button>
+        <a href="contact.html" class="btn-reeni btn-reeni-primary btn-reeni-sm btn-shine d-none d-md-inline-flex">
+          <i class="bi bi-send-fill"></i> Let's Talk
+        </a>
+        <button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni" aria-label="Toggle Mobile Menu">
+          <i class="bi bi-list fs-1 text-main"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================================
+       02. OFFCANVAS MOBILE NAVIGATION
+       ============================================================================ -->
+  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni" aria-labelledby="offcanvasReeniLabel">
+    <div class="offcanvas-header d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-reeni font-display mb-0" id="offcanvasReeniLabel">REENI<span>.</span>CORE</a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close Mobile Menu"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <ul class="mobile-nav-list mb-0">
+        <li><a href="index.html" class="mobile-nav-link">Foundation Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link active">About Me</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services & Specialties</a></li>
+        <li><a href="resume.html" class="mobile-nav-link">Experience & CV</a></li>
+        <li><a href="portfolio.html" class="mobile-nav-link">Portfolio Case Studies</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Pricing Packages</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Editorial Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact Studio</a></li>
+      </ul>
+      <div class="mt-4 pt-4 border-top border-secondary border-opacity-25">
+        <span class="small text-muted text-uppercase fw-bold letter-spacing-1 d-block mb-3">Connect With Me</span>
+        <div class="social-icons">
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+          <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================================
+         03. SECTION 1: PAGE BANNER (STORY & IDENTITY)
+         ============================================================================ -->
+    <section class="page-banner pt-section pb-section position-relative overflow-hidden grid-lines-bg text-center" id="about-hero">
+      <!-- Ambient Parallax Glowing Orbs -->
+      <div class="ambient-bg">
+        <div class="blur-glow blur-glow-1"></div>
+        <div class="blur-glow blur-glow-2"></div>
+        <div class="floating-shape" style="top: 18%; left: 12%; animation-duration: 9s;"><i class="bi bi-stars fs-2 text-warning"></i></div>
+        <div class="floating-shape" style="bottom: 20%; right: 15%; animation-duration: 11s;"><i class="bi bi-gem fs-2 text-accent"></i></div>
+      </div>
+
+      <div class="container position-relative z-1" data-aos="fade-up" data-aos-duration="1000">
+        <div class="badge-reeni mx-auto mb-3 d-inline-flex align-items-center gap-2">
+          <span class="status-pulse"></span>
+          <span>ThemeForest Elite Author Biography</span>
+        </div>
+        <h1 class="display-3 fw-bold font-display tracking-tight text-main mb-3">
+          Professional Story & <span class="text-accent">Identity</span>
+        </h1>
+        <p class="lead-reeni mx-auto mb-4" style="max-width: 680px;">
+          Architecting robust cloud infrastructures and hyper-aesthetic user interfaces for world-class founders and commercial brands.
+        </p>
+        <ul class="breadcrumb-reeni justify-content-center">
+          <li><a href="index.html">Foundation</a></li>
+          <li class="separator">/</li>
+          <li class="active">About Me</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         04. SECTION 2: PERSONAL INTRODUCTION
+         ============================================================================ -->
+    <section class="py-section container position-relative" id="personal-introduction">
+      <div class="row align-items-center g-5">
+        
+        <!-- Large Professional Portrait Column -->
+        <div class="col-lg-5" data-aos="fade-right" data-aos-duration="1000">
+          <div class="position-relative mx-auto" style="max-width: 460px;">
+            <div class="hover-tilt">
+              <div class="hover-tilt-inner img-zoom-wrap card-glass p-3 border-radius-xl shadow-lg">
+                <img src="assets/images/about/about-main.jpg" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80'" alt="Reeni Professional Portrait" class="border-radius-lg w-100 object-fit-cover" style="aspect-ratio: 4/5;" />
+              </div>
+            </div>
+
+            <!-- Floating Experience Badge -->
+            <div class="hero-floating-card hero-floating-card-1" style="top: 10%; right: -6%;">
+              <div class="card-icon-wrap mb-0 bg-warning bg-opacity-10 text-warning border-warning border-opacity-25" style="width: 48px; height: 48px; font-size: 1.4rem;">✦</div>
+              <div>
+                <span class="d-block fw-bold font-display text-main fs-5 mb-0">15+ Years</span>
+                <span class="small text-muted d-block" style="font-size: 0.75rem;">Global Leadership</span>
+              </div>
+            </div>
+
+            <!-- Floating Verification Badge -->
+            <div class="hero-floating-card hero-floating-card-2" style="bottom: 8%; left: -6%;">
+              <div class="card-icon-wrap mb-0 bg-success bg-opacity-10 text-success border-success border-opacity-25" style="width: 48px; height: 48px; font-size: 1.4rem;"><i class="bi bi-patch-check-fill"></i></div>
+              <div>
+                <span class="d-block fw-bold font-display text-main fs-5 mb-0">Envato Elite</span>
+                <span class="small text-muted d-block" style="font-size: 0.75rem;">Verified Architect</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Elegant Introduction & Bio Details Column -->
+        <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000">
+          <span class="section-subtitle mb-2">PERSONAL INTRODUCTION</span>
+          <h2 class="section-title font-display mb-4">Crafting Code With Obsessive <span class="text-accent">Precision & Elegance</span></h2>
+          
+          <p class="lead-reeni mb-4">
+            Hello! I am Reeni Core, a Senior Full-Stack Architect and UI/UX Product Designer based in Zurich, Switzerland. I specialize in building enterprise design systems and high-concurrency cloud software.
+          </p>
+          <p class="text-muted mb-5">
+            Over the past decade and a half, I have spearheaded digital product engineering for global institutions and ambitious commercial startups across Europe and North America. My philosophy centers on bridging the traditional divide between rigorous software engineering and breathtaking visual craftsmanship.
+          </p>
+
+          <!-- Biography Meta Table -->
+          <div class="row g-4 mb-5 border-top border-bottom border-secondary border-opacity-25 py-4">
+            <div class="col-sm-6 col-md-4">
+              <span class="small fw-bold text-muted text-uppercase letter-spacing-1 d-block mb-1">Location</span>
+              <span class="fw-bold font-heading text-main d-flex align-items-center gap-2"><i class="bi bi-geo-alt-fill text-accent"></i> Zurich, Switzerland</span>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <span class="small fw-bold text-muted text-uppercase letter-spacing-1 d-block mb-1">Availability</span>
+              <span class="fw-bold font-heading text-success d-flex align-items-center gap-2"><span class="status-pulse"></span> Freelance & Contract</span>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <span class="small fw-bold text-muted text-uppercase letter-spacing-1 d-block mb-1">Direct Email</span>
+              <a href="contact.html" class="fw-bold font-heading text-accent text-decoration-none">hello@reeni.studio</a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <span class="small fw-bold text-muted text-uppercase letter-spacing-1 d-block mb-1">Direct Phone</span>
+              <span class="fw-bold font-heading text-main font-mono">+41 44 555 0192</span>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <span class="small fw-bold text-muted text-uppercase letter-spacing-1 d-block mb-1">Spoken Languages</span>
+              <span class="fw-bold font-heading text-main">English, German, French</span>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <span class="small fw-bold text-muted text-uppercase letter-spacing-1 d-block mb-1">Nationality</span>
+              <span class="fw-bold font-heading text-main">Swiss / Canadian</span>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="d-flex flex-wrap align-items-center gap-3">
+            <div class="magnetic-wrap">
+              <a href="resume.html" class="btn-reeni btn-reeni-primary btn-shine btn-reeni-lg">
+                <i class="bi bi-file-earmark-arrow-down-fill"></i> Download CV
+              </a>
+            </div>
+            <div class="magnetic-wrap">
+              <a href="contact.html" class="btn-reeni btn-reeni-outline btn-shine btn-reeni-lg">
+                <i class="bi bi-chat-dots-fill"></i> Hire Me Studio
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         05. SECTION 3: MY STORY (TIMELINE STORYTELLING)
+         ============================================================================ -->
+    <section class="py-section bg-subtle grid-lines-bg" id="my-story">
+      <div class="container">
+        
+        <div class="text-center mx-auto mb-5 pb-3" style="max-width: 740px;" data-aos="fade-up">
+          <span class="section-subtitle mb-2">PROFESSIONAL JOURNEY</span>
+          <h2 class="section-title font-display">The Evolution Of An <span class="text-accent">Architect</span></h2>
+          <p class="lead-reeni mt-3">From self-taught markup experimentation to directing international engineering divisions and publishing Envato elite frameworks.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-xl-9">
+            <div class="timeline-wrap">
+              
+              <!-- Story Chapter 1 -->
+              <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                <span class="timeline-dot"></span>
+                <span class="timeline-date">2010 – 2013</span>
+                <div class="story-timeline-card">
+                  <h3 class="h4 font-display mb-2">The Genesis & Passion Discovery</h3>
+                  <span class="small font-mono text-accent d-block mb-3">Self-Taught Roots • Web Standards Mastery</span>
+                  <p class="text-muted mb-0">Began my journey disassembling early web portals, mastering raw W3C HTML/CSS specifications, and experimenting with Photoshop user interface mockups. Quickly recognized that software design is an art of human interaction.</p>
+                </div>
+              </div>
+
+              <!-- Story Chapter 2 -->
+              <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                <span class="timeline-dot"></span>
+                <span class="timeline-date">2014 – 2017</span>
+                <div class="story-timeline-card">
+                  <h3 class="h4 font-display mb-2">Deepening The Full-Stack Foundation</h3>
+                  <span class="small font-mono text-accent d-block mb-3">Academic Excellence • MVC Architecture</span>
+                  <p class="text-muted mb-0">Graduated Summa Cum Laude in Software Engineering while concurrently building bespoke PHP and MySQL web applications for European agencies. Mastered object-oriented design patterns, database normalization, and RESTful API structures.</p>
+                </div>
+              </div>
+
+              <!-- Story Chapter 3 -->
+              <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                <span class="timeline-dot"></span>
+                <span class="timeline-date">2018 – 2022</span>
+                <div class="story-timeline-card">
+                  <h3 class="h4 font-display mb-2">Agency Leadership & Enterprise Scaling</h3>
+                  <span class="small font-mono text-accent d-block mb-3">Lead Architect • High Concurrency Systems</span>
+                  <p class="text-muted mb-0">Spearheaded engineering teams across Berlin and London, directing frontend architectures for fintech portals and multi-tenant SaaS dashboards. Reduced infrastructure latencies by 45% through aggressive caching and code optimization.</p>
+                </div>
+              </div>
+
+              <!-- Story Chapter 4 -->
+              <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                <span class="timeline-dot"></span>
+                <span class="timeline-date">2023 – Present</span>
+                <div class="story-timeline-card">
+                  <h3 class="h4 font-display mb-2">ThemeForest Elite Creator & Agency Founder</h3>
+                  <span class="small font-mono text-accent d-block mb-3">Commercial Design Systems • Global Reach</span>
+                  <p class="text-muted mb-0">Established Reeni ThemeCore to engineer commercial HTML5 and JavaScript templates for Envato ThemeForest. Focused on delivering pristine design tokens, zero-dependency physics engines, and enterprise-grade code documentation.</p>
+                </div>
+              </div>
+
+              <!-- Story Chapter 5 -->
+              <div class="timeline-item mb-0" data-aos="fade-up" data-aos-delay="500">
+                <span class="timeline-dot"></span>
+                <span class="timeline-date">The Future Horizon</span>
+                <div class="story-timeline-card border-accent bg-accent bg-opacity-10">
+                  <h3 class="h4 font-display text-main mb-2">AI Orchestration & Autonomous UI Paragrams</h3>
+                  <span class="small font-mono text-accent d-block mb-3">Pioneering Next-Gen Web Experiences</span>
+                  <p class="text-main opacity-85 mb-0">Actively researching real-time WebSocket canvas synchronization, server-side generative intelligence integration, and ultra-low-footprint vanilla physics algorithms to define the next decade of commercial web design.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         06. SECTION 4: MY SKILLS (PREMIUM CARDS WITH ANIMATED PROGRESS BARS)
+         ============================================================================ -->
+    <section class="py-section container" id="my-skills">
+      
+      <div class="text-center mx-auto mb-5 pb-3" style="max-width: 760px;" data-aos="fade-up">
+        <span class="section-subtitle mb-2">TECHNICAL PROFICIENCY</span>
+        <h2 class="section-title font-display">Specialized <span class="text-accent">Skills Matrix</span></h2>
+        <p class="lead-reeni mt-3">Obsessively perfected core capabilities verified across hundreds of commercial enterprise launches.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Skill 1: HTML5 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-card" data-skill-percent="98">
+            <div class="skill-header">
+              <h3 class="skill-title"><i class="bi bi-filetype-html text-warning fs-5"></i> HTML5 Semantic Markup</h3>
+              <span class="skill-percentage">0%</span>
+            </div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill"></div></div>
+            <p class="text-muted small mt-3 mb-0">W3C strict compliance, accessible ARIA roles, microdata schema tag injection, and clean DOM hierarchies.</p>
+          </div>
+        </div>
+
+        <!-- Skill 2: CSS3 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+          <div class="skill-card" data-skill-percent="95">
+            <div class="skill-header">
+              <h3 class="skill-title"><i class="bi bi-filetype-css text-info fs-5"></i> CSS3 & Design Tokens</h3>
+              <span class="skill-percentage">0%</span>
+            </div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill"></div></div>
+            <p class="text-muted small mt-3 mb-0">Fluid typography, CSS variables architecture, 3D hardware-accelerated transforms, and keyframe animations.</p>
+          </div>
+        </div>
+
+        <!-- Skill 3: Bootstrap 5 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-card" data-skill-percent="96">
+            <div class="skill-header">
+              <h3 class="skill-title"><i class="bi bi-bootstrap-fill text-primary fs-5"></i> Bootstrap 5 Grid System</h3>
+              <span class="skill-percentage">0%</span>
+            </div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill"></div></div>
+            <p class="text-muted small mt-3 mb-0">Custom Sass variable overrides, responsive breakpoint orchestration, and utility class optimization.</p>
+          </div>
+        </div>
+
+        <!-- Skill 4: JavaScript -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-card" data-skill-percent="92">
+            <div class="skill-header">
+              <h3 class="skill-title"><i class="bi bi-filetype-js text-warning fs-5"></i> Vanilla JavaScript ES6+</h3>
+              <span class="skill-percentage">0%</span>
+            </div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill"></div></div>
+            <p class="text-muted small mt-3 mb-0">Asynchronous promises, intersection observers, custom cursor physics, and modular ES6 class structures.</p>
+          </div>
+        </div>
+
+        <!-- Skill 5: PHP -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+          <div class="skill-card" data-skill-percent="88">
+            <div class="skill-header">
+              <h3 class="skill-title"><i class="bi bi-filetype-php text-primary fs-5"></i> PHP MVC Architecture</h3>
+              <span class="skill-percentage">0%</span>
+            </div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill"></div></div>
+            <p class="text-muted small mt-3 mb-0">Object-oriented server logic, PDO secure database abstraction, composer package handling, and session security.</p>
+          </div>
+        </div>
+
+        <!-- Skill 6: Laravel -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-card" data-skill-percent="85">
+            <div class="skill-header">
+              <h3 class="skill-title"><i class="bi bi-box text-danger fs-5"></i> Laravel Enterprise SaaS</h3>
+              <span class="skill-percentage">0%</span>
+            </div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill"></div></div>
+            <p class="text-muted small mt-3 mb-0">Eloquent ORM relationships, Artisan console commands, queue job processing, and Blade templating engines.</p>
+          </div>
+        </div>
+
+        <!-- Skill 7: MySQL -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-card" data-skill-percent="90">
+            <div class="skill-header">
+              <h3 class="skill-title"><i class="bi bi-database text-success fs-5"></i> MySQL Relational Data</h3>
+              <span class="skill-percentage">0%</span>
+            </div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill"></div></div>
+            <p class="text-muted small mt-3 mb-0">Complex join queries, index tuning, transaction ACID compliance, and multi-tenant schema isolation.</p>
+          </div>
+        </div>
+
+        <!-- Skill 8: REST API -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+          <div class="skill-card" data-skill-percent="94">
+            <div class="skill-header">
+              <h3 class="skill-title"><i class="bi bi-hdd-network text-info fs-5"></i> RESTful API Engineering</h3>
+              <span class="skill-percentage">0%</span>
+            </div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill"></div></div>
+            <p class="text-muted small mt-3 mb-0">JWT bearer authentication, rate limiting middleware, JSON schema validation, and webhooks integration.</p>
+          </div>
+        </div>
+
+        <!-- Skill 9: Git -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-card" data-skill-percent="95">
+            <div class="skill-header">
+              <h3 class="skill-title"><i class="bi bi-git text-danger fs-5"></i> Git Version Control</h3>
+              <span class="skill-percentage">0%</span>
+            </div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill"></div></div>
+            <p class="text-muted small mt-3 mb-0">Branching strategies (GitFlow), interactive rebasing, merge conflict resolution, and atomic commit hygiene.</p>
+          </div>
+        </div>
+
+        <!-- Skill 10: GitHub -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-card" data-skill-percent="96">
+            <div class="skill-header">
+              <h3 class="skill-title"><i class="bi bi-github text-main fs-5"></i> GitHub CI/CD Workflows</h3>
+              <span class="skill-percentage">0%</span>
+            </div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill"></div></div>
+            <p class="text-muted small mt-3 mb-0">Automated GitHub Actions pipelines, code quality linting bots, release tagging, and package registries.</p>
+          </div>
+        </div>
+
+        <!-- Skill 11: Responsive Design -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+          <div class="skill-card" data-skill-percent="100">
+            <div class="skill-header">
+              <h3 class="skill-title"><i class="bi bi-phone-landscape text-accent fs-5"></i> Responsive Web Engineering</h3>
+              <span class="skill-percentage">0%</span>
+            </div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill"></div></div>
+            <p class="text-muted small mt-3 mb-0">Ultra-wide desktop containers, tablet grid reflows, mobile touch target sizing (44px min), and retina displays.</p>
+          </div>
+        </div>
+
+        <!-- Skill 12: Performance Optimization -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-card" data-skill-percent="92">
+            <div class="skill-header">
+              <h3 class="skill-title"><i class="bi bi-speedometer2 text-warning fs-5"></i> Performance & Core Vitals</h3>
+              <span class="skill-percentage">0%</span>
+            </div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill"></div></div>
+            <p class="text-muted small mt-3 mb-0">Lighthouse 100/100 scores, lazy asset hydration, Critical CSS extraction, and gzip/brotli payload compression.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ============================================================================
+         07. SECTION 5: EXPERIENCE HIGHLIGHTS (ANIMATED ICON COUNTERS)
+         ============================================================================ -->
+    <section class="py-5 bg-subtle grid-lines-bg border-top border-bottom border-secondary border-opacity-25" id="experience-highlights">
+      <div class="container py-4">
+        <div class="row g-4 text-center">
+          
+          <!-- Highlight 1 -->
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+            <div class="p-3">
+              <div class="card-icon-wrap mx-auto mb-3" style="width: 52px; height: 52px;"><i class="bi bi-award-fill"></i></div>
+              <div class="stat-number text-accent mb-1" data-stat-count="15" data-stat-suffix="+">0</div>
+              <span class="small fw-bold text-uppercase text-main letter-spacing-1 d-block">Years Experience</span>
+            </div>
+          </div>
+
+          <!-- Highlight 2 -->
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="150">
+            <div class="p-3 border-start border-secondary border-opacity-25">
+              <div class="card-icon-wrap mx-auto mb-3" style="width: 52px; height: 52px;"><i class="bi bi-check2-square"></i></div>
+              <div class="stat-number text-main mb-1" data-stat-count="240" data-stat-suffix="+">0</div>
+              <span class="small fw-bold text-uppercase text-main letter-spacing-1 d-block">Completed Projects</span>
+            </div>
+          </div>
+
+          <!-- Highlight 3 -->
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+            <div class="p-3 border-start border-secondary border-opacity-25">
+              <div class="card-icon-wrap mx-auto mb-3" style="width: 52px; height: 52px;"><i class="bi bi-people-fill"></i></div>
+              <div class="stat-number text-accent mb-1" data-stat-count="180" data-stat-suffix="+">0</div>
+              <span class="small fw-bold text-uppercase text-main letter-spacing-1 d-block">Happy Clients</span>
+            </div>
+          </div>
+
+          <!-- Highlight 4 -->
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="250">
+            <div class="p-3 border-start border-secondary border-opacity-25">
+              <div class="card-icon-wrap mx-auto mb-3" style="width: 52px; height: 52px;"><i class="bi bi-trophy-fill"></i></div>
+              <div class="stat-number text-main mb-1" data-stat-count="28" data-stat-suffix="">0</div>
+              <span class="small fw-bold text-uppercase text-main letter-spacing-1 d-block">Design Awards</span>
+            </div>
+          </div>
+
+          <!-- Highlight 5 -->
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
+            <div class="p-3 border-start border-secondary border-opacity-25">
+              <div class="card-icon-wrap mx-auto mb-3" style="width: 52px; height: 52px;"><i class="bi bi-globe-americas"></i></div>
+              <div class="stat-number text-accent mb-1" data-stat-count="18" data-stat-suffix="">0</div>
+              <span class="small fw-bold text-uppercase text-main letter-spacing-1 d-block">Countries Worked</span>
+            </div>
+          </div>
+
+          <!-- Highlight 6 -->
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="350">
+            <div class="p-3 border-start border-secondary border-opacity-25">
+              <div class="card-icon-wrap mx-auto mb-3" style="width: 52px; height: 52px;"><i class="bi bi-star-fill text-warning"></i></div>
+              <div class="stat-number text-main mb-1" data-stat-count="99" data-stat-suffix="%">0</div>
+              <span class="small fw-bold text-uppercase text-main letter-spacing-1 d-block">Satisfaction Rate</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         08. SECTION 6: EDUCATION TIMELINE
+         ============================================================================ -->
+    <section class="py-section container" id="education-timeline">
+      
+      <div class="text-center mx-auto mb-5 pb-4" style="max-width: 720px;" data-aos="fade-up">
+        <span class="section-subtitle mb-2">ACADEMIC FOUNDATION</span>
+        <h2 class="section-title font-display">Education <span class="text-accent">Timeline</span></h2>
+        <p class="lead-reeni mt-3">Rigorous computer science degrees and industry accreditations fueling commercial architecture excellence.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-9">
+          <div class="card-reeni p-4 p-md-5">
+            <div class="timeline-wrap">
+              
+              <!-- Edu 1 -->
+              <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+                <span class="timeline-dot"></span>
+                <span class="timeline-date">2016 – 2018</span>
+                <h3 class="h4 font-display mb-1">Master of Computer Science (M.Sc.)</h3>
+                <span class="small fw-bold text-accent d-block mb-3">Swiss Federal Institute of Technology (ETH Zurich)</span>
+                <p class="text-muted small mb-0">Graduated with High Distinction (Top 5% of class). Thesis focused on Autonomous Cloud Container Scaling and Fault-Tolerant Microservices in Distributed Financial Ecosystems.</p>
+              </div>
+
+              <!-- Edu 2 -->
+              <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+                <span class="timeline-dot"></span>
+                <span class="timeline-date">2012 – 2016</span>
+                <h3 class="h4 font-display mb-1">Bachelor of Software Engineering (B.Eng.)</h3>
+                <span class="small fw-bold text-accent d-block mb-3">State Institute of Technology • Boston, MA</span>
+                <p class="text-muted small mb-0">Graduated Summa Cum Laude. Comprehensive curriculum covering Data Structures, Relational Database Normalization, Object-Oriented Programming (OOP), and Network Security.</p>
+              </div>
+
+              <!-- Edu 3 -->
+              <div class="timeline-item mb-0" data-aos="fade-right" data-aos-delay="300">
+                <span class="timeline-dot"></span>
+                <span class="timeline-date">2019 Professional Enclave</span>
+                <h3 class="h4 font-display mb-1">Certified Solutions Architect • Professional</h3>
+                <span class="small fw-bold text-accent d-block mb-3">Amazon Web Services (AWS) Cloud Academy</span>
+                <p class="text-muted small mb-0">Advanced credential validation covering high-concurrency VPC design, serverless Lambda pipeline orchestration, and enterprise disaster recovery architectures.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================================
+         09. SECTION 7: WORK EXPERIENCE TIMELINE
+         ============================================================================ -->
+    <section class="py-section bg-subtle grid-lines-bg" id="work-experience-timeline">
+      <div class="container">
+        
+        <div class="text-center mx-auto mb-5 pb-4" style="max-width: 720px;" data-aos="fade-up">
+          <span class="section-subtitle mb-2">COMMERCIAL CAREER RECORD</span>
+          <h2 class="section-title font-display">Work Experience <span class="text-accent">Timeline</span></h2>
+          <p class="lead-reeni mt-3">Over fifteen years of progressive engineering leadership across elite studios and enterprise SaaS providers.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-xl-9">
+            <div class="card-reeni p-4 p-md-5">
+              <div class="timeline-wrap">
+                
+                <!-- Work 1 -->
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+                  <span class="timeline-dot"></span>
+                  <span class="timeline-date">2023 – Present</span>
+                  <h3 class="h4 font-display mb-1">Lead Software Architect & Founder</h3>
+                  <span class="small fw-bold text-accent d-block mb-3">Reeni ThemeCore Commercial Studio • Zurich (Hybrid)</span>
+                  <p class="text-muted small mb-0">Directing end-to-end frontend and backend architectures for commercial ThemeForest HTML5 templates. Supervising design tokens, JavaScript performance audits, and enterprise customer technical support.</p>
+                </div>
+
+                <!-- Work 2 -->
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+                  <span class="timeline-dot"></span>
+                  <span class="timeline-date">2020 – 2023</span>
+                  <h3 class="h4 font-display mb-1">Senior Full-Stack Lead Engineer</h3>
+                  <span class="small fw-bold text-accent d-block mb-3">StudioX Enterprise Labs Inc • Berlin, Germany</span>
+                  <p class="text-muted small mb-0">Spearheaded the engineering of hyper-scalable analytics dashboards in Vue 3 and Laravel MVC. Architected Stripe fintech payment gateway webhooks handling $5M+ monthly transaction volumes.</p>
+                </div>
+
+                <!-- Work 3 -->
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+                  <span class="timeline-dot"></span>
+                  <span class="timeline-date">2018 – 2020</span>
+                  <h3 class="h4 font-display mb-1">Frontend UI & Animation Architect</h3>
+                  <span class="small fw-bold text-accent d-block mb-3">Apex Creative Digital Agency • London, UK</span>
+                  <p class="text-muted small mb-0">Designed award-winning interactive marketing campaigns for Fortune 500 clients. Engineered zero-dependency vanilla JavaScript physics engines and custom WebGL background shaders.</p>
+                </div>
+
+                <!-- Work 4 -->
+                <div class="timeline-item mb-0" data-aos="fade-left" data-aos-delay="400">
+                  <span class="timeline-dot"></span>
+                  <span class="timeline-date">2014 – 2018</span>
+                  <h3 class="h4 font-display mb-1">Full-Stack Web Developer</h3>
+                  <span class="small fw-bold text-accent d-block mb-3">Nexus Web Solutions • Zurich, Switzerland</span>
+                  <p class="text-muted small mb-0">Built bespoke e-commerce portals and CMS platforms utilizing PHP, MySQL, and Bootstrap HTML frameworks. Conducted client training workshops and managed server deployment environments.</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         10. SECTION 8: TOOLS & TECHNOLOGIES
+         ============================================================================ -->
+    <section class="py-section container" id="tools-technologies">
+      
+      <div class="text-center mx-auto mb-5 pb-3" style="max-width: 720px;" data-aos="fade-up">
+        <span class="section-subtitle mb-2">DAILY WORKSPACE ARSENAL</span>
+        <h2 class="section-title font-display">Tools & <span class="text-accent">Technologies</span></h2>
+        <p class="lead-reeni mt-3">Industry-standard development editors, design environments, and backend toolchains powering every release.</p>
+      </div>
+
+      <div class="row g-3 g-md-4">
+        <!-- VS Code -->
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="50">
+          <div class="tool-item-card" title="Visual Studio Code IDE">
+            <i class="bi bi-laptop"></i>
+            <span class="tool-item-name">VS Code</span>
+          </div>
+        </div>
+
+        <!-- Git -->
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+          <div class="tool-item-card" title="Git Version Control System">
+            <i class="bi bi-git text-danger"></i>
+            <span class="tool-item-name">Git VCS</span>
+          </div>
+        </div>
+
+        <!-- GitHub -->
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="150">
+          <div class="tool-item-card" title="GitHub Cloud Repositories & CI/CD">
+            <i class="bi bi-github"></i>
+            <span class="tool-item-name">GitHub</span>
+          </div>
+        </div>
+
+        <!-- Figma -->
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+          <div class="tool-item-card" title="Figma Collaborative Interface Design">
+            <i class="bi bi-vector-pen text-warning"></i>
+            <span class="tool-item-name">Figma</span>
+          </div>
+        </div>
+
+        <!-- Photoshop -->
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="250">
+          <div class="tool-item-card" title="Adobe Photoshop Raster Editing">
+            <i class="bi bi-image text-info"></i>
+            <span class="tool-item-name">Photoshop</span>
+          </div>
+        </div>
+
+        <!-- Illustrator -->
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
+          <div class="tool-item-card" title="Adobe Illustrator Vector Graphics">
+            <i class="bi bi-brush text-accent"></i>
+            <span class="tool-item-name">Illustrator</span>
+          </div>
+        </div>
+
+        <!-- Laravel -->
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="350">
+          <div class="tool-item-card" title="Laravel PHP Enterprise MVC">
+            <i class="bi bi-box text-danger"></i>
+            <span class="tool-item-name">Laravel</span>
+          </div>
+        </div>
+
+        <!-- PHP -->
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="400">
+          <div class="tool-item-card" title="PHP 8+ Server Scripting Engine">
+            <i class="bi bi-filetype-php text-primary"></i>
+            <span class="tool-item-name">PHP 8+</span>
+          </div>
+        </div>
+
+        <!-- MySQL -->
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="450">
+          <div class="tool-item-card" title="MySQL Relational Database">
+            <i class="bi bi-database text-success"></i>
+            <span class="tool-item-name">MySQL</span>
+          </div>
+        </div>
+
+        <!-- Bootstrap -->
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="500">
+          <div class="tool-item-card" title="Bootstrap 5 Responsive UI Framework">
+            <i class="bi bi-bootstrap text-primary"></i>
+            <span class="tool-item-name">Bootstrap</span>
+          </div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="550">
+          <div class="tool-item-card" title="Vanilla JavaScript ES6+ Engine">
+            <i class="bi bi-filetype-js text-warning"></i>
+            <span class="tool-item-name">JavaScript</span>
+          </div>
+        </div>
+
+        <!-- Docker -->
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="zoom-in" data-aos-delay="600">
+          <div class="tool-item-card" title="Docker Container Virtualization">
+            <i class="bi bi-cpu text-info"></i>
+            <span class="tool-item-name">Docker</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================================
+         11. SECTION 9: WHY WORK WITH ME (PREMIUM FEATURE CARDS)
+         ============================================================================ -->
+    <section class="py-section bg-subtle grid-lines-bg" id="why-work-with-me">
+      <div class="container">
+        
+        <div class="text-center mx-auto mb-5 pb-3" style="max-width: 740px;" data-aos="fade-up">
+          <span class="section-subtitle mb-2">THE REENI CORE DIFFERENCE</span>
+          <h2 class="section-title font-display">Why Work <span class="text-accent">With Me</span></h2>
+          <p class="lead-reeni mt-3">Enterprise reliability paired with boutique creative agency aesthetic execution.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-reeni p-4 p-xl-5 h-100">
+              <div class="card-icon-wrap"><i class="bi bi-code-slash"></i></div>
+              <h3 class="h4 font-display mb-3">Pristine Clean Code</h3>
+              <p class="text-muted mb-0">Every template inherits modular architecture, strict W3C HTML validation, heavily commented source blocks, and zero bloated third-party dependencies.</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-reeni p-4 p-xl-5 h-100">
+              <div class="card-icon-wrap"><i class="bi bi-palette-fill"></i></div>
+              <h3 class="h4 font-display mb-3">Bespoke Creative Design</h3>
+              <p class="text-muted mb-0">Obsessive attention to micro-spacing, typography pairings, luxury dark mode contrasts, and cinematic hover physics that make commercial brands memorable.</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-reeni p-4 p-xl-5 h-100">
+              <div class="card-icon-wrap"><i class="bi bi-lightning-charge-fill"></i></div>
+              <h3 class="h4 font-display mb-3">Rapid Sprint Delivery</h3>
+              <p class="text-muted mb-0">Structured Agile milestone execution ensuring 100% on-time commercial handover without sacrificing code review depth or quality assurance testing.</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-reeni p-4 p-xl-5 h-100">
+              <div class="card-icon-wrap"><i class="bi bi-search-heart"></i></div>
+              <h3 class="h4 font-display mb-3">SEO & Core Vitals Optimized</h3>
+              <p class="text-muted mb-0">Semantic W3C heading structures, OpenGraph metadata tagging, ultra-lightweight DOM size, and sub-second asset rendering speeds.</p>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-reeni p-4 p-xl-5 h-100">
+              <div class="card-icon-wrap"><i class="bi bi-phone-fill"></i></div>
+              <h3 class="h4 font-display mb-3">Flawless Responsive Hierarchy</h3>
+              <p class="text-muted mb-0">Thoroughly tested touch interactions, adaptive mobile offcanvas navigation, and fluid desktop grid reflows across all iOS and Android devices.</p>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-reeni p-4 p-xl-5 h-100">
+              <div class="card-icon-wrap"><i class="bi bi-window-desktop"></i></div>
+              <h3 class="h4 font-display mb-3">Modern UI Paragrams</h3>
+              <p class="text-muted mb-0">Integrating cutting-edge glassmorphic blur filters, custom Vanilla JS cursor magnet physics, and smooth scroll reveal transitions.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         12. SECTION 10: FUN FACTS (ANIMATED COUNTERS)
+         ============================================================================ -->
+    <section class="py-5 bg-surface border-top border-bottom border-secondary border-opacity-25" id="about-fun-facts">
+      <div class="container py-4">
+        <div class="row g-4 text-center">
+          
+          <div class="col-6 col-md-4 col-lg-2 offset-lg-1" data-aos="zoom-in" data-aos-delay="50">
+            <div class="p-3">
+              <div class="stat-number text-accent mb-1" data-stat-count="4850" data-stat-suffix="+">0</div>
+              <span class="small fw-bold font-heading text-main text-uppercase letter-spacing-1 d-block mb-1">Cups of Coffee</span>
+              <span class="small text-muted" style="font-size: 0.75rem;">Arabica Dark Roast</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+            <div class="p-3 border-start border-secondary border-opacity-25">
+              <div class="stat-number text-main mb-1" data-stat-count="240" data-stat-suffix="+">0</div>
+              <span class="small fw-bold font-heading text-main text-uppercase letter-spacing-1 d-block mb-1">Projects Built</span>
+              <span class="small text-muted" style="font-size: 0.75rem;">SaaS & Agency</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="150">
+            <div class="p-3 border-start border-secondary border-opacity-25">
+              <div class="stat-number text-accent mb-1" data-stat-count="850" data-stat-suffix="K+">0</div>
+              <span class="small fw-bold font-heading text-main text-uppercase letter-spacing-1 d-block mb-1">Lines of Code</span>
+              <span class="small text-muted" style="font-size: 0.75rem;">Pristine HTML/JS</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-6 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+            <div class="p-3 border-start border-secondary border-opacity-25">
+              <div class="stat-number text-main mb-1" data-stat-count="28" data-stat-suffix="">0</div>
+              <span class="small fw-bold font-heading text-main text-uppercase letter-spacing-1 d-block mb-1">Awards Won</span>
+              <span class="small text-muted" style="font-size: 0.75rem;">Envato Elite Badge</span>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-2" data-aos="zoom-in" data-aos-delay="250">
+            <div class="p-3 border-start border-secondary border-opacity-25">
+              <div class="stat-number text-accent mb-1" data-stat-count="180" data-stat-suffix="+">0</div>
+              <span class="small fw-bold font-heading text-main text-uppercase letter-spacing-1 d-block mb-1">Happy Clients</span>
+              <span class="small text-muted" style="font-size: 0.75rem;">99% Repeat Rate</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         13. SECTION 11: PERSONAL INTERESTS (MODERN CARDS WITH HOVER ANIMATION)
+         ============================================================================ -->
+    <section class="py-section container" id="personal-interests">
+      
+      <div class="text-center mx-auto mb-5 pb-3" style="max-width: 720px;" data-aos="fade-up">
+        <span class="section-subtitle mb-2">BEYOND THE TERMINAL</span>
+        <h2 class="section-title font-display">Personal <span class="text-accent">Interests</span></h2>
+        <p class="lead-reeni mt-3">Passions and creative hobbies that recharge my architectural focus and inspire fresh user interface concepts.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Interest 1 -->
+        <div class="col-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="100">
+          <div class="interest-card">
+            <div class="interest-icon-wrap"><i class="bi bi-airplane-fill"></i></div>
+            <h3 class="h5 font-display mb-2">Alpine Travel</h3>
+            <p class="text-muted small mb-0">Exploring remote Swiss hiking trails and historic European architectural capitals.</p>
+          </div>
+        </div>
+
+        <!-- Interest 2 -->
+        <div class="col-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="150">
+          <div class="interest-card">
+            <div class="interest-icon-wrap"><i class="bi bi-camera-fill"></i></div>
+            <h3 class="h5 font-display mb-2">Photography</h3>
+            <p class="text-muted small mb-0">Capturing high-contrast brutalist concrete structures and atmospheric urban nightscapes.</p>
+          </div>
+        </div>
+
+        <!-- Interest 3 -->
+        <div class="col-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="200">
+          <div class="interest-card">
+            <div class="interest-icon-wrap"><i class="bi bi-book-half"></i></div>
+            <h3 class="h5 font-display mb-2">Sci-Fi Reading</h3>
+            <p class="text-muted small mb-0">Obsessed with hard science fiction literature and philosophy of human consciousness.</p>
+          </div>
+        </div>
+
+        <!-- Interest 4 -->
+        <div class="col-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="250">
+          <div class="interest-card">
+            <div class="interest-icon-wrap"><i class="bi bi-cpu-fill"></i></div>
+            <h3 class="h5 font-display mb-2">Retro Tech</h3>
+            <p class="text-muted small mb-0">Restoring vintage mechanical keyboards and early 1990s Unix workstation hardware.</p>
+          </div>
+        </div>
+
+        <!-- Interest 5 -->
+        <div class="col-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="100">
+          <div class="interest-card">
+            <div class="interest-icon-wrap"><i class="bi bi-film"></i></div>
+            <h3 class="h5 font-display mb-2">Cinematic Cinema</h3>
+            <p class="text-muted small mb-0">Studying color grading and widescreen cinematography in independent cinema.</p>
+          </div>
+        </div>
+
+        <!-- Interest 6 -->
+        <div class="col-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="150">
+          <div class="interest-card">
+            <div class="interest-icon-wrap"><i class="bi bi-controller"></i></div>
+            <h3 class="h5 font-display mb-2">Indie Gaming</h3>
+            <p class="text-muted small mb-0">Appreciating atmospheric puzzle design and narrative-driven indie gaming masterpieces.</p>
+          </div>
+        </div>
+
+        <!-- Interest 7 -->
+        <div class="col-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="200">
+          <div class="interest-card">
+            <div class="interest-icon-wrap"><i class="bi bi-headphones"></i></div>
+            <h3 class="h5 font-display mb-2">Synth Music</h3>
+            <p class="text-muted small mb-0">Listening to ambient electronic synthwave and neoclassical piano composition.</p>
+          </div>
+        </div>
+
+        <!-- Interest 8 -->
+        <div class="col-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-delay="250">
+          <div class="interest-card">
+            <div class="interest-icon-wrap"><i class="bi bi-building"></i></div>
+            <h3 class="h5 font-display mb-2">Architecture</h3>
+            <p class="text-muted small mb-0">Studying Bauhaus minimalist design principles and sustainable modern living spaces.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================================
+         14. SECTION 12: TESTIMONIALS PREVIEW (REUSE SHARED TESTIMONIAL STYLE)
+         ============================================================================ -->
+    <section class="py-section bg-subtle grid-lines-bg" id="about-testimonials-preview">
+      <div class="container">
+        
+        <div class="text-center mx-auto mb-5 pb-3" style="max-width: 740px;" data-aos="fade-up">
+          <span class="section-subtitle mb-2">CLIENT VERIFICATION</span>
+          <h2 class="section-title font-display">Testimonials <span class="text-accent">Preview</span></h2>
+          <p class="lead-reeni mt-3">What enterprise engineering directors and startup founders say about collaborating with Reeni Core.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Testimonial 1 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-card">
+              <span class="testimonial-quote-icon">“</span>
+              <div>
+                <div class="rating-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p class="text-main mb-4" style="line-height: 1.75;">
+                  "Reeni Core is an exceptional talent. He restructured our entire multi-platform design tokens system and delivered ultra-clean vanilla JS code that surpassed our strict internal review standards. Truly elite."
+                </p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-4 border-top border-secondary border-opacity-25">
+                <img src="assets/images/testimonials/client-1.jpg" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'" alt="Sarah Jenkins Avatar" class="testimonial-avatar" />
+                <div>
+                  <h3 class="h6 font-display mb-0 text-main">Sarah Jenkins</h3>
+                  <span class="small font-mono text-accent">VP Product • Spotify Core</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-card">
+              <span class="testimonial-quote-icon">“</span>
+              <div>
+                <div class="rating-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p class="text-main mb-4" style="line-height: 1.75;">
+                  "Working with Reeni on our fintech portal was seamless. His ability to bridge complex backend data architectures with high-converting luxury UI design made our Series B product launch a massive commercial success."
+                </p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-4 border-top border-secondary border-opacity-25">
+                <img src="assets/images/testimonials/client-2.jpg" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'" alt="Marcus Vance Avatar" class="testimonial-avatar" />
+                <div>
+                  <h3 class="h6 font-display mb-0 text-main">Marcus Vance</h3>
+                  <span class="small font-mono text-accent">Founder • Nexus Cloud</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="testimonial-card">
+              <span class="testimonial-quote-icon">“</span>
+              <div>
+                <div class="rating-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p class="text-main mb-4" style="line-height: 1.75;">
+                  "The cleanest HTML5 and CSS3 architecture I have encountered on ThemeForest. Every section inherits thoughtful micro-animations and responsive spacing that works flawlessly across all mobile devices."
+                </p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-4 border-top border-secondary border-opacity-25">
+                <img src="assets/images/testimonials/client-3.jpg" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80'" alt="Elena Rostova Avatar" class="testimonial-avatar" />
+                <div>
+                  <h3 class="h6 font-display mb-0 text-main">Elena Rostova</h3>
+                  <span class="small font-mono text-accent">Creative Director • Vogue Studio</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5 pt-3" data-aos="zoom-in">
+          <div class="magnetic-wrap">
+            <a href="portfolio.html" class="btn-reeni btn-reeni-ghost">
+              <span>View All Studio Case Studies</span> <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         15. SECTION 13: CALL TO ACTION BANNER
+         ============================================================================ -->
+    <section class="py-section container position-relative" id="about-cta-banner">
+      <div class="card-reeni p-5 text-center position-relative overflow-hidden grid-lines-bg border-accent" data-aos="zoom-in" data-aos-duration="1000">
+        <!-- Ambient Glow -->
+        <div class="ambient-bg" style="opacity: 0.6;">
+          <div class="blur-glow blur-glow-1" style="width: 300px; height: 300px; top: -100px; left: 50%; transform: translateX(-50%);"></div>
+        </div>
+
+        <div class="position-relative z-1 mx-auto" style="max-width: 760px;">
+          <div class="badge-reeni mx-auto mb-4 d-inline-flex align-items-center gap-2">
+            <span class="status-pulse"></span>
+            <span>Now Booking Q3 & Q4 Commercial Projects</span>
+          </div>
+
+          <h2 class="display-4 font-display fw-bold text-main mb-4">
+            Ready To Build Your Next <span class="text-accent">Digital Masterpiece?</span>
+          </h2>
+
+          <p class="lead-reeni mx-auto mb-5" style="max-width: 620px;">
+            Whether you are launching an institutional SaaS dashboard, a commercial agency portal, or a luxury personal portfolio — let's engineer precision together.
+          </p>
+
+          <div class="d-flex flex-wrap align-items-center justify-content-center gap-4">
+            <div class="magnetic-wrap">
+              <a href="contact.html" class="btn-reeni btn-reeni-primary btn-shine btn-reeni-lg">
+                <i class="bi bi-send-fill"></i> Hire Me Now
+              </a>
+            </div>
+            <div class="magnetic-wrap">
+              <a href="resume.html" class="btn-reeni btn-reeni-outline btn-shine btn-reeni-lg">
+                <i class="bi bi-file-earmark-arrow-down-fill"></i> Download Full CV
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================================
+       16. REUSE SHARED FOOTER ARCHITECTURE
+       ============================================================================ -->
+  <footer class="footer-reeni">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Footer Brand Widget -->
+        <div class="col-lg-4">
+          <a href="index.html" class="navbar-brand-reeni font-display d-block mb-3">REENI<span>.</span>CORE</a>
+          <p class="text-muted small mb-4" style="max-width: 320px;">
+            Commercial ThemeForest personal portfolio and agency HTML5 foundation. W3C valid markup, Bootstrap 5 responsive hierarchy, and custom vanilla JavaScript physics.
+          </p>
+          <div class="social-icons">
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+            <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+          </div>
+        </div>
+
+        <!-- Footer Navigation Links 1 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Foundation Home</a></li>
+            <li><a href="about.html">About Reeni</a></li>
+            <li><a href="services.html">Services & Specialties</a></li>
+            <li><a href="resume.html">Experience & CV</a></li>
+            <li><a href="portfolio.html">Featured Works</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Navigation Links 2 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="blog.html">Editorial Journal</a></li>
+            <li><a href="contact.html">Help & Studio FAQ</a></li>
+            <li><a href="contact.html">Privacy Policy</a></li>
+            <li><a href="contact.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Newsletter Subscription -->
+        <div class="col-md-6 col-lg-4">
+          <h4 class="footer-widget-title">Subscribe Studio</h4>
+          <p class="text-muted small mb-4">Receive monthly dispatches on modern CSS architecture, vanilla JS physics, and ThemeForest releases.</p>
+          <form class="search-box mb-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Reeni Core Dispatches!');">
+            <input type="email" class="form-control-reeni" placeholder="Enter your email..." aria-label="Email Address for Newsletter" required />
+            <button type="submit" class="search-btn" aria-label="Subscribe"><i class="bi bi-arrow-right-short fs-3"></i></button>
+          </form>
+          <span class="small text-muted d-block" style="font-size: 0.75rem;">🔒 Zero spam guarantee. Unsubscribe at any time.</span>
+        </div>
+
+      </div>
+
+      <!-- Footer Copyright Bottom -->
+      <div class="footer-bottom">
+        <div>
+          <span>© 2026 Reeni ThemeCore Foundation. Crafted for commercial ThemeForest distribution.</span>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Privacy Policy</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Terms of Service</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Support Studio</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================================
+       17. BACK TO TOP BUTTON (WITH CIRCULAR SCROLL PROGRESS RING)
+       ============================================================================ -->
+  <button id="back-to-top" aria-label="Back to Top of Page">
+    <svg class="progress-ring" width="52" height="52">
+      <circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" />
+    </svg>
+    <i class="bi bi-arrow-up position-relative z-1"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS (Popper Included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Reeni Core Physics & Interactions JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

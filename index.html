@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reeni - Premium Personal Portfolio & Agency HTML Template</title>
+  <meta name="description" content="Reeni is a commercial ThemeForest-quality personal portfolio, agency, and resume HTML template featuring luxury typography, cinematic modes, and interactive vanilla JS physics." />
+  <meta name="keywords" content="portfolio html template, themeforest template, cv resume html, agency landing page, bootstrap 5 portfolio, dark mode portfolio" />
+  <meta name="author" content="Reeni ThemeCore" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <!-- Reeni Design System CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="overflow-hidden">
+
+  <!-- Custom Cursor Physics Engine -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-outline"></div>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress"></div>
+
+  <!-- Cinematic Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <span class="preloader-logo font-display">REENI.STUDIO</span>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar"></div>
+      </div>
+      <div class="preloader-percentage">0%</div>
+    </div>
+  </div>
+
+  <!-- Page Transition Layer -->
+  <div class="page-transition-layer"></div>
+
+  <!-- ============================================================================
+       01. STICKY TOP NAVIGATION BAR
+       ============================================================================ -->
+  <header class="navbar-reeni sticky-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-reeni font-display">REENI<span>.</span></a>
+      
+      <!-- Desktop Navigation Menu (Multi-Page Architecture) -->
+      <nav class="d-none d-lg-flex align-items-center gap-1">
+        <a href="index.html" class="nav-link-reeni active">Foundation</a>
+        <a href="about.html" class="nav-link-reeni">About</a>
+        <a href="services.html" class="nav-link-reeni">Services</a>
+        <a href="portfolio.html" class="nav-link-reeni">Portfolio</a>
+        <a href="pricing.html" class="nav-link-reeni">Pricing</a>
+        <a href="blog.html" class="nav-link-reeni">Blog</a>
+        <a href="contact.html" class="nav-link-reeni">Contact</a>
+      </nav>
+
+      <!-- Action & Theme Switcher Controls -->
+      <div class="d-flex align-items-center gap-3">
+        <button class="theme-switch-btn" aria-label="Toggle Dark/Light Mode" title="Switch Theme">
+          <i class="bi bi-sun-fill icon-sun text-warning"></i>
+          <i class="bi bi-moon-stars-fill icon-moon text-primary"></i>
+        </button>
+        <a href="contact.html" class="btn-reeni btn-reeni-primary btn-reeni-sm btn-shine d-none d-md-inline-flex">
+          <i class="bi bi-send-fill"></i> Let's Talk
+        </a>
+        <button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni" aria-label="Toggle Mobile Menu">
+          <i class="bi bi-list fs-1 text-main"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================================
+       02. OFFCANVAS MOBILE NAVIGATION
+       ============================================================================ -->
+  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni" aria-labelledby="offcanvasReeniLabel">
+    <div class="offcanvas-header d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-reeni font-display mb-0" id="offcanvasReeniLabel">REENI<span>.</span>CORE</a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close Mobile Menu"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <ul class="mobile-nav-list mb-0">
+        <li><a href="index.html" class="mobile-nav-link active">Foundation Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Me</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services & Specialties</a></li>
+        <li><a href="resume.html" class="mobile-nav-link">Experience & CV</a></li>
+        <li><a href="portfolio.html" class="mobile-nav-link">Portfolio Case Studies</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Pricing Packages</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Editorial Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact Studio</a></li>
+      </ul>
+      <div class="mt-4 pt-4 border-top border-secondary border-opacity-25">
+        <span class="small text-muted text-uppercase fw-bold letter-spacing-1 d-block mb-3">Connect With Me</span>
+        <div class="social-icons">
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+          <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================================
+         03. SECTION 1: PREMIUM CINEMATIC HERO
+         ============================================================================ -->
+    <section class="page-banner pt-section pb-section position-relative overflow-hidden grid-lines-bg" id="hero">
+      <!-- Ambient Parallax Glowing Orbs -->
+      <div class="ambient-bg">
+        <div class="blur-glow blur-glow-1"></div>
+        <div class="blur-glow blur-glow-2"></div>
+        <div class="floating-shape" style="top: 20%; left: 10%;"><i class="bi bi-star-fill fs-1 text-warning"></i></div>
+        <div class="floating-shape" style="bottom: 25%; right: 12%;"><i class="bi bi-hexagon fs-1 text-accent"></i></div>
+      </div>
+
+      <div class="container position-relative z-1">
+        <div class="row align-items-center g-5">
+          <!-- Hero Typography & CTA Column -->
+          <div class="col-lg-7 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1000">
+            
+            <div class="badge-reeni mb-4 d-inline-flex align-items-center gap-2">
+              <span class="status-pulse"></span>
+              <span>Available For Commercial & Freelance Projects</span>
+            </div>
+
+            <h1 class="display-3 fw-bold font-display tracking-tight text-main mb-3" style="line-height: 1.1;">
+              Architecting Digital <span class="text-accent">Masterpieces</span>
+            </h1>
+
+            <div class="h3 fw-normal font-heading mb-4 text-muted">
+              I am a <span class="typing-text fw-bold">Senior Full-Stack Architect</span><span class="typing-cursor"></span>
+            </div>
+
+            <p class="lead-reeni mb-5" style="max-width: 620px;">
+              Empowering enterprise founders and commercial brands through elite ThemeForest design systems, hyper-scalable cloud backends, and cinematic user interface engineering.
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start gap-3 mb-5">
+              <div class="magnetic-wrap">
+                <a href="resume.html" class="btn-reeni btn-reeni-primary btn-shine btn-reeni-lg">
+                  <i class="bi bi-file-earmark-arrow-down-fill"></i> Download CV
+                </a>
+              </div>
+              <div class="magnetic-wrap">
+                <a href="contact.html" class="btn-reeni btn-reeni-outline btn-shine btn-reeni-lg">
+                  <i class="bi bi-chat-dots-fill"></i> Hire Me Now
+                </a>
+              </div>
+            </div>
+
+            <!-- Social Connect -->
+            <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-3 pt-3 border-top border-secondary border-opacity-25">
+              <span class="small fw-bold text-uppercase letter-spacing-1 text-muted">Follow Core:</span>
+              <div class="social-icons">
+                <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble"><i class="bi bi-dribbble"></i></a>
+                <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="blog.html" class="social-icon-btn" aria-label="Medium"><i class="bi bi-medium"></i></a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Hero Interactive Image & Floating Badges Column -->
+          <div class="col-lg-5" data-aos="zoom-in" data-aos-duration="1200">
+            <div class="position-relative mx-auto" style="max-width: 460px;">
+              
+              <!-- 3D Parallax Tilt Container -->
+              <div class="hover-tilt">
+                <div class="hover-tilt-inner img-zoom-wrap card-glass p-3 border-radius-xl shadow-lg">
+                  <img src="assets/images/hero/hero-main.jpg" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80'" alt="Reeni Senior Architect Portrait" class="border-radius-lg w-100 object-fit-cover" style="aspect-ratio: 4/5;" />
+                </div>
+              </div>
+
+              <!-- Floating Experience Card -->
+              <div class="hero-floating-card hero-floating-card-1">
+                <div class="card-icon-wrap mb-0" style="width: 48px; height: 48px; font-size: 1.4rem;">✦</div>
+                <div>
+                  <span class="d-block fw-bold font-display text-main fs-5 mb-0">15+ Years</span>
+                  <span class="small text-muted d-block" style="font-size: 0.75rem;">Elite Experience</span>
+                </div>
+              </div>
+
+              <!-- Floating Satisfaction Card -->
+              <div class="hero-floating-card hero-floating-card-2">
+                <div class="card-icon-wrap mb-0 bg-success bg-opacity-10 text-success border-success border-opacity-25" style="width: 48px; height: 48px; font-size: 1.4rem;"><i class="bi bi-check-circle-fill"></i></div>
+                <div>
+                  <span class="d-block fw-bold font-display text-main fs-5 mb-0">4.9/5 Rating</span>
+                  <span class="small text-muted d-block" style="font-size: 0.75rem;">ThemeForest Verified</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         04. SECTION 2: TRUSTED COMPANIES / CLIENTS LOGO TICKER
+         ============================================================================ -->
+    <section class="client-ticker-wrap" id="clients" data-aos="fade-up">
+      <div class="container mb-3 text-center">
+        <span class="small fw-bold font-heading text-muted letter-spacing-1 text-uppercase">✦ Trusted By Global Leaders & Commercial Startups</span>
+      </div>
+      <div class="client-ticker-track">
+        <a href="portfolio.html" class="client-logo-item"><i class="bi bi-google text-warning"></i> GOOGLE LABS</a>
+        <a href="portfolio.html" class="client-logo-item"><i class="bi bi-spotify text-success"></i> SPOTIFY CORE</a>
+        <a href="portfolio.html" class="client-logo-item"><i class="bi bi-microsoft text-info"></i> MICROSOFT CLOUD</a>
+        <a href="portfolio.html" class="client-logo-item"><i class="bi bi-stripe text-primary"></i> STRIPE FINTECH</a>
+        <a href="portfolio.html" class="client-logo-item"><i class="bi bi-slack text-danger"></i> SLACK ENTERPRISE</a>
+        <a href="portfolio.html" class="client-logo-item"><i class="bi bi-apple"></i> APPLE STUDIO</a>
+        <a href="portfolio.html" class="client-logo-item"><i class="bi bi-amazon text-warning"></i> AMAZON AWS</a>
+        <a href="portfolio.html" class="client-logo-item"><i class="bi bi-meta text-primary"></i> META DESIGN</a>
+        <!-- Repeat for seamless infinite ticker loop -->
+        <a href="portfolio.html" class="client-logo-item"><i class="bi bi-google text-warning"></i> GOOGLE LABS</a>
+        <a href="portfolio.html" class="client-logo-item"><i class="bi bi-spotify text-success"></i> SPOTIFY CORE</a>
+        <a href="portfolio.html" class="client-logo-item"><i class="bi bi-microsoft text-info"></i> MICROSOFT CLOUD</a>
+        <a href="portfolio.html" class="client-logo-item"><i class="bi bi-stripe text-primary"></i> STRIPE FINTECH</a>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         05. SECTION 3: ABOUT PREVIEW WITH ANIMATED COUNTERS
+         ============================================================================ -->
+    <section class="py-section container position-relative" id="about-preview">
+      <div class="row align-items-center g-5">
+        
+        <!-- About Portrait Column -->
+        <div class="col-lg-6" data-aos="flip-left" data-aos-duration="1000">
+          <div class="position-relative p-4 card-glass border-radius-xl">
+            <div class="img-zoom-wrap border-radius-lg">
+              <img src="assets/images/about/about-main.jpg" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80'" alt="Reeni About Preview" class="w-100 object-fit-cover border-radius-lg" style="aspect-ratio: 16/11;" />
+            </div>
+            <div class="position-absolute bottom-0 end-0 p-4 bg-accent text-inverse border-radius-lg shadow-lg m-4 d-none d-sm-block" style="max-width: 220px;">
+              <span class="fs-2 fw-bold font-display d-block lh-1 mb-1">100%</span>
+              <span class="small fw-bold text-uppercase letter-spacing-1">On-Time Delivery Record</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Description & Stats Column -->
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+          <span class="section-subtitle mb-2">FOUNDATION ARCHITECTURE PREVIEW</span>
+          <h2 class="section-title font-display mb-4">Engineering Precision Meets <span class="text-accent">Aesthetic Excellence</span></h2>
+          
+          <p class="lead-reeni mb-4">
+            With over a decade of commercial full-stack engineering, I bridge the chasm between complex cloud software architecture and high-converting, cinematic interface design.
+          </p>
+          <p class="text-muted mb-5">
+            Every line of code inherits rigorous W3C semantic validation standards, optimized mobile-first breakpoints, and zero-dependency micro-interaction engines tailored for top-tier agency deliverables.
+          </p>
+
+          <!-- Animated Counters Grid -->
+          <div class="row g-4 mb-5 border-top border-bottom border-secondary border-opacity-25 py-4">
+            <div class="col-4 text-center text-sm-start">
+              <div class="stat-number text-accent" data-stat-count="240" data-stat-suffix="+">0</div>
+              <span class="small fw-bold text-uppercase text-muted letter-spacing-1">Projects Launched</span>
+            </div>
+            <div class="col-4 text-center text-sm-start">
+              <div class="stat-number text-main" data-stat-count="180" data-stat-suffix="+">0</div>
+              <span class="small fw-bold text-uppercase text-muted letter-spacing-1">Global Clients</span>
+            </div>
+            <div class="col-4 text-center text-sm-start">
+              <div class="stat-number text-accent" data-stat-count="28" data-stat-suffix="">0</div>
+              <span class="small fw-bold text-uppercase text-muted letter-spacing-1">Design Awards</span>
+            </div>
+          </div>
+
+          <div class="magnetic-wrap">
+            <a href="about.html" class="btn-reeni btn-reeni-primary btn-shine">
+              <i class="bi bi-person-badge-fill"></i> Explore Complete About Page
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         06. SECTION 4: SERVICES PREVIEW (6 PREMIUM CARDS)
+         ============================================================================ -->
+    <section class="py-section bg-subtle grid-lines-bg" id="services-preview">
+      <div class="container">
+        
+        <div class="text-center mx-auto mb-5 pb-3" style="max-width: 720px;" data-aos="fade-up">
+          <span class="section-subtitle mb-2">SPECIALIZED SERVICES PREVIEW</span>
+          <h2 class="section-title font-display">Holistic Digital <span class="text-accent">Specialties</span></h2>
+          <p class="lead-reeni mt-3">Tailored full-stack capabilities designed to elevate enterprise SaaS products and luxury commercial portfolios.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Service Card 1 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-reeni p-4 p-xl-5">
+              <div class="card-icon-wrap"><i class="bi bi-vector-pen"></i></div>
+              <h3 class="h4 font-display mb-3">SaaS UI/UX Design System</h3>
+              <p class="text-muted mb-4">Architecting comprehensive Figma tokens, atomic component libraries, and interactive design prototypes with obsessive attention to visual hierarchy.</p>
+              <div class="mt-auto pt-3 border-top border-secondary border-opacity-25">
+                <a href="services.html" class="fw-bold text-accent text-decoration-none d-inline-flex align-items-center gap-2 small text-uppercase letter-spacing-1">
+                  <span>Explore Specialty</span> <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-reeni p-4 p-xl-5">
+              <div class="card-icon-wrap"><i class="bi bi-code-slash"></i></div>
+              <h3 class="h4 font-display mb-3">Full-Stack Web App Dev</h3>
+              <p class="text-muted mb-4">Building ultra-fast, responsive web applications utilizing robust server backends, clean HTML5/CSS3 foundations, and modular vanilla JavaScript.</p>
+              <div class="mt-auto pt-3 border-top border-secondary border-opacity-25">
+                <a href="services.html" class="fw-bold text-accent text-decoration-none d-inline-flex align-items-center gap-2 small text-uppercase letter-spacing-1">
+                  <span>Explore Specialty</span> <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-reeni p-4 p-xl-5">
+              <div class="card-icon-wrap"><i class="bi bi-cloud-check-fill"></i></div>
+              <h3 class="h4 font-display mb-3">Cloud & Backend Systems</h3>
+              <p class="text-muted mb-4">Designing high-concurrency database schemas, RESTful APIs, and secure server deployments engineered for 99.99% uptime reliability.</p>
+              <div class="mt-auto pt-3 border-top border-secondary border-opacity-25">
+                <a href="services.html" class="fw-bold text-accent text-decoration-none d-inline-flex align-items-center gap-2 small text-uppercase letter-spacing-1">
+                  <span>Explore Specialty</span> <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 4 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-reeni p-4 p-xl-5">
+              <div class="card-icon-wrap"><i class="bi bi-phone-fill"></i></div>
+              <h3 class="h4 font-display mb-3">Mobile App Engineering</h3>
+              <p class="text-muted mb-4">Developing fluid cross-platform mobile experiences with native performance feel, intuitive touch gestures, and offline synchronization capabilities.</p>
+              <div class="mt-auto pt-3 border-top border-secondary border-opacity-25">
+                <a href="services.html" class="fw-bold text-accent text-decoration-none d-inline-flex align-items-center gap-2 small text-uppercase letter-spacing-1">
+                  <span>Explore Specialty</span> <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 5 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-reeni p-4 p-xl-5">
+              <div class="card-icon-wrap"><i class="bi bi-cart3"></i></div>
+              <h3 class="h4 font-display mb-3">Luxury E-Commerce Portals</h3>
+              <p class="text-muted mb-4">Creating bespoke online marketplaces featuring frictionless checkout workflows, dynamic product configurators, and enterprise payment gateway integrations.</p>
+              <div class="mt-auto pt-3 border-top border-secondary border-opacity-25">
+                <a href="services.html" class="fw-bold text-accent text-decoration-none d-inline-flex align-items-center gap-2 small text-uppercase letter-spacing-1">
+                  <span>Explore Specialty</span> <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 6 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-reeni p-4 p-xl-5">
+              <div class="card-icon-wrap"><i class="bi bi-cpu-fill"></i></div>
+              <h3 class="h4 font-display mb-3">AI & API Orchestration</h3>
+              <p class="text-muted mb-4">Seamlessly integrating cutting-edge machine learning models, real-time WebSocket data channels, and third-party enterprise APIs into cohesive portals.</p>
+              <div class="mt-auto pt-3 border-top border-secondary border-opacity-25">
+                <a href="services.html" class="fw-bold text-accent text-decoration-none d-inline-flex align-items-center gap-2 small text-uppercase letter-spacing-1">
+                  <span>Explore Specialty</span> <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5 pt-3" data-aos="zoom-in">
+          <div class="magnetic-wrap">
+            <a href="services.html" class="btn-reeni btn-reeni-outline btn-shine">
+              <i class="bi bi-grid-fill"></i> View All Studio Services
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         07. SECTION 5: FEATURED PORTFOLIO PREVIEW (6 PROJECT CARDS)
+         ============================================================================ -->
+    <section class="py-section container" id="portfolio-preview">
+      
+      <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-5 pb-3 border-bottom border-secondary border-opacity-25" data-aos="fade-up">
+        <div>
+          <span class="section-subtitle mb-2">SELECTED WORKS & CASE STUDIES</span>
+          <h2 class="section-title font-display mb-0">Featured <span class="text-accent">Portfolio</span></h2>
+        </div>
+        <div class="mt-4 mt-md-0">
+          <a href="portfolio.html" class="btn-reeni btn-reeni-ghost btn-reeni-sm">
+            <span>Explore All Projects</span> <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card-reeni p-3 h-100 d-flex flex-column justify-content-between">
+            <div class="img-zoom-wrap mb-4">
+              <span class="badge-reeni position-absolute top-0 start-0 m-3 z-1">SaaS Platform</span>
+              <img src="assets/images/portfolio/project-1.jpg" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'" alt="Nexus AI Platform Showcase" class="w-100 object-fit-cover border-radius-sm" style="aspect-ratio: 16/10;" />
+            </div>
+            <div class="px-2 pb-2">
+              <h3 class="h4 font-display mb-2">Nexus AI SaaS Cloud</h3>
+              <p class="text-muted small mb-4">Enterprise AI workspace featuring real-time collaborative canvas nodes and generative workflow builders.</p>
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary border-opacity-25">
+                <span class="small font-mono text-accent">React • Laravel • Tailwind</span>
+                <a href="portfolio-details.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 fw-bold text-main">
+                  <span>Case Study</span> <i class="bi bi-arrow-right small"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card-reeni p-3 h-100 d-flex flex-column justify-content-between">
+            <div class="img-zoom-wrap mb-4">
+              <span class="badge-reeni position-absolute top-0 start-0 m-3 z-1">E-Commerce</span>
+              <img src="assets/images/portfolio/project-2.jpg" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80'" alt="Vogue E-Commerce Luxury" class="w-100 object-fit-cover border-radius-sm" style="aspect-ratio: 16/10;" />
+            </div>
+            <div class="px-2 pb-2">
+              <h3 class="h4 font-display mb-2">Vogue Luxury Marketplace</h3>
+              <p class="text-muted small mb-4">High-end fashion retail portal with instant AR virtual try-on engines and Stripe checkout flows.</p>
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary border-opacity-25">
+                <span class="small font-mono text-accent">Vue 3 • Node.js • Stripe</span>
+                <a href="portfolio-details.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 fw-bold text-main">
+                  <span>Case Study</span> <i class="bi bi-arrow-right small"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card-reeni p-3 h-100 d-flex flex-column justify-content-between">
+            <div class="img-zoom-wrap mb-4">
+              <span class="badge-reeni position-absolute top-0 start-0 m-3 z-1">Fintech Portal</span>
+              <img src="assets/images/portfolio/project-3.jpg" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'" alt="Aether Banking Dashboard" class="w-100 object-fit-cover border-radius-sm" style="aspect-ratio: 16/10;" />
+            </div>
+            <div class="px-2 pb-2">
+              <h3 class="h4 font-display mb-2">Aether Banking Dashboard</h3>
+              <p class="text-muted small mb-4">Institutional cryptocurrency and fiat liquidity aggregator providing sub-millisecond charting visualizers.</p>
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary border-opacity-25">
+                <span class="small font-mono text-accent">TypeScript • D3.js • Express</span>
+                <a href="portfolio-details.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 fw-bold text-main">
+                  <span>Case Study</span> <i class="bi bi-arrow-right small"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card-reeni p-3 h-100 d-flex flex-column justify-content-between">
+            <div class="img-zoom-wrap mb-4">
+              <span class="badge-reeni position-absolute top-0 start-0 m-3 z-1">Mobile App</span>
+              <img src="assets/images/portfolio/project-4.jpg" onerror="this.src='https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80'" alt="Hyperion Mobile Wallet" class="w-100 object-fit-cover border-radius-sm" style="aspect-ratio: 16/10;" />
+            </div>
+            <div class="px-2 pb-2">
+              <h3 class="h4 font-display mb-2">Hyperion Crypto Wallet</h3>
+              <p class="text-muted small mb-4">Non-custodial multi-chain asset manager equipped with biometric enclave authentication.</p>
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary border-opacity-25">
+                <span class="small font-mono text-accent">Flutter • Web3.js • Sol</span>
+                <a href="portfolio-details.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 fw-bold text-main">
+                  <span>Case Study</span> <i class="bi bi-arrow-right small"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card-reeni p-3 h-100 d-flex flex-column justify-content-between">
+            <div class="img-zoom-wrap mb-4">
+              <span class="badge-reeni position-absolute top-0 start-0 m-3 z-1">Big Data</span>
+              <img src="assets/images/portfolio/project-5.jpg" onerror="this.src='https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80'" alt="Chronos Analytics Hub" class="w-100 object-fit-cover border-radius-sm" style="aspect-ratio: 16/10;" />
+            </div>
+            <div class="px-2 pb-2">
+              <h3 class="h4 font-display mb-2">Chronos Telemetry Hub</h3>
+              <p class="text-muted small mb-4">Real-time IoT cloud observatory processing 10 million telemetry events per second.</p>
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary border-opacity-25">
+                <span class="small font-mono text-accent">Python • Kafka • PostgreSQL</span>
+                <a href="portfolio-details.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 fw-bold text-main">
+                  <span>Case Study</span> <i class="bi bi-arrow-right small"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card-reeni p-3 h-100 d-flex flex-column justify-content-between">
+            <div class="img-zoom-wrap mb-4">
+              <span class="badge-reeni position-absolute top-0 start-0 m-3 z-1">Brand Portal</span>
+              <img src="assets/images/portfolio/project-6.jpg" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80'" alt="Solaria Clean Energy" class="w-100 object-fit-cover border-radius-sm" style="aspect-ratio: 16/10;" />
+            </div>
+            <div class="px-2 pb-2">
+              <h3 class="h4 font-display mb-2">Solaria Clean Energy</h3>
+              <p class="text-muted small mb-4">Corporate sustainability showcase providing interactive carbon offset calculators for global enterprises.</p>
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary border-opacity-25">
+                <span class="small font-mono text-accent">HTML5 • Bootstrap 5 • JS</span>
+                <a href="portfolio-details.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 fw-bold text-main">
+                  <span>Case Study</span> <i class="bi bi-arrow-right small"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================================
+         08. SECTION 6: SKILLS PREVIEW (ANIMATED PROGRESS BARS)
+         ============================================================================ -->
+    <section class="py-section bg-subtle grid-lines-bg" id="skills-preview">
+      <div class="container">
+        
+        <div class="text-center mx-auto mb-5 pb-3" style="max-width: 760px;" data-aos="fade-up">
+          <span class="section-subtitle mb-2">TECHNICAL FOUNDATION</span>
+          <h2 class="section-title font-display">Core Competencies & <span class="text-accent">Expertise</span></h2>
+          <p class="lead-reeni mt-3">Obsessively honed skills spanning standard markup architecture, backend MVC frameworks, and version control mastery.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- HTML5 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-card" data-skill-percent="98">
+              <div class="skill-header">
+                <h3 class="skill-title"><i class="bi bi-filetype-html text-warning fs-5"></i> HTML5 Semantic Core</h3>
+                <span class="skill-percentage">0%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CSS3 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="skill-card" data-skill-percent="95">
+              <div class="skill-header">
+                <h3 class="skill-title"><i class="bi bi-filetype-css text-info fs-5"></i> CSS3 & Modern Styling</h3>
+                <span class="skill-percentage">0%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bootstrap -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="skill-card" data-skill-percent="96">
+              <div class="skill-header">
+                <h3 class="skill-title"><i class="bi bi-bootstrap-fill text-primary fs-5"></i> Bootstrap 5 Grid Hierarchy</h3>
+                <span class="skill-percentage">0%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- JavaScript -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-card" data-skill-percent="92">
+              <div class="skill-header">
+                <h3 class="skill-title"><i class="bi bi-filetype-js text-warning fs-5"></i> Vanilla JavaScript ES6+</h3>
+                <span class="skill-percentage">0%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PHP -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="skill-card" data-skill-percent="88">
+              <div class="skill-header">
+                <h3 class="skill-title"><i class="bi bi-filetype-php text-primary fs-5"></i> PHP Backend Logic</h3>
+                <span class="skill-percentage">0%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Laravel -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="skill-card" data-skill-percent="85">
+              <div class="skill-header">
+                <h3 class="skill-title"><i class="bi bi-box text-danger fs-5"></i> Laravel Enterprise MVC</h3>
+                <span class="skill-percentage">0%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MySQL -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-card" data-skill-percent="90">
+              <div class="skill-header">
+                <h3 class="skill-title"><i class="bi bi-database text-success fs-5"></i> MySQL Relational Data</h3>
+                <span class="skill-percentage">0%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Git -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="skill-card" data-skill-percent="94">
+              <div class="skill-header">
+                <h3 class="skill-title"><i class="bi bi-git text-danger fs-5"></i> Git Version Control</h3>
+                <span class="skill-percentage">0%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GitHub -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="skill-card" data-skill-percent="95">
+              <div class="skill-header">
+                <h3 class="skill-title"><i class="bi bi-github text-main fs-5"></i> GitHub CI/CD Workflows</h3>
+                <span class="skill-percentage">0%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Responsive Design -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-card" data-skill-percent="100">
+              <div class="skill-header">
+                <h3 class="skill-title"><i class="bi bi-display text-accent fs-5"></i> Responsive Layout Design</h3>
+                <span class="skill-percentage">0%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- UI Implementation -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="skill-card" data-skill-percent="98">
+              <div class="skill-header">
+                <h3 class="skill-title"><i class="bi bi-palette-fill text-info fs-5"></i> UI Implementation Mastery</h3>
+                <span class="skill-percentage">0%</span>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         09. SECTION 7: RESUME PREVIEW (TIMELINE ARCHITECTURE)
+         ============================================================================ -->
+    <section class="py-section container" id="resume-preview">
+      
+      <div class="text-center mx-auto mb-5 pb-4" style="max-width: 720px;" data-aos="fade-up">
+        <span class="section-subtitle mb-2">CAREER TIMELINE PREVIEW</span>
+        <h2 class="section-title font-display">Experience & <span class="text-accent">Education</span></h2>
+        <p class="lead-reeni mt-3">A proven track record leading engineering divisions and delivering elite software solutions across Europe and North America.</p>
+      </div>
+
+      <div class="row g-5">
+        
+        <!-- Experience Timeline Column -->
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+          <div class="card-reeni p-4 p-md-5 h-100">
+            <div class="d-flex align-items-center gap-3 mb-5 pb-3 border-bottom border-secondary border-opacity-25">
+              <div class="card-icon-wrap mb-0" style="width: 52px; height: 52px;"><i class="bi bi-briefcase-fill"></i></div>
+              <h3 class="h4 font-display mb-0">Work Experience</h3>
+            </div>
+
+            <div class="timeline-wrap">
+              <!-- Item 1 -->
+              <div class="timeline-item">
+                <span class="timeline-dot"></span>
+                <span class="timeline-date">2023 – Present</span>
+                <h4 class="h5 font-display mb-1">Lead Software Architect</h4>
+                <span class="small fw-bold text-muted d-block mb-3">TechEnvato Commercial Studio • Remote</span>
+                <p class="text-muted small mb-0">Directing global frontend architectures, authoring commercial ThemeForest HTML/JS design systems, and supervising code quality reviews.</p>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="timeline-item">
+                <span class="timeline-dot"></span>
+                <span class="timeline-date">2020 – 2023</span>
+                <h4 class="h5 font-display mb-1">Senior Full-Stack Engineer</h4>
+                <span class="small fw-bold text-muted d-block mb-3">StudioX Labs Inc • Berlin, Germany</span>
+                <p class="text-muted small mb-0">Developed hyper-scalable SaaS dashboards in Vue/Laravel, integrated Stripe fintech payment gateways, and cut load latencies by 45%.</p>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="timeline-item">
+                <span class="timeline-dot"></span>
+                <span class="timeline-date">2018 – 2020</span>
+                <h4 class="h5 font-display mb-1">Frontend UI Developer</h4>
+                <span class="small fw-bold text-muted d-block mb-3">Apex Creative Agency • London, UK</span>
+                <p class="text-muted small mb-0">Engineered responsive landing pages, W3C compliant HTML/CSS prototypes, and complex vanilla JavaScript animation physics.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Timeline Column -->
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+          <div class="card-reeni p-4 p-md-5 h-100">
+            <div class="d-flex align-items-center gap-3 mb-5 pb-3 border-bottom border-secondary border-opacity-25">
+              <div class="card-icon-wrap mb-0" style="width: 52px; height: 52px;"><i class="bi bi-mortarboard-fill"></i></div>
+              <h3 class="h4 font-display mb-0">Academic Education</h3>
+            </div>
+
+            <div class="timeline-wrap">
+              <!-- Edu 1 -->
+              <div class="timeline-item">
+                <span class="timeline-dot"></span>
+                <span class="timeline-date">2016 – 2018</span>
+                <h4 class="h5 font-display mb-1">Master of Computer Science</h4>
+                <span class="small fw-bold text-muted d-block mb-3">Global University of Technology • Zurich</span>
+                <p class="text-muted small mb-0">Specialized in Distributed Software Systems, Advanced Web Engineering, and Human-Computer Interaction (HCI) interface paradigms.</p>
+              </div>
+
+              <!-- Edu 2 -->
+              <div class="timeline-item">
+                <span class="timeline-dot"></span>
+                <span class="timeline-date">2012 – 2016</span>
+                <h4 class="h5 font-display mb-1">Bachelor of Software Engineering</h4>
+                <span class="small fw-bold text-muted d-block mb-3">State Institute of Technology • Boston</span>
+                <p class="text-muted small mb-0">Graduated Summa Cum Laude. Focused on Object-Oriented Programming (OOP), Relational Database Schemas, and Software Security.</p>
+              </div>
+
+              <!-- Edu 3 -->
+              <div class="timeline-item">
+                <span class="timeline-dot"></span>
+                <span class="timeline-date">2018 – 2019</span>
+                <h4 class="h5 font-display mb-1">Certified Cloud Practitioner</h4>
+                <span class="small fw-bold text-muted d-block mb-3">Amazon Web Services (AWS) Academy</span>
+                <p class="text-muted small mb-0">Professional accreditation in serverless container orchestration, high-concurrency VPC security, and cloud scalability metrics.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-5 pt-3" data-aos="zoom-in">
+        <div class="magnetic-wrap">
+          <a href="resume.html" class="btn-reeni btn-reeni-primary btn-shine">
+            <i class="bi bi-file-text-fill"></i> View Complete Resume Page
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================================
+         10. SECTION 8: STATISTICS SECTION (ANIMATED COUNTERS)
+         ============================================================================ -->
+    <section class="py-5 bg-subtle border-top border-bottom border-secondary border-opacity-25" id="statistics">
+      <div class="container py-4">
+        <div class="row g-4 text-center">
+          
+          <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="p-4">
+              <div class="stat-number text-accent" data-stat-count="240" data-stat-suffix="+">0</div>
+              <span class="h6 font-heading fw-bold text-main d-block mb-1">Projects Completed</span>
+              <span class="small text-muted">Across 18 Countries</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="p-4 border-start border-secondary border-opacity-25">
+              <div class="stat-number text-main" data-stat-count="180" data-stat-suffix="+">0</div>
+              <span class="h6 font-heading fw-bold text-main d-block mb-1">Happy Founders</span>
+              <span class="small text-muted">99% Repeat Client Rate</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="p-4 border-start border-secondary border-opacity-25">
+              <div class="stat-number text-accent" data-stat-count="15" data-stat-suffix="+">0</div>
+              <span class="h6 font-heading fw-bold text-main d-block mb-1">Years Experience</span>
+              <span class="small text-muted">Continuous Excellence</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+            <div class="p-4 border-start border-secondary border-opacity-25">
+              <div class="stat-number text-main" data-stat-count="28" data-stat-suffix="+">0</div>
+              <span class="h6 font-heading fw-bold text-main d-block mb-1">Industry Awards</span>
+              <span class="small text-muted">Envato Elite Author</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         11. SECTION 9: TESTIMONIALS PREVIEW (MODERN LUXURY CARDS)
+         ============================================================================ -->
+    <section class="py-section container" id="testimonials-preview">
+      
+      <div class="text-center mx-auto mb-5 pb-4" style="max-width: 740px;" data-aos="fade-up">
+        <span class="section-subtitle mb-2">FOUNDER TESTIMONIALS</span>
+        <h2 class="section-title font-display">Trusted By Global <span class="text-accent">Clients</span></h2>
+        <p class="lead-reeni mt-3">Unfiltered endorsements from commercial startup CTOs, creative directors, and ThemeForest enterprise license holders.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Testimonial 1 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-card">
+            <div class="testimonial-quote-icon">“</div>
+            <div>
+              <div class="rating-stars">★★★★★</div>
+              <p class="lead-reeni fs-6 text-main mb-4 position-relative z-1">
+                "Reeni engineered our flagship SaaS portal with extraordinary speed. The code architecture is immaculate, semantic, and scored a 100 on Google PageSpeed. Absolute luxury craftsmanship."
+              </p>
+            </div>
+            <div class="d-flex align-items-center gap-3 pt-4 border-top border-secondary border-opacity-25">
+              <img src="assets/images/testimonials/avatar-1.jpg" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'" alt="Sarah Jenkins" class="testimonial-avatar" />
+              <div>
+                <h4 class="h6 font-display fw-bold mb-0 text-main">Sarah Jenkins</h4>
+                <span class="small text-accent">VP of Product @ VercelLabs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial-card">
+            <div class="testimonial-quote-icon">“</div>
+            <div>
+              <div class="rating-stars">★★★★★</div>
+              <p class="lead-reeni fs-6 text-main mb-4 position-relative z-1">
+                "Finding an architect who excels at both backend Laravel microservices and high-end cinematic UI physics is rare. Reeni exceeded every milestone on our banking redesign."
+              </p>
+            </div>
+            <div class="d-flex align-items-center gap-3 pt-4 border-top border-secondary border-opacity-25">
+              <img src="assets/images/testimonials/avatar-2.jpg" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'" alt="Marcus Thorne" class="testimonial-avatar" />
+              <div>
+                <h4 class="h6 font-display fw-bold mb-0 text-main">Marcus Thorne</h4>
+                <span class="small text-accent">CEO @ FintechHorizon</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="testimonial-card">
+            <div class="testimonial-quote-icon">“</div>
+            <div>
+              <div class="rating-stars">★★★★★</div>
+              <p class="lead-reeni fs-6 text-main mb-4 position-relative z-1">
+                "The ThemeForest foundation architecture provided by Reeni made our internal agency customization effortless. Clean vanilla JS, zero bloatware, and stunning dark mode aesthetics."
+              </p>
+            </div>
+            <div class="d-flex align-items-center gap-3 pt-4 border-top border-secondary border-opacity-25">
+              <img src="assets/images/testimonials/avatar-3.jpg" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80'" alt="Elena Rostova" class="testimonial-avatar" />
+              <div>
+                <h4 class="h6 font-display fw-bold mb-0 text-main">Elena Rostova</h4>
+                <span class="small text-accent">Head of Design @ StudioX</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================================
+         12. SECTION 10: LATEST BLOG PREVIEW (3 PREMIUM CARDS)
+         ============================================================================ -->
+    <section class="py-section bg-subtle grid-lines-bg" id="blog-preview">
+      <div class="container">
+        
+        <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-5 pb-3 border-bottom border-secondary border-opacity-25" data-aos="fade-up">
+          <div>
+            <span class="section-subtitle mb-2">EDITORIAL INSIGHTS & NEWS</span>
+            <h2 class="section-title font-display mb-0">Latest <span class="text-accent">Articles</span></h2>
+          </div>
+          <div class="mt-4 mt-md-0">
+            <a href="blog.html" class="btn-reeni btn-reeni-ghost btn-reeni-sm">
+              <span>View All Journal Posts</span> <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Blog Card 1 -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <article class="card-reeni p-4 h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="img-zoom-wrap mb-4">
+                  <img src="assets/images/blog/blog-1.jpg" onerror="this.src='https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80'" alt="Micro-Interactions Article" class="w-100 object-fit-cover border-radius-sm" style="aspect-ratio: 16/10;" />
+                </div>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <span class="badge-reeni py-1 px-3">UI/UX Engineering</span>
+                  <span class="small text-muted font-mono"><i class="bi bi-calendar3"></i> Jun 24, 2026</span>
+                </div>
+                <h3 class="h4 font-display mb-3">
+                  <a href="blog-details.html" class="text-main text-decoration-none hover-accent">Micro-Interactions in Modern SaaS Interface Architecture</a>
+                </h3>
+                <p class="text-muted small mb-4">Discover how subtle 60fps physics feedback loops drastically improve user retention across cloud software portals.</p>
+              </div>
+              <div class="pt-3 border-top border-secondary border-opacity-25">
+                <a href="blog-details.html" class="fw-bold text-accent text-decoration-none small text-uppercase letter-spacing-1 d-inline-flex align-items-center gap-2">
+                  <span>Read Specimen</span> <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Blog Card 2 -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <article class="card-reeni p-4 h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="img-zoom-wrap mb-4">
+                  <img src="assets/images/blog/blog-2.jpg" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80'" alt="Scalable Design Systems" class="w-100 object-fit-cover border-radius-sm" style="aspect-ratio: 16/10;" />
+                </div>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <span class="badge-reeni py-1 px-3">Architecture</span>
+                  <span class="small text-muted font-mono"><i class="bi bi-calendar3"></i> Jun 18, 2026</span>
+                </div>
+                <h3 class="h4 font-display mb-3">
+                  <a href="blog-details.html" class="text-main text-decoration-none hover-accent">Architecting Scalable Design Systems for ThemeForest</a>
+                </h3>
+                <p class="text-muted small mb-4">A technical blueprint for structuring CSS variables, dark mode triggers, and responsive layout hierarchies.</p>
+              </div>
+              <div class="pt-3 border-top border-secondary border-opacity-25">
+                <a href="blog-details.html" class="fw-bold text-accent text-decoration-none small text-uppercase letter-spacing-1 d-inline-flex align-items-center gap-2">
+                  <span>Read Specimen</span> <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Blog Card 3 -->
+          <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <article class="card-reeni p-4 h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="img-zoom-wrap mb-4">
+                  <img src="assets/images/blog/blog-3.jpg" onerror="this.src='https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80'" alt="Vanilla JS Dominates" class="w-100 object-fit-cover border-radius-sm" style="aspect-ratio: 16/10;" />
+                </div>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <span class="badge-reeni py-1 px-3">Performance</span>
+                  <span class="small text-muted font-mono"><i class="bi bi-calendar3"></i> Jun 10, 2026</span>
+                </div>
+                <h3 class="h4 font-display mb-3">
+                  <a href="blog-details.html" class="text-main text-decoration-none hover-accent">Why Vanilla JS Still Dominates High-End Web Performance</a>
+                </h3>
+                <p class="text-muted small mb-4">Exploring the raw execution speed and memory efficiency of native DOM manipulation over heavy framework runtimes.</p>
+              </div>
+              <div class="pt-3 border-top border-secondary border-opacity-25">
+                <a href="blog-details.html" class="fw-bold text-accent text-decoration-none small text-uppercase letter-spacing-1 d-inline-flex align-items-center gap-2">
+                  <span>Read Specimen</span> <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         13. SECTION 11: CALL TO ACTION (LARGE PREMIUM BANNER)
+         ============================================================================ -->
+    <section class="py-section container" id="cta">
+      <div class="cta-box" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="position-relative z-1 mx-auto" style="max-width: 800px;">
+          <span class="badge-reeni mb-4"><i class="bi bi-stars"></i> Let's Engineer Something Extraordinary</span>
+          <h2 class="display-4 fw-bold font-display text-inverse mb-4">Ready To Bring Your Next <span class="text-accent">Vision</span> To Life?</h2>
+          <p class="lead-reeni text-muted mb-5 mx-auto" style="max-width: 620px;">
+            Whether you are launching a commercial agency portal, an enterprise SaaS platform, or a luxury personal portfolio, I am ready to translate your ambition into pristine code.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <div class="magnetic-wrap">
+              <a href="contact.html" class="btn-reeni btn-reeni-primary btn-shine btn-reeni-lg">
+                <i class="bi bi-rocket-takeoff-fill"></i> Initiate Project Consultation
+              </a>
+            </div>
+            <div class="magnetic-wrap">
+              <a href="pricing.html" class="btn-reeni btn-reeni-ghost btn-reeni-lg text-inverse border-secondary border-opacity-50">
+                <i class="bi bi-credit-card-2-front"></i> View Pricing Plans
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         14. SECTION 12: INSTAGRAM / GALLERY PREVIEW
+         ============================================================================ -->
+    <section class="py-section bg-subtle border-top border-secondary border-opacity-25" id="gallery-preview">
+      <div class="container mb-5 pb-2 text-center" data-aos="fade-up">
+        <span class="section-subtitle mb-2">VISUAL DIARY & LIFE STUDIO</span>
+        <h2 class="section-title font-display">Instagram <span class="text-accent">Gallery</span> Preview</h2>
+        <p class="lead-reeni mt-2">Glimpses into my architectural workstation, keynote talks, and design explorations.</p>
+      </div>
+
+      <!-- 6-Square Grid Showcase -->
+      <div class="container-fluid px-4 px-lg-5">
+        <div class="row g-3 g-md-4">
+          
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+            <a href="portfolio.html" class="insta-grid-item" aria-label="Gallery Shot 1">
+              <img src="assets/images/instagram/insta-1.jpg" onerror="this.src='https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80'" alt="Workstation Setup" />
+              <div class="insta-overlay"><i class="bi bi-instagram fs-4"></i><span class="small font-mono">@reeni.code</span></div>
+            </a>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="150">
+            <a href="portfolio.html" class="insta-grid-item" aria-label="Gallery Shot 2">
+              <img src="assets/images/instagram/insta-2.jpg" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80'" alt="Code Review Session" />
+              <div class="insta-overlay"><i class="bi bi-instagram fs-4"></i><span class="small font-mono">@reeni.code</span></div>
+            </a>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+            <a href="portfolio.html" class="insta-grid-item" aria-label="Gallery Shot 3">
+              <img src="assets/images/instagram/insta-3.jpg" onerror="this.src='https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80'" alt="Design Workshop" />
+              <div class="insta-overlay"><i class="bi bi-instagram fs-4"></i><span class="small font-mono">@reeni.code</span></div>
+            </a>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="250">
+            <a href="portfolio.html" class="insta-grid-item" aria-label="Gallery Shot 4">
+              <img src="assets/images/instagram/insta-4.jpg" onerror="this.src='https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80'" alt="MacBook Code Screen" />
+              <div class="insta-overlay"><i class="bi bi-instagram fs-4"></i><span class="small font-mono">@reeni.code</span></div>
+            </a>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="300">
+            <a href="portfolio.html" class="insta-grid-item" aria-label="Gallery Shot 5">
+              <img src="assets/images/instagram/insta-5.jpg" onerror="this.src='https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&w=600&q=80'" alt="Keynote Presentation" />
+              <div class="insta-overlay"><i class="bi bi-instagram fs-4"></i><span class="small font-mono">@reeni.code</span></div>
+            </a>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="350">
+            <a href="portfolio.html" class="insta-grid-item" aria-label="Gallery Shot 6">
+              <img src="assets/images/instagram/insta-6.jpg" onerror="this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80'" alt="Team Brainstorming" />
+              <div class="insta-overlay"><i class="bi bi-instagram fs-4"></i><span class="small font-mono">@reeni.code</span></div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================================
+       15. REUSE SHARED FOOTER ARCHITECTURE
+       ============================================================================ -->
+  <footer class="footer-reeni">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Footer Brand Widget -->
+        <div class="col-lg-4">
+          <a href="index.html" class="navbar-brand-reeni font-display d-block mb-3">REENI<span>.</span>CORE</a>
+          <p class="text-muted small mb-4" style="max-width: 320px;">
+            Commercial ThemeForest personal portfolio and agency HTML5 foundation. W3C valid markup, Bootstrap 5 responsive hierarchy, and custom vanilla JavaScript physics.
+          </p>
+          <div class="social-icons">
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+            <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+          </div>
+        </div>
+
+        <!-- Footer Navigation Links 1 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Foundation Home</a></li>
+            <li><a href="about.html">About Reeni</a></li>
+            <li><a href="services.html">Services & Specialties</a></li>
+            <li><a href="resume.html">Experience & CV</a></li>
+            <li><a href="portfolio.html">Featured Works</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Navigation Links 2 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="blog.html">Editorial Journal</a></li>
+            <li><a href="faq.html">Help & FAQ</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-condition.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Newsletter Subscription -->
+        <div class="col-md-6 col-lg-4">
+          <h4 class="footer-widget-title">Subscribe Studio</h4>
+          <p class="text-muted small mb-4">Receive monthly dispatches on modern CSS architecture, vanilla JS physics, and ThemeForest releases.</p>
+          <form class="search-box mb-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Reeni Core Dispatches!');">
+            <input type="email" class="form-control-reeni" placeholder="Enter your email..." aria-label="Email Address for Newsletter" required />
+            <button type="submit" class="search-btn" aria-label="Subscribe"><i class="bi bi-arrow-right-short fs-3"></i></button>
+          </form>
+          <span class="small text-muted d-block" style="font-size: 0.75rem;">🔒 Zero spam guarantee. Unsubscribe at any time.</span>
+        </div>
+
+      </div>
+
+      <!-- Footer Copyright Bottom -->
+      <div class="footer-bottom">
+        <div>
+          <span>© 2026 Reeni ThemeCore Foundation. Crafted for commercial ThemeForest distribution.</span>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+          <a href="privacy-policy.html" class="text-muted text-decoration-none small hover-accent">Privacy Policy</a>
+          <a href="terms-condition.html" class="text-muted text-decoration-none small hover-accent">Terms of Service</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Support Studio</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================================
+       16. BACK TO TOP BUTTON (WITH CIRCULAR SCROLL PROGRESS RING)
+       ============================================================================ -->
+  <button id="back-to-top" aria-label="Back to Top of Page">
+    <svg class="progress-ring" width="52" height="52">
+      <circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" />
+    </svg>
+    <i class="bi bi-arrow-up position-relative z-1"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS (Popper Included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Reeni Core Physics & Interactions JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
