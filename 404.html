@@ -4,42 +4,393 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>404 Page Not Found | Reeni - Personal Portfolio HTML Template</title>
-  <meta name="description" content="404 error page foundation for Reeni ThemeForest portfolio template." />
+  <meta name="description" content="High-fidelity 404 error page for Reeni ThemeForest portfolio template." />
+  
+  <!-- CSS Stylesheets CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- AOS Scroll Animations CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  
+  <!-- Custom Core Design System CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body class="overflow-hidden d-flex flex-column min-vh-100 justify-content-between grid-lines-bg">
-  <div id="cursor-dot"></div><div id="cursor-outline"></div>
+<body class="overflow-hidden">
 
-  <div id="preloader"><div class="preloader-content"><span class="preloader-logo font-display">REENI.404</span><div class="preloader-bar-wrap"><div class="preloader-bar"></div></div><div class="preloader-percentage">0%</div></div></div>
+  <!-- Custom Cursor Physics Engine -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-outline"></div>
 
-  <header class="navbar-reeni">
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress"></div>
+
+  <!-- Cinematic Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <span class="preloader-logo font-display">REENI.404</span>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar"></div>
+      </div>
+      <div class="preloader-percentage">0%</div>
+    </div>
+  </div>
+
+  <!-- Page Transition Layer -->
+  <div class="page-transition-layer"></div>
+
+  <!-- ============================================================================
+       01. STICKY TOP NAVIGATION BAR
+       ============================================================================ -->
+  <header class="navbar-reeni sticky-top">
     <div class="container d-flex align-items-center justify-content-between">
-      <a href="index.html" class="navbar-brand-reeni font-display">REENI<span>.</span></a>
-      <button class="theme-switch-btn" aria-label="Toggle Theme"><i class="bi bi-sun-fill icon-sun text-warning"></i><i class="bi bi-moon-stars-fill icon-moon text-primary"></i></button>
+      <a href="index.html" class="navbar-brand-reeni font-display">REENI<span>.</span>CORE</a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav class="d-none d-lg-flex align-items-center gap-1">
+        <a href="index.html" class="nav-link-reeni">Foundation</a>
+        <a href="about.html" class="nav-link-reeni">About</a>
+        <a href="services.html" class="nav-link-reeni">Services</a>
+        <a href="resume.html" class="nav-link-reeni">Resume</a>
+        <a href="portfolio.html" class="nav-link-reeni">Portfolio</a>
+        <a href="pricing.html" class="nav-link-reeni">Pricing</a>
+        <a href="blog.html" class="nav-link-reeni">Blog</a>
+        <a href="contact.html" class="nav-link-reeni">Contact</a>
+      </nav>
+
+      <!-- Action & Theme Switcher Controls -->
+      <div class="d-flex align-items-center gap-3">
+        <button class="theme-switch-btn" aria-label="Toggle Dark/Light Mode" title="Switch Theme">
+          <i class="bi bi-sun-fill icon-sun text-warning"></i>
+          <i class="bi bi-moon-stars-fill icon-moon text-primary"></i>
+        </button>
+        <a href="contact.html" class="btn-reeni btn-reeni-primary btn-reeni-sm btn-shine d-none d-md-inline-flex">
+          <i class="bi bi-send-fill"></i> Let's Talk
+        </a>
+        <button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni" aria-label="Toggle Mobile Menu">
+          <i class="bi bi-list fs-1 text-main"></i>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main class="container text-center my-auto py-5 position-relative z-1">
-    <div class="reveal-scale mx-auto" style="max-width: 700px;">
-      <span class="display-1 fw-bold font-display text-gradient d-block mb-3" style="font-size: clamp(6rem, 15vw, 12rem); line-height: 1;">404</span>
-      <h1 class="h2 font-display mb-3">Page Not Found</h1>
-      <p class="lead-reeni mb-5">The requested page does not exist or has been relocated during architectural restructuring. Return to the core foundation dashboard.</p>
-      
-      <div class="magnetic-wrap">
-        <a href="index.html" class="btn-reeni btn-reeni-primary btn-shine btn-reeni-lg">
-          <i class="bi bi-house-door-fill"></i> Back To Foundation Home
-        </a>
+  <!-- ============================================================================
+       02. OFFCANVAS MOBILE NAVIGATION
+       ============================================================================ -->
+  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni" aria-labelledby="offcanvasReeniLabel">
+    <div class="offcanvas-header d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-reeni font-display mb-0" id="offcanvasReeniLabel">REENI<span>.</span>CORE</a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close Mobile Menu"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <ul class="mobile-nav-list mb-0">
+        <li><a href="index.html" class="mobile-nav-link">Foundation Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Me</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services & Specialties</a></li>
+        <li><a href="resume.html" class="mobile-nav-link">Experience & CV</a></li>
+        <li><a href="portfolio.html" class="mobile-nav-link">Portfolio Case Studies</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Pricing Packages</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Editorial Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact Studio</a></li>
+      </ul>
+      <div class="mt-4 pt-4 border-top border-secondary border-opacity-25">
+        <span class="small text-muted text-uppercase fw-bold letter-spacing-1 d-block mb-3">Connect With Me</span>
+        <div class="social-icons">
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+          <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+        </div>
       </div>
     </div>
+  </div>
+
+  <main>
+    <!-- ============================================================================
+         03. SECTION 1: PREMIUM HERO & ILLUSTRATION
+         ============================================================================ -->
+    <section class="page-banner pt-section pb-5 position-relative overflow-hidden grid-lines-bg text-center">
+      <!-- Ambient Parallax Glowing Orbs & Particles -->
+      <div class="ambient-bg">
+        <div class="blur-glow blur-glow-1"></div>
+        <div class="blur-glow blur-glow-2"></div>
+        <div class="floating-shape" style="top: 15%; left: 8%;"><i class="bi bi-shield-exclamation fs-1 text-warning"></i></div>
+        <div class="floating-shape" style="top: 25%; right: 10%;"><i class="bi bi-star-fill fs-2 text-accent"></i></div>
+        <div class="floating-shape" style="bottom: 30%; left: 12%;"><i class="bi bi-hexagon-fill fs-3 text-muted"></i></div>
+        <div class="floating-shape" style="bottom: 15%; right: 15%;"><i class="bi bi-terminal fs-2 text-accent"></i></div>
+      </div>
+
+      <div class="container position-relative z-1">
+        <div class="row align-items-center g-5 justify-content-center">
+          
+          <!-- Graphic / Creative Illustration Column -->
+          <div class="col-lg-5 order-lg-2" data-aos="zoom-in" data-aos-duration="1200">
+            <div class="error-svg-wrap">
+              <!-- Inline Responsive SVG blueprint schematic representing a broken connection -->
+              <svg class="error-svg-graphic" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Grid Lines background inside SVG -->
+                <g opacity="0.15">
+                  <line x1="50" y1="50" x2="450" y2="50" stroke="currentColor" stroke-dasharray="4 4" />
+                  <line x1="50" y1="150" x2="450" y2="150" stroke="currentColor" stroke-dasharray="4 4" />
+                  <line x1="50" y1="250" x2="450" y2="250" stroke="currentColor" stroke-dasharray="4 4" />
+                  <line x1="50" y1="350" x2="450" y2="350" stroke="currentColor" stroke-dasharray="4 4" />
+                  <line x1="100" y1="50" x2="100" y2="350" stroke="currentColor" stroke-dasharray="4 4" />
+                  <line x1="250" y1="50" x2="250" y2="350" stroke="currentColor" stroke-dasharray="4 4" />
+                  <line x1="400" y1="50" x2="400" y2="350" stroke="currentColor" stroke-dasharray="4 4" />
+                </g>
+
+                <!-- Glowing background effect behind the SVG -->
+                <circle cx="250" cy="200" r="120" fill="var(--accent)" opacity="0.05" class="svg-pulse-active" />
+
+                <!-- Orbital Rings -->
+                <circle cx="250" cy="200" r="140" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="6 6" class="svg-orbit-active" />
+                <circle cx="250" cy="200" r="90" stroke="var(--accent)" stroke-width="1" opacity="0.25" stroke-dasharray="4 4" />
+
+                <!-- The Core Box (Server/Processor Symbol) -->
+                <rect x="175" y="125" width="150" height="150" rx="16" stroke="var(--border)" stroke-width="2" fill="var(--surface)" class="svg-float-element" />
+                <rect x="185" y="135" width="130" height="130" rx="12" stroke="var(--accent)" stroke-width="1" opacity="0.2" fill="none" class="svg-float-element" />
+
+                <!-- Blueprint System Terminal Lines -->
+                <line x1="195" y1="160" x2="255" y2="160" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" class="svg-float-element" />
+                <circle cx="300" cy="160" r="4" fill="var(--accent)" class="svg-pulse-active" />
+                
+                <line x1="195" y1="185" x2="305" y2="185" stroke="var(--border)" stroke-width="2" stroke-linecap="round" class="svg-float-element" />
+                <line x1="195" y1="210" x2="280" y2="210" stroke="var(--border)" stroke-width="2" stroke-linecap="round" class="svg-float-element" />
+                <circle cx="295" cy="210" r="3" fill="var(--text-muted)" class="svg-float-element" />
+
+                <!-- Disconnected Node Element -->
+                <g class="svg-float-element-delayed">
+                  <!-- Pulsing Red/Amber error node -->
+                  <circle cx="390" cy="130" r="16" fill="rgba(239, 68, 68, 0.1)" stroke="rgb(239, 68, 68)" stroke-width="1.5" />
+                  <circle cx="390" cy="130" r="5" fill="rgb(239, 68, 68)" class="svg-pulse-active" />
+                  <!-- Disconnected signal wave -->
+                  <path d="M 370 110 Q 390 90 410 110" stroke="rgb(239, 68, 68)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5" />
+                  <!-- Line leading back to core but broken -->
+                  <path d="M 325 200 L 375 145" stroke="rgb(239, 68, 68)" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round" opacity="0.5" />
+                </g>
+
+                <!-- Connected Stable Node -->
+                <g class="svg-float-element">
+                  <circle cx="110" cy="280" r="12" fill="rgba(var(--accent-rgb), 0.1)" stroke="var(--accent)" stroke-width="1.5" />
+                  <circle cx="110" cy="280" r="4" fill="var(--accent)" />
+                  <!-- Solid connection line -->
+                  <path d="M 175 200 L 122 268" stroke="var(--border)" stroke-width="1.5" stroke-linecap="round" />
+                </g>
+
+                <!-- Tech Specs Text Overlays (Blueprint style) -->
+                <text x="195" y="245" fill="var(--text-muted)" font-family="monospace" font-size="9" letter-spacing="0.5" class="svg-float-element">SYS_ERR: 404_VOID</text>
+                <text x="195" y="255" fill="var(--accent)" font-family="monospace" font-size="8" letter-spacing="1" class="svg-float-element">PORT_CLOSED [0x08]</text>
+                
+                <text x="350" y="320" fill="var(--text-muted)" font-family="monospace" font-size="10" opacity="0.6" transform="rotate(-5, 350, 320)">LATENCY: NULL</text>
+                <text x="50" y="90" fill="var(--text-muted)" font-family="monospace" font-size="10" opacity="0.6" transform="rotate(5, 50, 90)">REENI_OS_v1.0</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Title & Friendly Message Column -->
+          <div class="col-lg-6 order-lg-1 text-lg-start" data-aos="fade-right" data-aos-duration="1000">
+            <span class="badge-reeni mb-3"><i class="bi bi-wifi-off text-danger"></i> System Desynchronization</span>
+            <h1 class="display-1 fw-extrabold font-display text-gradient mb-1" style="line-height: 1;">404</h1>
+            <h2 class="h1 font-heading fw-bold mb-3 text-main">Architectural Link Severed</h2>
+            <p class="lead-reeni mb-5 text-muted" style="max-width: 580px;">
+              The digital coordinates you requested have departed into the digital void, or the file was archived during our active system migration. Rest assured, you can easily recover your routing below.
+            </p>
+            
+            <!-- ============================================================================
+                 04. SECTION 2: ACTION BUTTONS
+                 ============================================================================ -->
+            <div class="d-flex flex-wrap align-items-center gap-3">
+              <div class="magnetic-wrap">
+                <a href="index.html" class="btn-reeni btn-reeni-primary btn-shine btn-reeni-lg">
+                  <i class="bi bi-house-door-fill"></i> Back To Core
+                </a>
+              </div>
+              <div class="magnetic-wrap">
+                <a href="contact.html" class="btn-reeni btn-reeni-outline btn-shine btn-reeni-lg">
+                  <i class="bi bi-chat-dots-fill"></i> Contact Me
+                </a>
+              </div>
+              <div class="magnetic-wrap">
+                <a href="portfolio.html" class="btn-reeni btn-reeni-secondary btn-shine btn-reeni-lg">
+                  <i class="bi bi-grid-3x3-gap-fill"></i> View Works
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         05. SECTION 3: HELPFUL QUICK LINKS BENTO GRID
+         ============================================================================ -->
+    <section class="pb-section position-relative z-1 overflow-hidden">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+          <span class="badge-reeni mb-2">Alternative Routes</span>
+          <h3 class="h2 font-heading fw-bold text-main">Helpful Infrastructure Links</h3>
+          <p class="text-muted small mx-auto" style="max-width: 460px;">Select a structural directory module below to proceed directly into the Reeni system database.</p>
+        </div>
+
+        <div class="helpful-links-grid" data-aos="fade-up" data-aos-duration="1200">
+          <!-- Link Card 1 -->
+          <a href="index.html" class="helpful-link-card">
+            <div class="card-icon-wrap" style="width: 48px; height: 48px; font-size: 1.25rem; border-radius: 8px;">
+              <i class="bi bi-cpu-fill"></i>
+            </div>
+            <div>
+              <h4 class="helpful-link-title">Core Home</h4>
+              <p class="helpful-link-desc">System dashboard.</p>
+            </div>
+          </a>
+
+          <!-- Link Card 2 -->
+          <a href="about.html" class="helpful-link-card">
+            <div class="card-icon-wrap" style="width: 48px; height: 48px; font-size: 1.25rem; border-radius: 8px;">
+              <i class="bi bi-person-badge-fill"></i>
+            </div>
+            <div>
+              <h4 class="helpful-link-title">About Reeni</h4>
+              <p class="helpful-link-desc">Credentials & stack.</p>
+            </div>
+          </a>
+
+          <!-- Link Card 3 -->
+          <a href="services.html" class="helpful-link-card">
+            <div class="card-icon-wrap" style="width: 48px; height: 48px; font-size: 1.25rem; border-radius: 8px;">
+              <i class="bi bi-sliders2-vertical"></i>
+            </div>
+            <div>
+              <h4 class="helpful-link-title">Specialties</h4>
+              <p class="helpful-link-desc">Premium specialties.</p>
+            </div>
+          </a>
+
+          <!-- Link Card 4 -->
+          <a href="portfolio.html" class="helpful-link-card">
+            <div class="card-icon-wrap" style="width: 48px; height: 48px; font-size: 1.25rem; border-radius: 8px;">
+              <i class="bi bi-layers-half"></i>
+            </div>
+            <div>
+              <h4 class="helpful-link-title">Case Studies</h4>
+              <p class="helpful-link-desc">Elite client projects.</p>
+            </div>
+          </a>
+
+          <!-- Link Card 5 -->
+          <a href="blog.html" class="helpful-link-card">
+            <div class="card-icon-wrap" style="width: 48px; height: 48px; font-size: 1.25rem; border-radius: 8px;">
+              <i class="bi bi-journal-richtext"></i>
+            </div>
+            <div>
+              <h4 class="helpful-link-title">Editorial</h4>
+              <p class="helpful-link-desc">Design thoughts.</p>
+            </div>
+          </a>
+
+          <!-- Link Card 6 -->
+          <a href="contact.html" class="helpful-link-card">
+            <div class="card-icon-wrap" style="width: 48px; height: 48px; font-size: 1.25rem; border-radius: 8px;">
+              <i class="bi bi-envelope-open-fill"></i>
+            </div>
+            <div>
+              <h4 class="helpful-link-title">Contact</h4>
+              <p class="helpful-link-desc">Launch a project.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="py-4 border-top border-secondary border-opacity-25 text-center small text-muted">
-    <div class="container"><span>© 2026 Reeni ThemeCore Foundation • Commercial ThemeForest Foundation</span></div>
+  <!-- ============================================================================
+       06. REUSE SHARED FOOTER ARCHITECTURE
+       ============================================================================ -->
+  <footer class="footer-reeni">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Footer Brand Widget -->
+        <div class="col-lg-4">
+          <a href="index.html" class="navbar-brand-reeni font-display d-block mb-3">REENI<span>.</span>CORE</a>
+          <p class="text-muted small mb-4" style="max-width: 320px;">
+            Commercial ThemeForest personal portfolio and agency HTML5 foundation. W3C valid markup, Bootstrap 5 responsive hierarchy, and custom vanilla JavaScript physics.
+          </p>
+          <div class="social-icons">
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+            <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+          </div>
+        </div>
+
+        <!-- Footer Navigation Links 1 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Foundation Home</a></li>
+            <li><a href="about.html">About Reeni</a></li>
+            <li><a href="services.html">Services & Specialties</a></li>
+            <li><a href="resume.html">Experience & CV</a></li>
+            <li><a href="portfolio.html">Featured Works</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Navigation Links 2 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="blog.html">Editorial Journal</a></li>
+            <li><a href="faq.html">Help & FAQ</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-condition.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Newsletter Subscription -->
+        <div class="col-md-6 col-lg-4">
+          <h4 class="footer-widget-title">Subscribe Studio</h4>
+          <p class="text-muted small mb-4">Receive monthly dispatches on modern CSS architecture, vanilla JS physics, and ThemeForest releases.</p>
+          <form class="search-box mb-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Reeni Core Dispatches!');">
+            <input type="email" class="form-control-reeni" placeholder="Enter your email..." aria-label="Email Address for Newsletter" required />
+            <button type="submit" class="search-btn" aria-label="Subscribe"><i class="bi bi-arrow-right-short fs-3"></i></button>
+          </form>
+          <span class="small text-muted d-block" style="font-size: 0.75rem;">🔒 Zero spam guarantee. Unsubscribe at any time.</span>
+        </div>
+
+      </div>
+
+      <!-- Footer Copyright Bottom -->
+      <div class="footer-bottom">
+        <div>
+          <span>© 2026 Reeni ThemeCore Foundation. Crafted for commercial ThemeForest distribution.</span>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+          <a href="privacy-policy.html" class="text-muted text-decoration-none small hover-accent">Privacy Policy</a>
+          <a href="terms-condition.html" class="text-muted text-decoration-none small hover-accent">Terms of Service</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Support Studio</a>
+        </div>
+      </div>
+
+    </div>
   </footer>
 
+  <!-- ============================================================================
+       07. BACK TO TOP BUTTON (WITH CIRCULAR SCROLL PROGRESS RING)
+       ============================================================================ -->
+  <button id="back-to-top" aria-label="Back to Top of Page">
+    <svg class="progress-ring" width="52" height="52">
+      <circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" />
+    </svg>
+    <i class="bi bi-arrow-up position-relative z-1"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS (Popper Included) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Reeni Core Physics & Interactions JS -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>

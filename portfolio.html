@@ -3,54 +3,948 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Grid | Reeni - Personal Portfolio HTML Template</title>
-  <meta name="description" content="Portfolio grid foundation page for Reeni ThemeForest portfolio template." />
+  <title>Portfolio | Reeni - Premium Personal Portfolio & Agency HTML Template</title>
+  <meta name="description" content="Explore the creative and technical portfolio of Reeni Core — showcasing at least 12 premium design, development, Laravel, and UI/UX projects." />
+  <meta name="keywords" content="portfolio showcase, web development projects, laravel developer, ui/ux design portfolio, bootstrap html portfolio" />
+  <meta name="author" content="Reeni ThemeCore" />
+
+  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <!-- Reeni Design System CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body class="overflow-hidden">
-  <div id="cursor-dot"></div><div id="cursor-outline"></div><div id="reading-progress"></div>
-  <div id="preloader"><div class="preloader-content"><span class="preloader-logo font-display">REENI.PORTFOLIO</span><div class="preloader-bar-wrap"><div class="preloader-bar"></div></div><div class="preloader-percentage">0%</div></div></div>
 
+  <!-- Custom Cursor Physics Engine -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-outline"></div>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress"></div>
+
+  <!-- Cinematic Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <span class="preloader-logo font-display">REENI.PORTFOLIO</span>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar"></div>
+      </div>
+      <div class="preloader-percentage">0%</div>
+    </div>
+  </div>
+
+  <!-- Page Transition Layer -->
+  <div class="page-transition-layer"></div>
+
+  <!-- ============================================================================
+       01. STICKY TOP NAVIGATION BAR
+       ============================================================================ -->
   <header class="navbar-reeni sticky-top">
     <div class="container d-flex align-items-center justify-content-between">
-      <a href="index.html" class="navbar-brand-reeni font-display">REENI<span>.</span></a>
-      <nav class="d-none d-lg-flex align-items-center gap-1"><a href="index.html" class="nav-link-reeni">Foundation</a><a href="about.html" class="nav-link-reeni">About</a><a href="services.html" class="nav-link-reeni">Services</a><a href="portfolio.html" class="nav-link-reeni active">Portfolio</a><a href="blog.html" class="nav-link-reeni">Blog</a><a href="contact.html" class="nav-link-reeni">Contact</a></nav>
-      <div class="d-flex align-items-center gap-3"><button class="theme-switch-btn" aria-label="Toggle Theme"><i class="bi bi-sun-fill icon-sun text-warning"></i><i class="bi bi-moon-stars-fill icon-moon text-primary"></i></button><button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni"><i class="bi bi-list fs-1 text-main"></i></button></div>
+      <a href="index.html" class="navbar-brand-reeni font-display">REENI<span>.</span>CORE</a>
+      
+      <!-- Desktop Navigation Menu (Multi-Page Architecture) -->
+      <nav class="d-none d-lg-flex align-items-center gap-1">
+        <a href="index.html" class="nav-link-reeni">Foundation</a>
+        <a href="about.html" class="nav-link-reeni">About</a>
+        <a href="services.html" class="nav-link-reeni">Services</a>
+        <a href="resume.html" class="nav-link-reeni">Resume</a>
+        <a href="portfolio.html" class="nav-link-reeni active">Portfolio</a>
+        <a href="pricing.html" class="nav-link-reeni">Pricing</a>
+        <a href="blog.html" class="nav-link-reeni">Blog</a>
+        <a href="contact.html" class="nav-link-reeni">Contact</a>
+      </nav>
+
+      <!-- Action & Theme Switcher Controls -->
+      <div class="d-flex align-items-center gap-3">
+        <button class="theme-switch-btn" aria-label="Toggle Dark/Light Mode" title="Switch Theme">
+          <i class="bi bi-sun-fill icon-sun text-warning"></i>
+          <i class="bi bi-moon-stars-fill icon-moon text-primary"></i>
+        </button>
+        <a href="contact.html" class="btn-reeni btn-reeni-primary btn-reeni-sm btn-shine d-none d-md-inline-flex">
+          <i class="bi bi-send-fill"></i> Let's Talk
+        </a>
+        <button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni" aria-label="Toggle Mobile Menu">
+          <i class="bi bi-list fs-1 text-main"></i>
+        </button>
+      </div>
     </div>
   </header>
 
-  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni">
-    <div class="offcanvas-header d-flex align-items-center justify-content-between"><a href="index.html" class="navbar-brand-reeni font-display mb-0">REENI<span>.</span>CORE</a><button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button></div>
-    <div class="offcanvas-body d-flex flex-column justify-content-between"><ul class="mobile-nav-list mb-0"><li><a href="index.html" class="mobile-nav-link">Foundation</a></li><li><a href="portfolio.html" class="mobile-nav-link active">Portfolio Page</a></li><li><a href="portfolio-details.html" class="mobile-nav-link">Portfolio Details</a></li><li><a href="contact.html" class="mobile-nav-link">Contact Page</a></li></ul></div>
+  <!-- ============================================================================
+       02. OFFCANVAS MOBILE NAVIGATION
+       ============================================================================ -->
+  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni" aria-labelledby="offcanvasReeniLabel">
+    <div class="offcanvas-header d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-reeni font-display mb-0" id="offcanvasReeniLabel">REENI<span>.</span>CORE</a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close Mobile Menu"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <ul class="mobile-nav-list mb-0">
+        <li><a href="index.html" class="mobile-nav-link">Foundation Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Me</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services & Specialties</a></li>
+        <li><a href="resume.html" class="mobile-nav-link">Experience & CV</a></li>
+        <li><a href="portfolio.html" class="mobile-nav-link active">Portfolio Case Studies</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Pricing Packages</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Editorial Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact Studio</a></li>
+      </ul>
+      <div class="mt-4 pt-4 border-top border-secondary border-opacity-25">
+        <span class="small text-muted text-uppercase fw-bold letter-spacing-1 d-block mb-3">Connect With Me</span>
+        <div class="social-icons">
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+          <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <main>
-    <section class="page-banner grid-lines-bg text-center">
-      <div class="container position-relative z-1 reveal-up">
-        <span class="section-subtitle mb-2">SELECTED WORKS & CASE STUDIES FOUNDATION</span>
-        <h1 class="page-banner-title font-display">Featured <span class="text-accent">Portfolio</span></h1>
-        <ul class="breadcrumb-reeni justify-content-center mt-3"><li><a href="index.html">Foundation</a></li><li class="separator">/</li><li class="active">Portfolio</li></ul>
+    <!-- ============================================================================
+         03. SECTION 1: HERO BANNER (PORTFOLIO IDENTITY)
+         ============================================================================ -->
+    <section class="page-banner pt-section pb-section position-relative overflow-hidden grid-lines-bg text-center" id="portfolio-hero">
+      <!-- Ambient Parallax Glowing Orbs -->
+      <div class="ambient-bg">
+        <div class="blur-glow blur-glow-1"></div>
+        <div class="blur-glow blur-glow-2"></div>
+        <div class="floating-shape" style="top: 15%; left: 10%; animation-duration: 8s;"><i class="bi bi-grid-3x3-gap fs-2 text-warning"></i></div>
+        <div class="floating-shape" style="bottom: 25%; right: 12%; animation-duration: 10s;"><i class="bi bi-code-square fs-2 text-accent"></i></div>
+        <div class="floating-shape" style="top: 40%; right: 8%; animation-duration: 12s;"><i class="bi bi-palette fs-3 text-main"></i></div>
+      </div>
+
+      <div class="container position-relative z-1" data-aos="fade-up" data-aos-duration="1000">
+        <div class="badge-reeni mx-auto mb-3 d-inline-flex align-items-center gap-2">
+          <span class="status-pulse"></span>
+          <span>ThemeForest Elite Portfolio Showcase</span>
+        </div>
+        <h1 class="display-3 fw-bold font-display tracking-tight text-main mb-3">
+          Creative & Technical <span class="text-accent">Portfolio</span>
+        </h1>
+        <p class="lead-reeni mx-auto mb-4" style="max-width: 680px;">
+          A curated selection of high-throughput SaaS web architectures, premium design systems, and beautiful user interfaces engineered for commercial scale.
+        </p>
+        <ul class="breadcrumb-reeni justify-content-center">
+          <li><a href="index.html">Foundation</a></li>
+          <li class="separator">/</li>
+          <li class="active">Portfolio</li>
+        </ul>
       </div>
     </section>
-    <section class="py-section container">
-      <div class="card-reeni p-5 text-center reveal-scale mx-auto" style="max-width: 800px;">
-        <div class="card-icon-wrap mx-auto"><i class="bi bi-grid-fill"></i></div>
-        <span class="badge-reeni mx-auto mb-3"><i class="bi bi-check2-circle"></i> Design System Inherited</span>
-        <h2 class="h3 font-display mb-3">Portfolio Grid Foundation Ready</h2>
-        <p class="lead-reeni mb-4">Foundation built to accommodate filterable masonry grid structures, image hover zoom transforms, and modal previews.</p>
-        <div class="d-flex flex-wrap justify-content-center gap-3">
-          <div class="magnetic-wrap"><a href="portfolio-details.html" class="btn-reeni btn-reeni-outline">Sample Project Details</a></div>
-          <div class="magnetic-wrap"><a href="index.html" class="btn-reeni btn-reeni-primary btn-shine"><i class="bi bi-arrow-left"></i> Return To Foundation Core</a></div>
+
+    <!-- ============================================================================
+         04. SECTION 2: PORTFOLIO INTRO
+         ============================================================================ -->
+    <section class="py-section container position-relative" id="portfolio-intro">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
+          <span class="section-subtitle mb-2">ENGINEERED OUTCOMES</span>
+          <h2 class="section-title font-display mb-4">Designing Solutions for Commercial Scale</h2>
+          <p class="lead-reeni text-muted mb-0">
+            Every digital product I deliver is constructed from the ground up with strict adherence to W3C markup validation, premium layout aesthetics, fast page response times, and clean modular structures. Hover on any card below to reveal active design tokens and core technological components.
+          </p>
+        </div>
+        <div class="col-lg-5 text-lg-end" data-aos="fade-left" data-aos-duration="1000">
+          <div class="magnetic-wrap">
+            <a href="contact.html" class="btn-reeni btn-reeni-primary btn-shine">
+              <i class="bi bi-calendar-check-fill"></i> Let's Discuss Your Project
+            </a>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- ============================================================================
+         05. SECTION 3: PORTFOLIO FILTER
+         ============================================================================ -->
+    <section class="container pb-5" id="portfolio-filter-section">
+      <div class="row">
+        <div class="col-12" data-aos="fade-up">
+          <div class="portfolio-filter-wrap">
+            <button class="portfolio-filter-btn active" data-filter="all">All Projects</button>
+            <button class="portfolio-filter-btn" data-filter="web-design">Web Design</button>
+            <button class="portfolio-filter-btn" data-filter="web-development">Web Development</button>
+            <button class="portfolio-filter-btn" data-filter="laravel">Laravel</button>
+            <button class="portfolio-filter-btn" data-filter="ui-ux">UI/UX</button>
+            <button class="portfolio-filter-btn" data-filter="branding">Branding</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         06. SECTION 4: PORTFOLIO GRID (12 Premium Projects)
+         ============================================================================ -->
+    <section class="pb-section container" id="portfolio-grid-section">
+      <div class="row g-4">
+
+        <!-- Project 1: Zenith Fintech Dashboard -->
+        <div class="col-md-6 col-lg-4 portfolio-grid-item" data-categories="web-development ui-ux" data-aos="fade-up" data-aos-delay="100">
+          <div class="portfolio-card">
+            <div class="portfolio-img-wrap">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Zenith Fintech Dashboard Image" referrerPolicy="no-referrer" />
+              <div class="portfolio-overlay">
+                <div class="portfolio-overlay-content">
+                  <a href="portfolio-details.html" class="portfolio-overlay-icon" aria-label="View Project Details">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                  <span class="portfolio-overlay-category">Web Development • UI/UX</span>
+                  <h4 class="portfolio-overlay-title">Zenith Fintech Matrix</h4>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <span class="portfolio-card-category">Web Development • UI/UX</span>
+              <h3 class="portfolio-card-title">
+                <a href="portfolio-details.html">Zenith Fintech Dashboard</a>
+              </h3>
+              <p class="portfolio-card-desc">
+                Enterprise multi-currency payment settlement matrix supporting secure micro-transactions at millisecond latency.
+              </p>
+              <div class="portfolio-card-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">Bootstrap 5</span>
+                <span class="tech-tag">Sass</span>
+                <span class="tech-tag">WebSockets</span>
+              </div>
+              <a href="portfolio-details.html" class="portfolio-read-more">
+                <span>View Details</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Apex Luxury Real Estate -->
+        <div class="col-md-6 col-lg-4 portfolio-grid-item" data-categories="web-design ui-ux" data-aos="fade-up" data-aos-delay="200">
+          <div class="portfolio-card">
+            <div class="portfolio-img-wrap">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Apex Luxury Real Estate Image" referrerPolicy="no-referrer" />
+              <div class="portfolio-overlay">
+                <div class="portfolio-overlay-content">
+                  <a href="portfolio-details.html" class="portfolio-overlay-icon" aria-label="View Project Details">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                  <span class="portfolio-overlay-category">Web Design • UI/UX</span>
+                  <h4 class="portfolio-overlay-title">Apex Luxury Real Estate</h4>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <span class="portfolio-card-category">Web Design • UI/UX</span>
+              <h3 class="portfolio-card-title">
+                <a href="portfolio-details.html">Apex Real Estate Portal</a>
+              </h3>
+              <p class="portfolio-card-desc">
+                Hyper-aesthetic visual discovery platform showcasing ultra-luxury residential properties and architectural masterpieces.
+              </p>
+              <div class="portfolio-card-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">Figma</span>
+                <span class="tech-tag">AOS</span>
+              </div>
+              <a href="portfolio-details.html" class="portfolio-read-more">
+                <span>View Details</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Novus Headless E-Commerce -->
+        <div class="col-md-6 col-lg-4 portfolio-grid-item" data-categories="web-development laravel" data-aos="fade-up" data-aos-delay="300">
+          <div class="portfolio-card">
+            <div class="portfolio-img-wrap">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Novus Headless E-Commerce Image" referrerPolicy="no-referrer" />
+              <div class="portfolio-overlay">
+                <div class="portfolio-overlay-content">
+                  <a href="portfolio-details.html" class="portfolio-overlay-icon" aria-label="View Project Details">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                  <span class="portfolio-overlay-category">Web Development • Laravel</span>
+                  <h4 class="portfolio-overlay-title">Novus E-Commerce API</h4>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <span class="portfolio-card-category">Web Development • Laravel</span>
+              <h3 class="portfolio-card-title">
+                <a href="portfolio-details.html">Novus Headless Commerce</a>
+              </h3>
+              <p class="portfolio-card-desc">
+                Next-generation API-first retail solution featuring real-time inventory synchronizations and modular PHP frameworks.
+              </p>
+              <div class="portfolio-card-tech">
+                <span class="tech-tag">Laravel 11</span>
+                <span class="tech-tag">PHP 8.3</span>
+                <span class="tech-tag">AlpineJS</span>
+                <span class="tech-tag">MySQL</span>
+              </div>
+              <a href="portfolio-details.html" class="portfolio-read-more">
+                <span>View Details</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Reeni Design System Tokens -->
+        <div class="col-md-6 col-lg-4 portfolio-grid-item" data-categories="ui-ux branding" data-aos="fade-up" data-aos-delay="100">
+          <div class="portfolio-card">
+            <div class="portfolio-img-wrap">
+              <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=800&q=80" alt="Reeni Design System Tokens Image" referrerPolicy="no-referrer" />
+              <div class="portfolio-overlay">
+                <div class="portfolio-overlay-content">
+                  <a href="portfolio-details.html" class="portfolio-overlay-icon" aria-label="View Project Details">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                  <span class="portfolio-overlay-category">UI/UX • Branding</span>
+                  <h4 class="portfolio-overlay-title">Design System Tokens</h4>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <span class="portfolio-card-category">UI/UX • Branding</span>
+              <h3 class="portfolio-card-title">
+                <a href="portfolio-details.html">Reeni Core Tokens Engine</a>
+              </h3>
+              <p class="portfolio-card-desc">
+                Cross-platform token engine defining responsive typography, custom visual shadows, and global color variables uniformly.
+              </p>
+              <div class="portfolio-card-tech">
+                <span class="tech-tag">Figma Tokens</span>
+                <span class="tech-tag">Style Dictionary</span>
+                <span class="tech-tag">SCSS</span>
+                <span class="tech-tag">JSON</span>
+              </div>
+              <a href="portfolio-details.html" class="portfolio-read-more">
+                <span>View Details</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Cyber Security Threat Matrix -->
+        <div class="col-md-6 col-lg-4 portfolio-grid-item" data-categories="web-development" data-aos="fade-up" data-aos-delay="200">
+          <div class="portfolio-card">
+            <div class="portfolio-img-wrap">
+              <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Cyber Security Threat Matrix Image" referrerPolicy="no-referrer" />
+              <div class="portfolio-overlay">
+                <div class="portfolio-overlay-content">
+                  <a href="portfolio-details.html" class="portfolio-overlay-icon" aria-label="View Project Details">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                  <span class="portfolio-overlay-category">Web Development</span>
+                  <h4 class="portfolio-overlay-title">Infiltration Threat Matrix</h4>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <span class="portfolio-card-category">Web Development</span>
+              <h3 class="portfolio-card-title">
+                <a href="portfolio-details.html">Cyber Threat Dashboard</a>
+              </h3>
+              <p class="portfolio-card-desc">
+                Immersive security telemetry suite monitoring active network infiltration vectors and reporting server anomalous behavior.
+              </p>
+              <div class="portfolio-card-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">Bootstrap 5</span>
+                <span class="tech-tag">Vanilla JS</span>
+                <span class="tech-tag">ChartJS</span>
+              </div>
+              <a href="portfolio-details.html" class="portfolio-read-more">
+                <span>View Details</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Aura Luxury Fragrance Branding -->
+        <div class="col-md-6 col-lg-4 portfolio-grid-item" data-categories="branding web-design" data-aos="fade-up" data-aos-delay="300">
+          <div class="portfolio-card">
+            <div class="portfolio-img-wrap">
+              <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80" alt="Aura Luxury Fragrance Branding Image" referrerPolicy="no-referrer" />
+              <div class="portfolio-overlay">
+                <div class="portfolio-overlay-content">
+                  <a href="portfolio-details.html" class="portfolio-overlay-icon" aria-label="View Project Details">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                  <span class="portfolio-overlay-category">Branding • Web Design</span>
+                  <h4 class="portfolio-overlay-title">Aura Perfumerie Identity</h4>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <span class="portfolio-card-category">Branding • Web Design</span>
+              <h3 class="portfolio-card-title">
+                <a href="portfolio-details.html">Aura Luxury Brand System</a>
+              </h3>
+              <p class="portfolio-card-desc">
+                Premium sensory packaging strategy and responsive landing layout designed for a boutique Parisian perfume maison.
+              </p>
+              <div class="portfolio-card-tech">
+                <span class="tech-tag">Identity</span>
+                <span class="tech-tag">Logo Design</span>
+                <span class="tech-tag">Packaging</span>
+                <span class="tech-tag">CSS Grid</span>
+              </div>
+              <a href="portfolio-details.html" class="portfolio-read-more">
+                <span>View Details</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7: Kora Social Messaging App -->
+        <div class="col-md-6 col-lg-4 portfolio-grid-item" data-categories="web-development ui-ux" data-aos="fade-up" data-aos-delay="100">
+          <div class="portfolio-card">
+            <div class="portfolio-img-wrap">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Kora Social Messaging App Image" referrerPolicy="no-referrer" />
+              <div class="portfolio-overlay">
+                <div class="portfolio-overlay-content">
+                  <a href="portfolio-details.html" class="portfolio-overlay-icon" aria-label="View Project Details">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                  <span class="portfolio-overlay-category">Web Development • UI/UX</span>
+                  <h4 class="portfolio-overlay-title">Kora Workspace Client</h4>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <span class="portfolio-card-category">Web Development • UI/UX</span>
+              <h3 class="portfolio-card-title">
+                <a href="portfolio-details.html">Kora Encrypted Messenger</a>
+              </h3>
+              <p class="portfolio-card-desc">
+                Secure peer-to-peer workspace chat client featuring lightweight channel lists and fluid real-time messaging elements.
+              </p>
+              <div class="portfolio-card-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">Bootstrap 5</span>
+                <span class="tech-tag">NodeJS</span>
+                <span class="tech-tag">SocketIO</span>
+              </div>
+              <a href="portfolio-details.html" class="portfolio-read-more">
+                <span>View Details</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8: Spectra Creative Studio Website -->
+        <div class="col-md-6 col-lg-4 portfolio-grid-item" data-categories="web-design branding" data-aos="fade-up" data-aos-delay="200">
+          <div class="portfolio-card">
+            <div class="portfolio-img-wrap">
+              <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Spectra Creative Studio Website Image" referrerPolicy="no-referrer" />
+              <div class="portfolio-overlay">
+                <div class="portfolio-overlay-content">
+                  <a href="portfolio-details.html" class="portfolio-overlay-icon" aria-label="View Project Details">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                  <span class="portfolio-overlay-category">Web Design • Branding</span>
+                  <h4 class="portfolio-overlay-title">Spectra Immersive Portal</h4>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <span class="portfolio-card-category">Web Design • Branding</span>
+              <h3 class="portfolio-card-title">
+                <a href="portfolio-details.html">Spectra Studio Showcase</a>
+              </h3>
+              <p class="portfolio-card-desc">
+                Immersive digital agency landing page representing interactive canvas elements and sophisticated scrolling transformations.
+              </p>
+              <div class="portfolio-card-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">Sass</span>
+                <span class="tech-tag">ThreeJS</span>
+                <span class="tech-tag">AOS</span>
+              </div>
+              <a href="portfolio-details.html" class="portfolio-read-more">
+                <span>View Details</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 9: Horizon Cloud ERP -->
+        <div class="col-md-6 col-lg-4 portfolio-grid-item" data-categories="web-development laravel" data-aos="fade-up" data-aos-delay="300">
+          <div class="portfolio-card">
+            <div class="portfolio-img-wrap">
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Horizon Cloud ERP Image" referrerPolicy="no-referrer" />
+              <div class="portfolio-overlay">
+                <div class="portfolio-overlay-content">
+                  <a href="portfolio-details.html" class="portfolio-overlay-icon" aria-label="View Project Details">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                  <span class="portfolio-overlay-category">Web Development • Laravel</span>
+                  <h4 class="portfolio-overlay-title">Horizon ERP Ecosystem</h4>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <span class="portfolio-card-category">Web Development • Laravel</span>
+              <h3 class="portfolio-card-title">
+                <a href="portfolio-details.html">Horizon Cloud ERP System</a>
+              </h3>
+              <p class="portfolio-card-desc">
+                Enterprise multi-tenant resource management system regulating warehouse supply chains and financial pipelines.
+              </p>
+              <div class="portfolio-card-tech">
+                <span class="tech-tag">Laravel 11</span>
+                <span class="tech-tag">VueJS</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">PHP 8.3</span>
+              </div>
+              <a href="portfolio-details.html" class="portfolio-read-more">
+                <span>View Details</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 10: Velo Logistics Tracking App -->
+        <div class="col-md-6 col-lg-4 portfolio-grid-item" data-categories="ui-ux web-development" data-aos="fade-up" data-aos-delay="100">
+          <div class="portfolio-card">
+            <div class="portfolio-img-wrap">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Velo Logistics Tracking App Image" referrerPolicy="no-referrer" />
+              <div class="portfolio-overlay">
+                <div class="portfolio-overlay-content">
+                  <a href="portfolio-details.html" class="portfolio-overlay-icon" aria-label="View Project Details">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                  <span class="portfolio-overlay-category">UI/UX • Web Development</span>
+                  <h4 class="portfolio-overlay-title">Velo Logistics Tracker</h4>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <span class="portfolio-card-category">UI/UX • Web Development</span>
+              <h3 class="portfolio-card-title">
+                <a href="portfolio-details.html">Velo Logistics Dashboard</a>
+              </h3>
+              <p class="portfolio-card-desc">
+                Real-time commercial delivery tracker visualizing vehicle sensor grids, route planning algorithms, and traffic alerts.
+              </p>
+              <div class="portfolio-card-tech">
+                <span class="tech-tag">Figma</span>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">Bootstrap 5</span>
+                <span class="tech-tag">LeafletJS</span>
+              </div>
+              <a href="portfolio-details.html" class="portfolio-read-more">
+                <span>View Details</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 11: Solis Renewable Energy Portal -->
+        <div class="col-md-6 col-lg-4 portfolio-grid-item" data-categories="web-design web-development" data-aos="fade-up" data-aos-delay="200">
+          <div class="portfolio-card">
+            <div class="portfolio-img-wrap">
+              <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80" alt="Solis Renewable Energy Portal Image" referrerPolicy="no-referrer" />
+              <div class="portfolio-overlay">
+                <div class="portfolio-overlay-content">
+                  <a href="portfolio-details.html" class="portfolio-overlay-icon" aria-label="View Project Details">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                  <span class="portfolio-overlay-category">Web Design • Web Development</span>
+                  <h4 class="portfolio-overlay-title">Solis Energy Engine</h4>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <span class="portfolio-card-category">Web Design • Web Development</span>
+              <h3 class="portfolio-card-title">
+                <a href="portfolio-details.html">Solis Renewable Portal</a>
+              </h3>
+              <p class="portfolio-card-desc">
+                Clean public tracking system managing solar panel output trends, user billing estimates, and carbon offset logs.
+              </p>
+              <div class="portfolio-card-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">Sass</span>
+                <span class="tech-tag">ChartJS</span>
+                <span class="tech-tag">AOS</span>
+              </div>
+              <a href="portfolio-details.html" class="portfolio-read-more">
+                <span>View Details</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 12: Chronos Cryptographic Wallet -->
+        <div class="col-md-6 col-lg-4 portfolio-grid-item" data-categories="branding ui-ux" data-aos="fade-up" data-aos-delay="300">
+          <div class="portfolio-card">
+            <div class="portfolio-img-wrap">
+              <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&w=800&q=80" alt="Chronos Cryptographic Wallet Image" referrerPolicy="no-referrer" />
+              <div class="portfolio-overlay">
+                <div class="portfolio-overlay-content">
+                  <a href="portfolio-details.html" class="portfolio-overlay-icon" aria-label="View Project Details">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                  <span class="portfolio-overlay-category">Branding • UI/UX</span>
+                  <h4 class="portfolio-overlay-title">Chronos Hardware Suite</h4>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-info">
+              <span class="portfolio-card-category">Branding • UI/UX</span>
+              <h3 class="portfolio-card-title">
+                <a href="portfolio-details.html">Chronos Cryptic Wallet</a>
+              </h3>
+              <p class="portfolio-card-desc">
+                High-contrast hardware-compatible visual user interface and sleek physical package design for modern digital assets.
+              </p>
+              <div class="portfolio-card-tech">
+                <span class="tech-tag">Identity</span>
+                <span class="tech-tag">Figma</span>
+                <span class="tech-tag">Motion</span>
+                <span class="tech-tag">Web3</span>
+              </div>
+              <a href="portfolio-details.html" class="portfolio-read-more">
+                <span>View Details</span> <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         07. SECTION 5: FEATURED PROJECT (Large Showcase)
+         ============================================================================ -->
+    <section class="py-section bg-subtle" id="portfolio-featured-project">
+      <div class="container">
+        
+        <div class="text-center mx-auto mb-5 pb-3" style="max-width: 740px;" data-aos="fade-up">
+          <span class="section-subtitle mb-2">MASTERPIECE SHOWCASE</span>
+          <h2 class="section-title font-display">Featured <span class="text-accent">Project</span></h2>
+          <p class="lead-reeni mt-3">Deep dive into our most complex architectural engineering deployment of the current fiscal year.</p>
+        </div>
+
+        <div class="featured-project-card p-4 p-lg-5" data-aos="zoom-in" data-aos-duration="1000">
+          <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+              <div class="featured-img-wrap">
+                <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80" alt="Featured Project Identity Protocol Image" referrerPolicy="no-referrer" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="badge-reeni mb-3 d-inline-flex align-items-center gap-2">
+                <span class="status-pulse"></span>
+                <span>Decentralized Identity Framework</span>
+              </div>
+              <h3 class="h2 font-display text-main fw-bold mb-3">Aetheria Decentralized Identity Protocol</h3>
+              <p class="text-muted mb-4" style="line-height: 1.8;">
+                A high-throughput biometric authentication framework engineered to eliminate password vectors for global tier-1 banking portals and institutional healthcare portals. Built with an optimized Laravel security core, WebAuthn standard assertions, and custom zero-knowledge verification cryptography graphs.
+              </p>
+              
+              <div class="mb-4">
+                <h4 class="small font-mono text-uppercase text-accent mb-2">Core Tech Stack</h4>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="tech-tag">Laravel 11</span>
+                  <span class="tech-tag">WebAuthn Core</span>
+                  <span class="tech-tag">Zero-Knowledge</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag">Bootstrap 5</span>
+                  <span class="tech-tag">Sass SCSS</span>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <div class="magnetic-wrap">
+                  <a href="portfolio-details.html" class="btn-reeni btn-reeni-primary btn-shine">
+                    <i class="bi bi-eye"></i> Live Preview
+                  </a>
+                </div>
+                <div class="magnetic-wrap">
+                  <a href="portfolio-details.html" class="btn-reeni btn-reeni-outline btn-shine">
+                    <i class="bi bi-file-text"></i> Read Case Study
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         08. SECTION 6: WORKING PROCESS PREVIEW
+         ============================================================================ -->
+    <section class="py-section container" id="portfolio-working-process">
+      <div class="text-center mx-auto mb-5 pb-3" style="max-width: 740px;" data-aos="fade-up">
+        <span class="section-subtitle mb-2">ELEGANT WORKFLOW</span>
+        <h2 class="section-title font-display">My Working <span class="text-accent">Process</span></h2>
+        <p class="lead-reeni mt-3">From structural definition to absolute high-fidelity launch — how I build custom commercial applications.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Step 1 -->
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="working-process-card">
+            <span class="process-step-badge">STEP 01</span>
+            <h3 class="h5 font-display text-main mb-3">01. Research</h3>
+            <p class="text-muted small mb-0" style="line-height: 1.7;">
+              In-depth user personas profiling, robust server infrastructure audits, and thorough competitive analyses of your specific industry vectors.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="working-process-card">
+            <span class="process-step-badge">STEP 02</span>
+            <h3 class="h5 font-display text-main mb-3">02. Design</h3>
+            <p class="text-muted small mb-0" style="line-height: 1.7;">
+              Formulating cross-platform Figma design tokens systems, defining fluid animations, and outlining responsive viewport layouts.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="working-process-card">
+            <span class="process-step-badge">STEP 03</span>
+            <h3 class="h5 font-display text-main mb-3">03. Development</h3>
+            <p class="text-muted small mb-0" style="line-height: 1.7;">
+              Writing valid semantic HTML5, implementing responsive Bootstrap 5 structures, and creating high-performance Vanilla JS scripts.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+          <div class="working-process-card">
+            <span class="process-step-badge">STEP 04</span>
+            <h3 class="h5 font-display text-main mb-3">04. Launch</h3>
+            <p class="text-muted small mb-0" style="line-height: 1.7;">
+              Automated multi-device regression testing, server performance optimization, and final compilation of production-ready static assets.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         09. SECTION 7: CLIENT TESTIMONIALS PREVIEW (Consistent Style)
+         ============================================================================ -->
+    <section class="py-section bg-subtle" id="portfolio-testimonials">
+      <div class="container">
+        
+        <div class="text-center mx-auto mb-5 pb-3" style="max-width: 740px;" data-aos="fade-up">
+          <span class="section-subtitle mb-2">CLIENT VERIFICATION</span>
+          <h2 class="section-title font-display">Testimonials <span class="text-accent">Preview</span></h2>
+          <p class="lead-reeni mt-3">What enterprise engineering directors and startup founders say about collaborating with Reeni Core.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Testimonial 1 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-card">
+              <span class="testimonial-quote-icon">“</span>
+              <div>
+                <div class="rating-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p class="text-main mb-4" style="line-height: 1.75;">
+                  "Reeni Core is an exceptional talent. He restructured our entire multi-platform design tokens system and delivered ultra-clean vanilla JS code that surpassed our strict internal review standards. Truly elite."
+                </p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-4 border-top border-secondary border-opacity-25 mt-auto">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Sarah Jenkins Avatar" class="testimonial-avatar" referrerPolicy="no-referrer" />
+                <div>
+                  <h3 class="h6 font-display mb-0 text-main">Sarah Jenkins</h3>
+                  <span class="small font-mono text-accent">VP Product • Spotify Core</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-card">
+              <span class="testimonial-quote-icon">“</span>
+              <div>
+                <div class="rating-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p class="text-main mb-4" style="line-height: 1.75;">
+                  "Working with Reeni on our fintech portal was seamless. His ability to bridge complex backend data architectures with high-converting luxury UI design made our Series B product launch a massive commercial success."
+                </p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-4 border-top border-secondary border-opacity-25 mt-auto">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Marcus Vance Avatar" class="testimonial-avatar" referrerPolicy="no-referrer" />
+                <div>
+                  <h3 class="h6 font-display mb-0 text-main">Marcus Vance</h3>
+                  <span class="small font-mono text-accent">Founder • Nexus Cloud</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="testimonial-card">
+              <span class="testimonial-quote-icon">“</span>
+              <div>
+                <div class="rating-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p class="text-main mb-4" style="line-height: 1.75;">
+                  "The cleanest HTML5 and CSS3 architecture I have encountered on ThemeForest. Every section inherits thoughtful micro-animations and responsive spacing that works flawlessly across all mobile devices."
+                </p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-4 border-top border-secondary border-opacity-25 mt-auto">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80" alt="Elena Rostova Avatar" class="testimonial-avatar" referrerPolicy="no-referrer" />
+                <div>
+                  <h3 class="h6 font-display mb-0 text-main">Elena Rostova</h3>
+                  <span class="small font-mono text-accent">Creative Director • Vogue Studio</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         10. SECTION 8: CALL TO ACTION BANNER (Glow & Clean Borders)
+         ============================================================================ -->
+    <section class="py-section container position-relative" id="portfolio-cta-banner">
+      <div class="card-reeni p-5 text-center position-relative overflow-hidden grid-lines-bg border-accent" data-aos="zoom-in" data-aos-duration="1000">
+        <!-- Ambient Glow -->
+        <div class="ambient-bg" style="opacity: 0.6;">
+          <div class="blur-glow blur-glow-1" style="width: 300px; height: 300px; top: -100px; left: 50%; transform: translateX(-50%);"></div>
+        </div>
+
+        <div class="position-relative z-1 mx-auto" style="max-width: 760px;">
+          <div class="badge-reeni mx-auto mb-4 d-inline-flex align-items-center gap-2">
+            <span class="status-pulse"></span>
+            <span>Now Booking Q3 & Q4 Commercial Projects</span>
+          </div>
+
+          <h2 class="display-4 font-display fw-bold text-main mb-4">
+            Let's Build Your Next <span class="text-accent">Digital Masterpiece</span>
+          </h2>
+
+          <p class="lead-reeni mx-auto mb-5" style="max-width: 620px;">
+            Whether you require a highly secure web integration, a customized design token architecture, or a beautiful portfolio case study — let's partner together to build state-of-the-art products.
+          </p>
+
+          <div class="d-flex flex-wrap align-items-center justify-content-center gap-4">
+            <div class="magnetic-wrap">
+              <a href="contact.html" class="btn-reeni btn-reeni-primary btn-shine btn-reeni-lg">
+                <i class="bi bi-send-fill"></i> Hire Me Now
+              </a>
+            </div>
+            <div class="magnetic-wrap">
+              <a href="contact.html" class="btn-reeni btn-reeni-outline btn-shine btn-reeni-lg">
+                <i class="bi bi-chat-text-fill"></i> Contact Studio
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer-reeni"><div class="container"><div class="footer-bottom mt-0 pt-0 border-0"><div><span>© 2026 Reeni ThemeCore Foundation. Built for ThemeForest.</span></div><div><span>Status: <strong class="text-accent">Portfolio Core Ready</strong></span></div></div></div></footer>
-  <button id="back-to-top"><svg class="progress-ring" width="52" height="52"><circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" /></svg><i class="bi bi-arrow-up position-relative z-1"></i></button>
+  <!-- ============================================================================
+       11. REUSE SHARED FOOTER ARCHITECTURE
+       ============================================================================ -->
+  <footer class="footer-reeni">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Footer Brand Widget -->
+        <div class="col-lg-4">
+          <a href="index.html" class="navbar-brand-reeni font-display d-block mb-3">REENI<span>.</span>CORE</a>
+          <p class="text-muted small mb-4" style="max-width: 320px;">
+            Commercial ThemeForest personal portfolio and agency HTML5 foundation. W3C valid markup, Bootstrap 5 responsive hierarchy, and custom vanilla JavaScript physics.
+          </p>
+          <div class="social-icons">
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+            <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+          </div>
+        </div>
+
+        <!-- Footer Navigation Links 1 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Foundation Home</a></li>
+            <li><a href="about.html">About Reeni</a></li>
+            <li><a href="services.html">Services & Specialties</a></li>
+            <li><a href="resume.html">Experience & CV</a></li>
+            <li><a href="portfolio.html">Featured Works</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Navigation Links 2 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="blog.html">Editorial Journal</a></li>
+            <li><a href="contact.html">Help & Studio FAQ</a></li>
+            <li><a href="contact.html">Privacy Policy</a></li>
+            <li><a href="contact.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Newsletter Subscription -->
+        <div class="col-md-6 col-lg-4">
+          <h4 class="footer-widget-title">Subscribe Studio</h4>
+          <p class="text-muted small mb-4">Receive monthly dispatches on modern CSS architecture, vanilla JS physics, and ThemeForest releases.</p>
+          <form class="search-box mb-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Reeni Core Dispatches!');">
+            <input type="email" class="form-control-reeni" placeholder="Enter your email..." aria-label="Email Address for Newsletter" required />
+            <button type="submit" class="search-btn" aria-label="Subscribe"><i class="bi bi-arrow-right-short fs-3"></i></button>
+          </form>
+          <span class="small text-muted d-block" style="font-size: 0.75rem;">🔒 Zero spam guarantee. Unsubscribe at any time.</span>
+        </div>
+
+      </div>
+
+      <!-- Footer Copyright Bottom -->
+      <div class="footer-bottom">
+        <div>
+          <span>© 2026 Reeni ThemeCore Foundation. Crafted for commercial ThemeForest distribution.</span>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Privacy Policy</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Terms of Service</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Support Studio</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================================
+       12. BACK TO TOP BUTTON (WITH CIRCULAR SCROLL PROGRESS RING)
+       ============================================================================ -->
+  <button id="back-to-top" aria-label="Back to Top of Page">
+    <svg class="progress-ring" width="52" height="52">
+      <circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" />
+    </svg>
+    <i class="bi bi-arrow-up position-relative z-1"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS (Popper Included) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Reeni Core Physics & Interactions JS -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>

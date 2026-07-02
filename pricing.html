@@ -3,51 +3,651 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pricing Plans | Reeni - Personal Portfolio HTML Template</title>
-  <meta name="description" content="Pricing foundation page for Reeni ThemeForest portfolio template." />
+  <title>Premium Service Pricing | Reeni Portfolio</title>
+  <meta name="description" content="View flexible investment packages and premium tiers for Reeni ThemeCore UI/UX, CSS styling, and custom Vanilla JS interaction design." />
+  <meta name="keywords" content="pricing plans, freelance services, contract packages, figma to code, bootstrap designer cost" />
+  <meta name="author" content="Reeni ThemeCore" />
+
+  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <!-- Reeni Design System CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body class="overflow-hidden">
-  <div id="cursor-dot"></div><div id="cursor-outline"></div><div id="reading-progress"></div>
-  <div id="preloader"><div class="preloader-content"><span class="preloader-logo font-display">REENI.PRICING</span><div class="preloader-bar-wrap"><div class="preloader-bar"></div></div><div class="preloader-percentage">0%</div></div></div>
 
-  <header class="navbar-reeni sticky-top">
+  <!-- Custom Cursor Physics Engine -->
+  <div id="cursor-dot" class="d-none d-lg-block"></div>
+  <div id="cursor-outline" class="d-none d-lg-block"></div>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress"></div>
+
+  <!-- Cinematic Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <span class="preloader-logo font-display">REENI.STUDIO</span>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar"></div>
+      </div>
+      <div class="preloader-percentage">0%</div>
+    </div>
+  </div>
+
+  <!-- Page Transition Layer -->
+  <div class="page-transition-layer"></div>
+
+  <!-- ============================================================================
+       01. STICKY TOP NAVIGATION BAR
+       ============================================================================ -->
+  <header class="navbar-reeni sticky-top" id="main-header">
     <div class="container d-flex align-items-center justify-content-between">
-      <a href="index.html" class="navbar-brand-reeni font-display">REENI<span>.</span></a>
-      <nav class="d-none d-lg-flex align-items-center gap-1"><a href="index.html" class="nav-link-reeni">Foundation</a><a href="about.html" class="nav-link-reeni">About</a><a href="services.html" class="nav-link-reeni">Services</a><a href="portfolio.html" class="nav-link-reeni">Portfolio</a><a href="pricing.html" class="nav-link-reeni active">Pricing</a><a href="contact.html" class="nav-link-reeni">Contact</a></nav>
-      <div class="d-flex align-items-center gap-3"><button class="theme-switch-btn" aria-label="Toggle Theme"><i class="bi bi-sun-fill icon-sun text-warning"></i><i class="bi bi-moon-stars-fill icon-moon text-primary"></i></button><button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni"><i class="bi bi-list fs-1 text-main"></i></button></div>
+      <a href="index.html" class="navbar-brand-reeni font-display" id="nav-logo">REENI<span>.</span>CORE</a>
+      
+      <!-- Desktop Navigation Menu (Multi-Page Architecture) -->
+      <nav class="d-none d-lg-flex align-items-center gap-1" id="desktop-nav">
+        <a href="index.html" class="nav-link-reeni">Foundation</a>
+        <a href="about.html" class="nav-link-reeni">About</a>
+        <a href="services.html" class="nav-link-reeni">Services</a>
+        <a href="resume.html" class="nav-link-reeni">Resume</a>
+        <a href="portfolio.html" class="nav-link-reeni">Portfolio</a>
+        <a href="pricing.html" class="nav-link-reeni active">Pricing</a>
+        <a href="blog.html" class="nav-link-reeni">Blog</a>
+        <a href="contact.html" class="nav-link-reeni">Contact</a>
+      </nav>
+
+      <!-- Action & Theme Switcher Controls -->
+      <div class="d-flex align-items-center gap-3" id="header-actions">
+        <button class="theme-switch-btn" aria-label="Toggle Dark/Light Mode" title="Switch Theme" id="theme-toggler">
+          <i class="bi bi-sun-fill icon-sun text-warning"></i>
+          <i class="bi bi-moon-stars-fill icon-moon text-primary"></i>
+        </button>
+        <a href="contact.html" class="btn-reeni btn-reeni-primary btn-reeni-sm btn-shine d-none d-md-inline-flex" id="header-cta-btn">
+          <i class="bi bi-send-fill"></i> Let's Talk
+        </a>
+        <button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni" aria-label="Toggle Mobile Menu" id="mobile-menu-btn">
+          <i class="bi bi-list fs-1 text-main"></i>
+        </button>
+      </div>
     </div>
   </header>
 
-  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni">
-    <div class="offcanvas-header d-flex align-items-center justify-content-between"><a href="index.html" class="navbar-brand-reeni font-display mb-0">REENI<span>.</span>CORE</a><button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button></div>
-    <div class="offcanvas-body d-flex flex-column justify-content-between"><ul class="mobile-nav-list mb-0"><li><a href="index.html" class="mobile-nav-link">Foundation</a></li><li><a href="pricing.html" class="mobile-nav-link active">Pricing Page</a></li><li><a href="faq.html" class="mobile-nav-link">FAQ Page</a></li><li><a href="contact.html" class="mobile-nav-link">Contact Page</a></li></ul></div>
+  <!-- ============================================================================
+       02. OFFCANVAS MOBILE NAVIGATION
+       ============================================================================ -->
+  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni" aria-labelledby="offcanvasReeniLabel">
+    <div class="offcanvas-header d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-reeni font-display mb-0" id="offcanvasReeniLabel">REENI<span>.</span>CORE</a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close Mobile Menu" id="offcanvas-close-btn"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between" id="offcanvas-body-content">
+      <ul class="mobile-nav-list mb-0" id="mobile-nav-menu">
+        <li><a href="index.html" class="mobile-nav-link">Foundation Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Me</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services & Specialties</a></li>
+        <li><a href="resume.html" class="mobile-nav-link">Experience & CV</a></li>
+        <li><a href="portfolio.html" class="mobile-nav-link">Portfolio Case Studies</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link active">Pricing Packages</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Editorial Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact Studio</a></li>
+      </ul>
+      <div class="mt-4 pt-4 border-top border-secondary border-opacity-25" id="offcanvas-social-section">
+        <span class="small text-muted text-uppercase fw-bold letter-spacing-1 d-block mb-3">Connect With Me</span>
+        <div class="social-icons" id="offcanvas-social-icons">
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+          <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <main>
-    <section class="page-banner grid-lines-bg text-center">
-      <div class="container position-relative z-1 reveal-up">
-        <span class="section-subtitle mb-2">INVESTMENT & PACKAGES FOUNDATION</span>
-        <h1 class="page-banner-title font-display">Pricing <span class="text-accent">Plans</span></h1>
-        <ul class="breadcrumb-reeni justify-content-center mt-3"><li><a href="index.html">Foundation</a></li><li class="separator">/</li><li class="active">Pricing</li></ul>
+    <!-- ============================================================================
+         03. HERO BANNER
+         ============================================================================ -->
+    <section class="page-banner pt-section pb-5 position-relative overflow-hidden grid-lines-bg text-center" id="pricing-hero">
+      <div class="ambient-bg" id="hero-ambient-lights">
+        <div class="blur-glow blur-glow-1"></div>
+        <div class="blur-glow blur-glow-2"></div>
+      </div>
+
+      <div class="container position-relative z-1" data-aos="fade-up" data-aos-duration="1000" id="hero-content-wrap">
+        <!-- Breadcrumb -->
+        <ul class="breadcrumb-reeni justify-content-center mb-4" id="hero-breadcrumb">
+          <li><a href="index.html">Foundation</a></li>
+          <li class="separator">/</li>
+          <li class="active">Investment Plans</li>
+        </ul>
+
+        <!-- Category Tag -->
+        <div class="d-flex align-items-center justify-content-center gap-2 mb-3" id="hero-status-badges">
+          <span class="badge-reeni text-accent"><i class="bi bi-coin me-1"></i> Flexible Investment Structures</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="display-4 fw-bold font-display tracking-tight text-main mb-4" style="max-width: 900px; margin-left: auto; margin-right: auto;" id="hero-main-title">
+          Bespoke Packages Tailored For Elite Brands
+        </h1>
+        <p class="lead text-muted mx-auto" style="max-width: 680px; font-size: 1.15rem;" id="hero-lead-text">
+          Fair, transparent investment models. Secure top-tier UI engineering, custom design system mappings, and flawless performance parameters.
+        </p>
       </div>
     </section>
-    <section class="py-section container">
-      <div class="card-reeni p-5 text-center reveal-scale mx-auto" style="max-width: 800px;">
-        <div class="card-icon-wrap mx-auto"><i class="bi bi-credit-card-2-front"></i></div>
-        <span class="badge-reeni mx-auto mb-3"><i class="bi bi-check2-circle"></i> Design System Inherited</span>
-        <h2 class="h3 font-display mb-3">Pricing Page Foundation Ready</h2>
-        <p class="lead-reeni mb-4">Configured for 3-tier pricing tables, toggle switches (monthly/yearly), feature checkmark lists, and highlighted popular plans.</p>
-        <div class="magnetic-wrap mx-auto"><a href="index.html" class="btn-reeni btn-reeni-primary btn-shine"><i class="bi bi-arrow-left"></i> Return To Foundation Core</a></div>
+
+    <!-- ============================================================================
+         04. PRICING INTRODUCTION & BILLING TOGGLE
+         ============================================================================ -->
+    <section class="py-5 bg-subtle-section border-top border-bottom border-secondary border-opacity-10" id="pricing-intro">
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 mb-4" data-aos="fade-up">
+            <span class="section-subtitle">BILLING CYCLE</span>
+            <h2 class="h3 font-display fw-bold text-main mb-3">Select Your Billing Parameter</h2>
+            <p class="text-muted small">Choose an annual billing contract to save 20% on recurring design system and full-stack template development support cycles.</p>
+          </div>
+        </div>
+
+        <!-- Custom Billing Switch -->
+        <div class="d-inline-flex align-items-center gap-3 p-2 rounded-pill bg-subtle border border-secondary border-opacity-25" data-aos="zoom-in" id="billing-switcher-wrap">
+          <span class="font-mono text-muted small px-3 fw-semibold">Monthly Billing</span>
+          <div class="form-check form-switch m-0 d-flex align-items-center p-0">
+            <input class="form-check-input billing-switch-input" type="checkbox" role="switch" id="billing-toggle-input" style="width: 50px; height: 26px; cursor: pointer; margin-left: 0;" />
+          </div>
+          <span class="font-mono text-main small px-3 fw-semibold d-flex align-items-center gap-2">
+            Yearly Billing <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-20 rounded-pill py-1 px-2" style="font-size: 0.7rem;">SAVE 20%</span>
+          </span>
+        </div>
       </div>
     </section>
+
+    <!-- ============================================================================
+         05. PRICING PLANS (3 PREMIUM CARDS)
+         ============================================================================ -->
+    <section class="py-section" id="pricing-plans-section">
+      <div class="container">
+        <div class="row g-4 justify-content-center align-items-stretch">
+          
+          <!-- Card 1: Starter -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100" id="starter-plan-col">
+            <div class="pricing-card-premium" id="starter-plan-card">
+              <span class="badge bg-secondary bg-opacity-10 text-muted font-mono px-3 py-1.5 rounded-pill border border-secondary border-opacity-10 mb-4 text-uppercase align-self-start" style="font-size: 0.75rem;">Starter Pack</span>
+              
+              <div class="pricing-icon-box" id="starter-icon-box">
+                <i class="bi bi-rocket-takeoff-fill"></i>
+              </div>
+
+              <h3 class="font-display fw-bold h4 text-main mb-1">Starter Core</h3>
+              <p class="text-muted small mb-4">Perfect for quick portfolio sites and single-page startup MVPs.</p>
+
+              <!-- Price Box -->
+              <div class="pricing-price-wrap" id="starter-price-box">
+                <span class="pricing-amount font-display" id="price-starter">$1,490</span>
+                <span class="pricing-period" id="period-starter">/ mo</span>
+              </div>
+
+              <div class="border-top border-secondary border-opacity-10 my-4"></div>
+
+              <h4 class="pricing-features-title">Core Deliverables</h4>
+              <ul class="pricing-feature-list" id="starter-feature-list">
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> 5 Custom-Styled HTML Pages</li>
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> Fully Responsive Layout Grid</li>
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> Bootstrap 5 Grid Framework</li>
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> W3C Compliant Markup</li>
+                <li class="pricing-feature-item disabled"><i class="bi bi-x-circle-fill"></i> Interactive UX/UI Prototype</li>
+                <li class="pricing-feature-item disabled"><i class="bi bi-x-circle-fill"></i> ThemeForest Quality Review</li>
+                <li class="pricing-feature-item disabled"><i class="bi bi-x-circle-fill"></i> Custom Physics Engine (JS)</li>
+              </ul>
+
+              <div class="mt-auto">
+                <a href="contact.html" class="btn-reeni btn-reeni-outline btn-shine w-full py-3 justify-content-center" id="starter-cta-btn">
+                  Select Starter Pack <i class="bi bi-arrow-right-short fs-5 ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Professional (Featured) -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" id="pro-plan-col">
+            <div class="pricing-card-premium featured" id="pro-plan-card">
+              <span class="badge bg-warning bg-opacity-10 text-warning font-mono px-3 py-1.5 rounded-pill border border-warning border-opacity-20 mb-4 text-uppercase align-self-start" style="font-size: 0.75rem;">Most Popular</span>
+              
+              <div class="pricing-icon-box" id="pro-icon-box" style="background-color: rgba(var(--accent-rgb), 0.1); border-color: var(--accent);">
+                <i class="bi bi-gem"></i>
+              </div>
+
+              <h3 class="font-display fw-bold h4 text-main mb-1">Professional Choice</h3>
+              <p class="text-muted small mb-4">Our signature setup offering ThemeForest-ready compliance and system assets.</p>
+
+              <!-- Price Box -->
+              <div class="pricing-price-wrap" id="pro-price-box">
+                <span class="pricing-amount font-display text-accent" id="price-pro">$3,490</span>
+                <span class="pricing-period" id="period-pro">/ mo</span>
+              </div>
+
+              <div class="border-top border-secondary border-opacity-10 my-4"></div>
+
+              <h4 class="pricing-features-title">Professional Deliverables</h4>
+              <ul class="pricing-feature-list" id="pro-feature-list">
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> 15 Custom-Styled HTML Pages</li>
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> Fully Responsive Layout Grid</li>
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> Bootstrap 5 Grid Framework</li>
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> W3C Compliant Markup</li>
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> Interactive Figma Prototype</li>
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> ThemeForest Quality Review</li>
+                <li class="pricing-feature-item disabled"><i class="bi bi-x-circle-fill"></i> Custom Physics Engine (JS)</li>
+              </ul>
+
+              <div class="mt-auto">
+                <a href="contact.html" class="btn-reeni btn-reeni-primary btn-shine w-full py-3 justify-content-center" id="pro-cta-btn">
+                  Select Professional <i class="bi bi-arrow-right-short fs-5 ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Enterprise -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300" id="enterprise-plan-col">
+            <div class="pricing-card-premium" id="enterprise-plan-card">
+              <span class="badge bg-primary bg-opacity-10 text-primary font-mono px-3 py-1.5 rounded-pill border border-primary border-opacity-20 mb-4 text-uppercase align-self-start" style="font-size: 0.75rem;">Enterprise Grade</span>
+              
+              <div class="pricing-icon-box" id="enterprise-icon-box">
+                <i class="bi bi-buildings-fill"></i>
+              </div>
+
+              <h3 class="font-display fw-bold h4 text-main mb-1">Enterprise Suite</h3>
+              <p class="text-muted small mb-4">Complete dedicated development and elite interactive custom frameworks.</p>
+
+              <!-- Price Box -->
+              <div class="pricing-price-wrap" id="enterprise-price-box">
+                <span class="pricing-amount font-display" id="price-enterprise">$7,990</span>
+                <span class="pricing-period" id="period-enterprise">/ mo</span>
+              </div>
+
+              <div class="border-top border-secondary border-opacity-10 my-4"></div>
+
+              <h4 class="pricing-features-title">Enterprise Deliverables</h4>
+              <ul class="pricing-feature-list" id="enterprise-feature-list">
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> Unlimited Custom HTML Pages</li>
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> Fully Responsive Layout Grid</li>
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> Bootstrap 5 Grid Framework</li>
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> W3C Compliant Markup</li>
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> Interactive Figma Prototype</li>
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> ThemeForest Quality Review</li>
+                <li class="pricing-feature-item"><i class="bi bi-check-circle-fill"></i> Custom Physics Engine (JS)</li>
+              </ul>
+
+              <div class="mt-auto">
+                <a href="contact.html" class="btn-reeni btn-reeni-outline btn-shine w-full py-3 justify-content-center" id="enterprise-cta-btn">
+                  Select Enterprise <i class="bi bi-arrow-right-short fs-5 ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         06. COMPARE PLANS TABLE (RESPONSIVE COMPARE MATRIX)
+         ============================================================================ -->
+    <section class="py-section container" id="compare-matrix-section">
+      <div class="text-center mb-5" data-aos="fade-up" id="compare-header">
+        <span class="section-subtitle">SPECIFICATION MATRIX</span>
+        <h2 class="display-6 font-display fw-bold text-main mb-3">Compare Core Deliverables</h2>
+        <p class="text-muted mx-auto" style="max-width: 600px;">Review deep parameter alignments and functional limits across our starter, professional, and enterprise tiers.</p>
+      </div>
+
+      <div class="compare-table-wrap" data-aos="fade-up" id="compare-table-container">
+        <div class="table-responsive">
+          <table class="table table-reeni align-middle">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 40%;">Core Specifications</th>
+                <th scope="col" class="text-center" style="width: 20%;">Starter Core</th>
+                <th scope="col" class="text-center text-accent" style="width: 20%;">Professional</th>
+                <th scope="col" class="text-center" style="width: 20%;">Enterprise Suite</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="feature-title">Custom Structured HTML Pages</td>
+                <td class="feature-value font-mono">5 Pages</td>
+                <td class="feature-value font-mono text-accent">15 Pages</td>
+                <td class="feature-value font-mono">Unlimited</td>
+              </tr>
+              <tr>
+                <td class="feature-title">Bootstrap 5 Responsive Grid</td>
+                <td class="feature-value"><i class="bi bi-check-lg compare-check"></i></td>
+                <td class="feature-value"><i class="bi bi-check-lg compare-check"></i></td>
+                <td class="feature-value"><i class="bi bi-check-lg compare-check"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-title">W3C Valid Code Verification</td>
+                <td class="feature-value"><i class="bi bi-check-lg compare-check"></i></td>
+                <td class="feature-value"><i class="bi bi-check-lg compare-check"></i></td>
+                <td class="feature-value"><i class="bi bi-check-lg compare-check"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-title">ThemeForest Compatibility Checks</td>
+                <td class="feature-value"><i class="bi bi-dash compare-cross"></i></td>
+                <td class="feature-value"><i class="bi bi-check-lg compare-check"></i></td>
+                <td class="feature-value"><i class="bi bi-check-lg compare-check"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-title">Figma Asset Mappings & Prototypes</td>
+                <td class="feature-value"><i class="bi bi-dash compare-cross"></i></td>
+                <td class="feature-value"><i class="bi bi-check-lg compare-check"></i></td>
+                <td class="feature-value"><i class="bi bi-check-lg compare-check"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-title">AOS Scroll Animation Tweaks</td>
+                <td class="feature-value"><i class="bi bi-check-lg compare-check"></i></td>
+                <td class="feature-value"><i class="bi bi-check-lg compare-check"></i></td>
+                <td class="feature-value"><i class="bi bi-check-lg compare-check"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-title">Custom Canvas / Physics Engine</td>
+                <td class="feature-value"><i class="bi bi-dash compare-cross"></i></td>
+                <td class="feature-value"><i class="bi bi-dash compare-cross"></i></td>
+                <td class="feature-value"><i class="bi bi-check-lg compare-check"></i></td>
+              </tr>
+              <tr>
+                <td class="feature-title">Priority SLA Email Support</td>
+                <td class="feature-value font-mono">30 Days</td>
+                <td class="feature-value font-mono text-accent">90 Days</td>
+                <td class="feature-value font-mono">1 Year VIP</td>
+              </tr>
+              <tr>
+                <td class="feature-title">Allotted Development Revisions</td>
+                <td class="feature-value font-mono">2 Rounds</td>
+                <td class="feature-value font-mono text-accent">5 Rounds</td>
+                <td class="feature-value font-mono">Unlimited</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         07. PAYMENT METHODS SECTION (MODERN SECURE PAYMENT OPTIONS)
+         ============================================================================ -->
+    <section class="py-section bg-subtle-section border-top border-bottom border-secondary border-opacity-10" id="payment-methods-section">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up" id="payment-header">
+          <span class="section-subtitle">SECURE TRANSACTION PORTAL</span>
+          <h2 class="display-6 font-display fw-bold text-main mb-3">Supported Payment Networks</h2>
+          <p class="text-muted mx-auto" style="max-width: 600px;">We accept multiple secure electronic, wire, and digital asset networks to guarantee clean billing operations.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center" id="payment-cards-row">
+          
+          <!-- Card 1: Credit Cards -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100" id="payment-cc-col">
+            <div class="payment-card-premium" id="payment-cc">
+              <div class="payment-card-icon" id="payment-cc-icon">
+                <i class="bi bi-credit-card-2-back-fill"></i>
+              </div>
+              <h4 class="font-heading fw-bold h5 text-main mb-1">Credit / Debit</h4>
+              <p class="text-muted small mb-0 font-mono" style="font-size: 0.8rem;">Visa, MasterCard, Amex</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Stripe Engine -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200" id="payment-stripe-col">
+            <div class="payment-card-premium" id="payment-stripe">
+              <div class="payment-card-icon" id="payment-stripe-icon">
+                <i class="bi bi-wallet2"></i>
+              </div>
+              <h4 class="font-heading fw-bold h5 text-main mb-1">Stripe Gateway</h4>
+              <p class="text-muted small mb-0 font-mono" style="font-size: 0.8rem;">Secure instant processing</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Cryptography / Bitcoin -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300" id="payment-crypto-col">
+            <div class="payment-card-premium" id="payment-crypto">
+              <div class="payment-card-icon" id="payment-crypto-icon">
+                <i class="bi bi-currency-bitcoin"></i>
+              </div>
+              <h4 class="font-heading fw-bold h5 text-main mb-1">Digital Assets</h4>
+              <p class="text-muted small mb-0 font-mono" style="font-size: 0.8rem;">BTC, ETH, USDC Payments</p>
+            </div>
+          </div>
+
+          <!-- Card 4: Wire Transfer -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400" id="payment-wire-col">
+            <div class="payment-card-premium" id="payment-wire">
+              <div class="payment-card-icon" id="payment-wire-icon">
+                <i class="bi bi-bank2"></i>
+              </div>
+              <h4 class="font-heading fw-bold h5 text-main mb-1">Bank Wire</h4>
+              <p class="text-muted small mb-0 font-mono" style="font-size: 0.8rem;">Direct IBAN / SWIFT Transfer</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         08. PRICING FAQ PREVIEW (4 ACCORDIONS + FAQ LINK)
+         ============================================================================ -->
+    <section class="py-section container" id="faq-preview-section">
+      <div class="row align-items-center g-5">
+        
+        <!-- Left Side: Section Intro -->
+        <div class="col-lg-5" data-aos="fade-right" id="faq-intro-col">
+          <span class="section-subtitle">FAQ PREVIEW</span>
+          <h2 class="display-5 font-display fw-bold text-main mb-4" id="faq-title">Financial Queries Resolved</h2>
+          <p class="text-muted mb-4" id="faq-desc">
+            Review critical answers regarding refund covenants, custom billing procedures, tax compliance, and scaling parameters.
+          </p>
+          <div class="magnetic-wrap" id="magnetic-faq-btn">
+            <a href="faq.html" class="btn-reeni btn-reeni-outline btn-shine" id="faq-view-all-btn">
+              <i class="bi bi-patch-question-fill"></i> View Full FAQ Suite
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side: 4 Common Accordions -->
+        <div class="col-lg-7" data-aos="fade-left" id="faq-accordion-col">
+          <div class="accordion accordion-reeni" id="accordionPricingFaq">
+            
+            <!-- Question 1 -->
+            <div class="accordion-item" id="faq-item-1">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaq1" aria-expanded="false" aria-controls="collapseFaq1" id="faq-btn-1">
+                  Are there any hidden onboarding or design setup fees?
+                </button>
+              </h3>
+              <div id="collapseFaq1" class="accordion-collapse collapse" data-bs-parent="#accordionPricingFaq">
+                <div class="accordion-body">
+                  No, our pricing structures are fully comprehensive. The displayed flat rate accounts for onboarding, framework configuration, visual mappings, and first-wave design token creations.
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="accordion-item" id="faq-item-2">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaq2" aria-expanded="false" aria-controls="collapseFaq2" id="faq-btn-2">
+                  Can I upgrade my active development tier mid-cycle?
+                </button>
+              </h3>
+              <div id="collapseFaq2" class="accordion-collapse collapse" data-bs-parent="#accordionPricingFaq">
+                <div class="accordion-body">
+                  Absolutely. We calculate pro-rated rate adjustments based on active project phases. Upgrades take effect immediately upon settlement of the milestone variance invoice.
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="accordion-item" id="faq-item-3">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaq3" aria-expanded="false" aria-controls="collapseFaq3" id="faq-btn-3">
+                  Do you offer discount options for multi-license layouts?
+                </button>
+              </h3>
+              <div id="collapseFaq3" class="accordion-collapse collapse" data-bs-parent="#accordionPricingFaq">
+                <div class="accordion-body">
+                  Yes, commercial clients ordering more than 3 templates for ThemeForest or private distribution pathways receive an automatic volume reduction. Contact our studio directly to build custom terms.
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="accordion-item" id="faq-item-4">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaq4" aria-expanded="false" aria-controls="collapseFaq4" id="faq-btn-4">
+                  What is your standard cancellation and refund procedure?
+                </button>
+              </h3>
+              <div id="collapseFaq4" class="accordion-collapse collapse" data-bs-parent="#accordionPricingFaq">
+                <div class="accordion-body">
+                  Contracts can be cancelled with 14 business days notice. Refunds are calculated on complete milestones; work delivered in a validated state is non-refundable, securing developer labor investments.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         09. CALL TO ACTION (CTA BANNER)
+         ============================================================================ -->
+    <section class="py-section container" id="pricing-cta">
+      <div class="service-cta-banner text-center" data-aos="zoom-in" data-aos-duration="1000" id="cta-banner-wrap">
+        <div class="position-relative z-1 mx-auto" style="max-width: 720px;" id="cta-inner">
+          <div class="badge-reeni mx-auto mb-4 d-inline-flex align-items-center gap-2" id="cta-badge">
+            <span class="status-pulse bg-warning" style="width: 8px; height: 8px;"></span>
+            <span>Let's Secure Your Timelines</span>
+          </div>
+
+          <h2 class="display-5 font-display fw-bold text-main mb-3" id="cta-headline">
+            Let's Build Something Amazing Together
+          </h2>
+
+          <p class="lead-reeni mx-auto mb-5 text-muted" style="max-width: 600px;" id="cta-desc">
+            Secure exceptional code delivery, validated design system token mapping, and elite responsiveness. Download Reeni's commercial credentials or start an inquiry now.
+          </p>
+
+          <div class="d-flex flex-wrap align-items-center justify-content-center gap-3" id="cta-buttons">
+            <div class="magnetic-wrap" id="magnetic-hire">
+              <a href="contact.html#contact-form-section" class="btn-reeni btn-reeni-primary btn-shine" id="cta-hire-btn">
+                <i class="bi bi-chat-left-text-fill"></i> Hire Me Now
+              </a>
+            </div>
+            <div class="magnetic-wrap" id="magnetic-cv">
+              <a href="resume.html" class="btn-reeni btn-reeni-outline btn-shine" id="cta-cv-btn">
+                <i class="bi bi-file-earmark-arrow-down-fill"></i> Download Commercial CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer-reeni"><div class="container"><div class="footer-bottom mt-0 pt-0 border-0"><div><span>© 2026 Reeni ThemeCore Foundation. Built for ThemeForest.</span></div><div><span>Status: <strong class="text-accent">Pricing Core Ready</strong></span></div></div></div></footer>
-  <button id="back-to-top"><svg class="progress-ring" width="52" height="52"><circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" /></svg><i class="bi bi-arrow-up position-relative z-1"></i></button>
+  <!-- ============================================================================
+       10. REUSE SHARED FOOTER ARCHITECTURE
+       ============================================================================ -->
+  <footer class="footer-reeni" id="app-footer">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Footer Brand Widget -->
+        <div class="col-lg-4" id="footer-widget-brand">
+          <a href="index.html" class="navbar-brand-reeni font-display d-block mb-3" id="footer-logo">REENI<span>.</span>CORE</a>
+          <p class="text-muted small mb-4" style="max-width: 320px;">
+            Commercial ThemeForest personal portfolio and agency HTML5 foundation. W3C valid markup, Bootstrap 5 responsive hierarchy, and custom vanilla JavaScript physics.
+          </p>
+          <div class="social-icons" id="footer-brand-socials">
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+            <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+          </div>
+        </div>
+
+        <!-- Footer Navigation Links 1 -->
+        <div class="col-6 col-md-3 col-lg-2" id="footer-widget-links-1">
+          <h4 class="footer-widget-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Foundation Home</a></li>
+            <li><a href="about.html">About Reeni</a></li>
+            <li><a href="services.html">Services & Specialties</a></li>
+            <li><a href="resume.html">Experience & CV</a></li>
+            <li><a href="portfolio.html">Featured Works</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Navigation Links 2 -->
+        <div class="col-6 col-md-3 col-lg-2" id="footer-widget-links-2">
+          <h4 class="footer-widget-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="faq.html">Editorial Journal</a></li>
+            <li><a href="contact.html">Help & Studio FAQ</a></li>
+            <li><a href="contact.html">Privacy Policy</a></li>
+            <li><a href="contact.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Newsletter Subscription -->
+        <div class="col-md-6 col-lg-4" id="footer-widget-newsletter">
+          <h4 class="footer-widget-title">Subscribe Studio</h4>
+          <p class="text-muted small mb-4">Receive monthly dispatches on modern CSS architecture, vanilla JS physics, and ThemeForest releases.</p>
+          <form class="search-box mb-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Reeni Core Dispatches!');" id="footer-newsletter-form">
+            <input type="email" class="form-control-reeni" placeholder="Enter your email..." aria-label="Email Address for Newsletter" required />
+            <button type="submit" class="search-btn" aria-label="Subscribe" id="footer-newsletter-btn"><i class="bi bi-arrow-right-short fs-3"></i></button>
+          </form>
+          <span class="small text-muted d-block" style="font-size: 0.75rem;">🔒 Zero spam guarantee. Unsubscribe at any time.</span>
+        </div>
+
+      </div>
+
+      <!-- Footer Copyright Bottom -->
+      <div class="footer-bottom" id="footer-copyright-row">
+        <div>
+          <span>© 2026 Reeni ThemeCore Foundation. Crafted for commercial ThemeForest distribution.</span>
+        </div>
+        <div class="d-flex align-items-center gap-4" id="footer-legal-links">
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Privacy Policy</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Terms of Service</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Support Studio</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================================
+       11. BACK TO TOP BUTTON (WITH CIRCULAR SCROLL PROGRESS RING)
+       ============================================================================ -->
+  <button id="back-to-top" aria-label="Back to Top of Page">
+    <svg class="progress-ring" width="52" height="52">
+      <circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" />
+    </svg>
+    <i class="bi bi-arrow-up position-relative z-1"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS (Popper Included) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Reeni Core Physics & Interactions JS -->
   <script src="assets/js/main.js"></script>
+  <!-- Reeni Pricing Interactive Logic JS -->
+  <script src="assets/js/pricing.js"></script>
 </body>
 </html>

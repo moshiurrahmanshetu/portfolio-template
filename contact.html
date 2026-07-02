@@ -3,51 +3,640 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Reeni - Personal Portfolio HTML Template</title>
-  <meta name="description" content="Contact foundation page for Reeni ThemeForest portfolio template." />
+  <title>Contact Studio | Premium Personal Portfolio | Reeni Portfolio</title>
+  <meta name="description" content="Get in touch with Reeni ThemeCore. Inquire about freelance services, custom front-end development, full-stack consulting, and ThemeForest-compliant architectures." />
+  <meta name="keywords" content="contact reeni, hire front-end developer, ui/ux consulting, design tokens, bootstrap 5, vanilla js designer" />
+  <meta name="author" content="Reeni ThemeCore" />
+
+  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <!-- Reeni Design System CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body class="overflow-hidden">
-  <div id="cursor-dot"></div><div id="cursor-outline"></div><div id="reading-progress"></div>
-  <div id="preloader"><div class="preloader-content"><span class="preloader-logo font-display">REENI.CONTACT</span><div class="preloader-bar-wrap"><div class="preloader-bar"></div></div><div class="preloader-percentage">0%</div></div></div>
 
-  <header class="navbar-reeni sticky-top">
+  <!-- Custom Cursor Physics Engine -->
+  <div id="cursor-dot" class="d-none d-lg-block"></div>
+  <div id="cursor-outline" class="d-none d-lg-block"></div>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress"></div>
+
+  <!-- Cinematic Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <span class="preloader-logo font-display">REENI.STUDIO</span>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar"></div>
+      </div>
+      <div class="preloader-percentage">0%</div>
+    </div>
+  </div>
+
+  <!-- Page Transition Layer -->
+  <div class="page-transition-layer"></div>
+
+  <!-- ============================================================================
+       01. STICKY TOP NAVIGATION BAR
+       ============================================================================ -->
+  <header class="navbar-reeni sticky-top" id="main-header">
     <div class="container d-flex align-items-center justify-content-between">
-      <a href="index.html" class="navbar-brand-reeni font-display">REENI<span>.</span></a>
-      <nav class="d-none d-lg-flex align-items-center gap-1"><a href="index.html" class="nav-link-reeni">Foundation</a><a href="about.html" class="nav-link-reeni">About</a><a href="services.html" class="nav-link-reeni">Services</a><a href="portfolio.html" class="nav-link-reeni">Portfolio</a><a href="blog.html" class="nav-link-reeni">Blog</a><a href="contact.html" class="nav-link-reeni active">Contact</a></nav>
-      <div class="d-flex align-items-center gap-3"><button class="theme-switch-btn" aria-label="Toggle Theme"><i class="bi bi-sun-fill icon-sun text-warning"></i><i class="bi bi-moon-stars-fill icon-moon text-primary"></i></button><button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni"><i class="bi bi-list fs-1 text-main"></i></button></div>
+      <a href="index.html" class="navbar-brand-reeni font-display" id="nav-logo">REENI<span>.</span>CORE</a>
+      
+      <!-- Desktop Navigation Menu (Multi-Page Architecture) -->
+      <nav class="d-none d-lg-flex align-items-center gap-1" id="desktop-nav">
+        <a href="index.html" class="nav-link-reeni">Foundation</a>
+        <a href="about.html" class="nav-link-reeni">About</a>
+        <a href="services.html" class="nav-link-reeni">Services</a>
+        <a href="resume.html" class="nav-link-reeni">Resume</a>
+        <a href="portfolio.html" class="nav-link-reeni">Portfolio</a>
+        <a href="pricing.html" class="nav-link-reeni">Pricing</a>
+        <a href="blog.html" class="nav-link-reeni">Blog</a>
+        <a href="contact.html" class="nav-link-reeni active">Contact</a>
+      </nav>
+
+      <!-- Action & Theme Switcher Controls -->
+      <div class="d-flex align-items-center gap-3" id="header-actions">
+        <button class="theme-switch-btn" aria-label="Toggle Dark/Light Mode" title="Switch Theme" id="theme-toggler">
+          <i class="bi bi-sun-fill icon-sun text-warning"></i>
+          <i class="bi bi-moon-stars-fill icon-moon text-primary"></i>
+        </button>
+        <a href="contact.html" class="btn-reeni btn-reeni-primary btn-reeni-sm btn-shine d-none d-md-inline-flex" id="header-cta-btn">
+          <i class="bi bi-send-fill"></i> Let's Talk
+        </a>
+        <button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni" aria-label="Toggle Mobile Menu" id="mobile-menu-btn">
+          <i class="bi bi-list fs-1 text-main"></i>
+        </button>
+      </div>
     </div>
   </header>
 
-  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni">
-    <div class="offcanvas-header d-flex align-items-center justify-content-between"><a href="index.html" class="navbar-brand-reeni font-display mb-0">REENI<span>.</span>CORE</a><button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button></div>
-    <div class="offcanvas-body d-flex flex-column justify-content-between"><ul class="mobile-nav-list mb-0"><li><a href="index.html" class="mobile-nav-link">Foundation</a></li><li><a href="contact.html" class="mobile-nav-link active">Contact Page</a></li></ul></div>
+  <!-- ============================================================================
+       02. OFFCANVAS MOBILE NAVIGATION
+       ============================================================================ -->
+  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni" aria-labelledby="offcanvasReeniLabel">
+    <div class="offcanvas-header d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-reeni font-display mb-0" id="offcanvasReeniLabel">REENI<span>.</span>CORE</a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close Mobile Menu" id="offcanvas-close-btn"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between" id="offcanvas-body-content">
+      <ul class="mobile-nav-list mb-0" id="mobile-nav-menu">
+        <li><a href="index.html" class="mobile-nav-link">Foundation Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Me</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services & Specialties</a></li>
+        <li><a href="resume.html" class="mobile-nav-link">Experience & CV</a></li>
+        <li><a href="portfolio.html" class="mobile-nav-link">Portfolio Case Studies</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Pricing Packages</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Editorial Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link active">Contact Studio</a></li>
+      </ul>
+      <div class="mt-4 pt-4 border-top border-secondary border-opacity-25" id="offcanvas-social-section">
+        <span class="small text-muted text-uppercase fw-bold letter-spacing-1 d-block mb-3">Connect With Me</span>
+        <div class="social-icons" id="offcanvas-social-icons">
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+          <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <main>
-    <section class="page-banner grid-lines-bg text-center">
-      <div class="container position-relative z-1 reveal-up">
-        <span class="section-subtitle mb-2">GET IN TOUCH FOUNDATION ARCHITECTURE</span>
-        <h1 class="page-banner-title font-display">Let's <span class="text-accent">Connect</span></h1>
-        <ul class="breadcrumb-reeni justify-content-center mt-3"><li><a href="index.html">Foundation</a></li><li class="separator">/</li><li class="active">Contact</li></ul>
+    <!-- ============================================================================
+         03. HERO BANNER
+         ============================================================================ -->
+    <section class="page-banner pt-section pb-5 position-relative overflow-hidden grid-lines-bg text-center" id="contact-hero">
+      <div class="ambient-bg" id="hero-ambient-lights">
+        <div class="blur-glow blur-glow-1"></div>
+        <div class="blur-glow blur-glow-2"></div>
+      </div>
+
+      <div class="container position-relative z-1" data-aos="fade-up" data-aos-duration="1000" id="hero-content-wrap">
+        <!-- Breadcrumb -->
+        <ul class="breadcrumb-reeni justify-content-center mb-4" id="hero-breadcrumb">
+          <li><a href="index.html">Foundation</a></li>
+          <li class="separator">/</li>
+          <li class="active">Contact Studio</li>
+        </ul>
+
+        <!-- Category & Read Time Badge -->
+        <div class="d-flex align-items-center justify-content-center gap-2 mb-3" id="hero-status-badges">
+          <span class="badge-reeni text-accent"><i class="bi bi-broadcast me-1"></i> Interactive Inquiry Channel</span>
+        </div>
+
+        <!-- Contact Title -->
+        <h1 class="display-4 fw-bold font-display tracking-tight text-main mb-4" style="max-width: 900px; margin-left: auto; margin-right: auto;" id="hero-main-title">
+          Let's Architect Your Premium Product Structure
+        </h1>
+        <p class="lead text-muted mx-auto" style="max-width: 680px; font-size: 1.15rem;" id="hero-lead-text">
+          Connect with Reeni ThemeCore to secure top-tier UX design, performant CSS component styling, and bespoke vanilla JS layout implementation.
+        </p>
       </div>
     </section>
-    <section class="py-section container">
-      <div class="card-reeni p-5 text-center reveal-scale mx-auto" style="max-width: 800px;">
-        <div class="card-icon-wrap mx-auto"><i class="bi bi-envelope-open"></i></div>
-        <span class="badge-reeni mx-auto mb-3"><i class="bi bi-check2-circle"></i> Design System Inherited</span>
-        <h2 class="h3 font-display mb-3">Contact Form Foundation Ready</h2>
-        <p class="lead-reeni mb-4">Foundation built to host floating input labels, interactive map embed containers, office info widgets, and AJAX validation.</p>
-        <div class="magnetic-wrap mx-auto"><a href="index.html" class="btn-reeni btn-reeni-primary btn-shine"><i class="bi bi-arrow-left"></i> Return To Design System Showcase</a></div>
+
+    <!-- ============================================================================
+         04. CONTACT INTRODUCTION & METADATA BADGES
+         ============================================================================ -->
+    <section class="py-5" id="contact-intro">
+      <div class="container text-center">
+        <div class="d-inline-flex flex-wrap align-items-center justify-content-center gap-3 p-3 rounded-pill border border-secondary border-opacity-10 bg-subtle-section shadow-sm mb-4" data-aos="zoom-in" id="badge-container">
+          <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-20 px-3 py-2 rounded-pill font-mono small d-flex align-items-center gap-2">
+            <span class="status-pulse bg-success" style="width: 8px; height: 8px;"></span> Open For Freelance Contracts
+          </span>
+          <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-20 px-3 py-2 rounded-pill font-mono small d-flex align-items-center gap-2">
+            <i class="bi bi-lightning-charge-fill text-warning"></i> Response Time: &lt; 12 Hours
+          </span>
+        </div>
       </div>
     </section>
+
+    <!-- ============================================================================
+         05. CONTACT INFORMATION CARDS (EMAIL, PHONE, LOCATION, WORKING HOURS)
+         ============================================================================ -->
+    <section class="py-5" id="contact-info-cards-section">
+      <div class="container">
+        <div class="row g-4 justify-content-center">
+          
+          <!-- Card 1: Email Address -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100" id="card-email-col">
+            <div class="contact-info-card text-center" id="card-email">
+              <div class="contact-icon-box mx-auto" id="card-email-icon-box">
+                <i class="bi bi-envelope-at-fill"></i>
+              </div>
+              <h4 class="font-heading fw-bold h5 text-main mb-2">Electronic Mail</h4>
+              <p class="text-muted small mb-3">For project inquiries & consulting</p>
+              <a href="mailto:atomicshetu@gmail.com" class="text-accent fw-bold text-decoration-none font-mono hover-underline" id="email-link">atomicshetu@gmail.com</a>
+            </div>
+          </div>
+
+          <!-- Card 2: Telephone Line -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200" id="card-phone-col">
+            <div class="contact-info-card text-center" id="card-phone">
+              <div class="contact-icon-box mx-auto" id="card-phone-icon-box">
+                <i class="bi bi-telephone-outbound-fill"></i>
+              </div>
+              <h4 class="font-heading fw-bold h5 text-main mb-2">Hotline Line</h4>
+              <p class="text-muted small mb-3">Direct voice contact & messaging</p>
+              <a href="tel:+18005553974" class="text-accent fw-bold text-decoration-none font-mono hover-underline" id="phone-link">+1 (800) 555-REENI</a>
+            </div>
+          </div>
+
+          <!-- Card 3: Physical Studio Location -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300" id="card-location-col">
+            <div class="contact-info-card text-center" id="card-location">
+              <div class="contact-icon-box mx-auto" id="card-location-icon-box">
+                <i class="bi bi-geo-alt-fill"></i>
+              </div>
+              <h4 class="font-heading fw-bold h5 text-main mb-2">Studio Headquarters</h4>
+              <p class="text-muted small mb-3">Based in creative coordinates</p>
+              <span class="text-accent fw-bold font-mono" id="location-text">San Francisco, California</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Operating Hours -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400" id="card-hours-col">
+            <div class="contact-info-card text-center" id="card-hours">
+              <div class="contact-icon-box mx-auto" id="card-hours-icon-box">
+                <i class="bi bi-calendar-week-fill"></i>
+              </div>
+              <h4 class="font-heading fw-bold h5 text-main mb-2">Operating Hours</h4>
+              <p class="text-muted small mb-3">Responsive communication loops</p>
+              <span class="text-accent fw-bold font-mono" id="hours-text">Mon - Fri: 9AM - 6PM UTC-8</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         06. INTERACTIVE CONTACT FORM SECTION
+         ============================================================================ -->
+    <section class="py-5" id="contact-form-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up" data-aos-duration="1000" id="form-card-col">
+            <div class="comment-form-container m-0 shadow-lg" id="contact-form-container">
+              <div class="text-center mb-5" id="form-header-wrap">
+                <span class="badge-reeni text-accent mb-2">PROJECT BRIEF CHANNEL</span>
+                <h3 class="comment-form-title font-display display-6 h2 mb-2">Initiate A Collaboration</h3>
+                <p class="comment-form-subtitle text-muted mb-0">Fill out this secure form with your parameters, and Reeni will review your file immediately.</p>
+              </div>
+
+              <!-- Main Submission Form -->
+              <form id="contact-form-target" class="needs-validation" novalidate>
+                <div class="row g-4">
+                  
+                  <!-- Field 1: Full Name -->
+                  <div class="col-md-6" id="field-name-col">
+                    <div class="form-group-floating" id="group-name">
+                      <input type="text" class="form-control-reeni" id="contact-name" placeholder="John Doe" required />
+                      <label for="contact-name">Your Full Name *</label>
+                      <div class="invalid-feedback text-danger mt-1 small"><i class="bi bi-exclamation-triangle-fill me-1"></i> Please provide your full name.</div>
+                    </div>
+                  </div>
+
+                  <!-- Field 2: Email Address -->
+                  <div class="col-md-6" id="field-email-col">
+                    <div class="form-group-floating" id="group-email">
+                      <input type="email" class="form-control-reeni" id="contact-email" placeholder="john@example.com" required />
+                      <label for="contact-email">Your Email Address *</label>
+                      <div class="invalid-feedback text-danger mt-1 small"><i class="bi bi-exclamation-triangle-fill me-1"></i> Please provide a valid email coordinates.</div>
+                    </div>
+                  </div>
+
+                  <!-- Field 3: Subject -->
+                  <div class="col-md-6" id="field-subject-col">
+                    <div class="form-group-floating" id="group-subject">
+                      <input type="text" class="form-control-reeni" id="contact-subject" placeholder="Inquiry" required />
+                      <label for="contact-subject">Inquiry Subject *</label>
+                      <div class="invalid-feedback text-danger mt-1 small"><i class="bi bi-exclamation-triangle-fill me-1"></i> Subject parameter is required.</div>
+                    </div>
+                  </div>
+
+                  <!-- Field 4: Telephone Line (Optional) -->
+                  <div class="col-md-6" id="field-phone-col">
+                    <div class="form-group-floating" id="group-phone">
+                      <input type="tel" class="form-control-reeni" id="contact-phone" placeholder="+123456789" />
+                      <label for="contact-phone">Contact Phone Number</label>
+                    </div>
+                  </div>
+
+                  <!-- Field 5: Service Selection (Interactive Chips) -->
+                  <div class="col-12" id="field-services-col">
+                    <div class="form-group-reeni" id="group-services">
+                      <label class="form-label-reeni mb-3">Service Focus Category *</label>
+                      <div class="service-chip-group p-3 rounded-3 border border-secondary border-opacity-10 bg-subtle-section" id="service-chips-container">
+                        <button type="button" class="service-chip-btn" data-value="UI/UX Interface Design">UI/UX Interface Design</button>
+                        <button type="button" class="service-chip-btn" data-value="Front-End Development">Front-End Development</button>
+                        <button type="button" class="service-chip-btn" data-value="SaaS Architecture">SaaS Architecture</button>
+                        <button type="button" class="service-chip-btn" data-value="ThemeForest HTML Templates">ThemeForest Compliance</button>
+                        <button type="button" class="service-chip-btn" data-value="Full-Stack Consulting">Full-Stack Consulting</button>
+                      </div>
+                      <input type="hidden" id="contact-service" name="service_selection" required />
+                      <div class="invalid-feedback text-danger mt-1 small" id="service-validation-feedback" style="display: none;">
+                        <i class="bi bi-exclamation-triangle-fill me-1"></i> Please select at least one service focus category.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Field 6: Budget Range (Elegant slider) -->
+                  <div class="col-12" id="field-budget-col">
+                    <div class="form-group-reeni" id="group-budget">
+                      <div class="d-flex justify-content-between align-items-center mb-3" id="budget-labels-wrap">
+                        <label class="form-label-reeni mb-0">Anticipated Budget Range *</label>
+                        <span class="badge bg-accent bg-opacity-10 text-accent font-mono border border-accent border-opacity-25 px-3 py-1 rounded" id="budget-value-display" style="font-size: 0.9rem;">$5,000 - $10,000 USD</span>
+                      </div>
+                      <div class="budget-range-wrap" id="budget-slider-container">
+                        <input type="range" class="budget-slider" id="budget-slider" min="1" max="6" step="1" value="3" aria-label="Project budget slider" />
+                        <div class="d-flex justify-content-between text-muted small font-mono mt-2" style="font-size: 0.75rem;" id="budget-ticks">
+                          <span>$1k - $3k</span>
+                          <span>$3k - $5k</span>
+                          <span>$5k - $10k</span>
+                          <span>$10k - $25k</span>
+                          <span>$25k - $50k</span>
+                          <span>$50k+</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Field 7: Project Brief Message -->
+                  <div class="col-12" id="field-message-col">
+                    <div class="form-group-floating" id="group-message">
+                      <textarea class="form-control-reeni" id="contact-message" placeholder="Message" rows="6" style="min-height: 140px;" required></textarea>
+                      <label for="contact-message">Detailed Project Brief *</label>
+                      <div class="invalid-feedback text-danger mt-1 small"><i class="bi bi-exclamation-triangle-fill me-1"></i> Please outline your product details.</div>
+                    </div>
+                  </div>
+
+                  <!-- Submit Trigger -->
+                  <div class="col-12 text-center mt-4" id="submit-btn-wrap">
+                    <div class="magnetic-wrap" id="magnetic-submit">
+                      <button type="submit" class="btn-reeni btn-reeni-primary btn-shine px-5 py-3 d-inline-flex align-items-center gap-2" id="form-submit-btn">
+                        <i class="bi bi-send-check-fill"></i> Secure Transmission
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         07. GEOLOCATION GOOGLE MAP PLACEHOLDER (HIGHLY POLISHED GREYSCALE EMBED)
+         ============================================================================ -->
+    <section class="py-5" id="geolocation-section">
+      <div class="container">
+        <div class="map-container-premium position-relative" data-aos="zoom-in" data-aos-duration="1000" id="map-wrap">
+          <!-- Grayscale Styled Iframe -->
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555030282!2d-122.5076401!3d37.757815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+            width="100%" 
+            height="480" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            id="styled-map-iframe">
+          </iframe>
+
+          <!-- Map Glass Overlay Card -->
+          <div class="map-overlay-card d-none d-md-block" id="map-overlay">
+            <span class="badge-reeni text-accent mb-2"><i class="bi bi-geo-alt-fill"></i> Reeni HQ Studio</span>
+            <h4 class="font-heading fw-bold text-main mb-1" style="font-size: 1.1rem;">San Francisco, CA</h4>
+            <p class="text-muted small mb-3">Operating out of the tech capital, serving global clients across digital channels.</p>
+            <div class="border-top border-secondary border-opacity-10 pt-2">
+              <span class="small text-accent font-mono d-block"><i class="bi bi-mailbox me-1"></i> core@reeni-design.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         08. PREMIUM SOCIAL LINKS (4 BRAND CARDS)
+         ============================================================================ -->
+    <section class="py-5" id="premium-social-section">
+      <div class="container">
+        <div class="row g-4 justify-content-center">
+          
+          <!-- Social Link 1: Dribbble -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100" id="social-dribbble-col">
+            <a href="portfolio.html" class="social-premium-card" id="social-dribbble">
+              <div class="social-premium-icon" id="social-dribbble-icon">
+                <i class="bi bi-dribbble"></i>
+              </div>
+              <div>
+                <h4 class="font-heading fw-bold text-main mb-0" style="font-size: 1rem;">Dribbble</h4>
+                <span class="text-muted font-mono" style="font-size: 0.75rem;">@reeni.creatives</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Social Link 2: GitHub -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200" id="social-github-col">
+            <a href="portfolio.html" class="social-premium-card" id="social-github">
+              <div class="social-premium-icon" id="social-github-icon">
+                <i class="bi bi-github"></i>
+              </div>
+              <div>
+                <h4 class="font-heading fw-bold text-main mb-0" style="font-size: 1rem;">GitHub</h4>
+                <span class="text-muted font-mono" style="font-size: 0.75rem;">github.com/reeni-core</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Social Link 3: LinkedIn -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300" id="social-linkedin-col">
+            <a href="contact.html" class="social-premium-card" id="social-linkedin">
+              <div class="social-premium-icon" id="social-linkedin-icon">
+                <i class="bi bi-linkedin"></i>
+              </div>
+              <div>
+                <h4 class="font-heading fw-bold text-main mb-0" style="font-size: 1rem;">LinkedIn</h4>
+                <span class="text-muted font-mono" style="font-size: 0.75rem;">linkedin.com/in/reeni</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Social Link 4: Behance -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400" id="social-behance-col">
+            <a href="portfolio.html" class="social-premium-card" id="social-behance">
+              <div class="social-premium-icon" id="social-behance-icon">
+                <i class="bi bi-behance"></i>
+              </div>
+              <div>
+                <h4 class="font-heading fw-bold text-main mb-0" style="font-size: 1rem;">Behance</h4>
+                <span class="text-muted font-mono" style="font-size: 0.75rem;">behance.net/reeni-architecture</span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         09. FAQ PREVIEW (4 HIGH-VALUE ACCORDIONS)
+         ============================================================================ -->
+    <section class="py-section container" id="faq-preview-section">
+      <div class="row align-items-center g-5">
+        <!-- Left Side: Section Intro -->
+        <div class="col-lg-5" data-aos="fade-right" id="faq-intro-col">
+          <span class="section-subtitle">FAQ RESOLUTION</span>
+          <h2 class="display-5 font-display fw-bold text-main mb-4" id="faq-title">Got Burning Questions?</h2>
+          <p class="text-muted mb-4" id="faq-desc">
+            Explore rapid responses regarding contract structures, tech stack integration parameters, production timelines, and IP ownership parameters.
+          </p>
+          <div class="magnetic-wrap" id="magnetic-faq-btn">
+            <a href="services.html#faq" class="btn-reeni btn-reeni-outline btn-shine" id="faq-view-all-btn">
+              <i class="bi bi-journal-question"></i> View Entire FAQ Suite
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side: 4 Common Accordions -->
+        <div class="col-lg-7" data-aos="fade-left" id="faq-accordion-col">
+          <div class="accordion accordion-reeni" id="accordionContactFaq">
+            
+            <!-- Question 1 -->
+            <div class="accordion-item" id="faq-item-1">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaq1" aria-expanded="false" aria-controls="collapseFaq1" id="faq-btn-1">
+                  How quickly can we initiate my project contract?
+                </button>
+              </h3>
+              <div id="collapseFaq1" class="accordion-collapse collapse" data-bs-parent="#accordionContactFaq">
+                <div class="accordion-body">
+                  Following form transmission, we will complete structural feasibility review within 12 hours. If terms align, on-boarding protocols can be completed and visual work initiated within 48-72 business hours.
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="accordion-item" id="faq-item-2">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaq2" aria-expanded="false" aria-controls="collapseFaq2" id="faq-btn-2">
+                  What is your default front-end engineering tech stack?
+                </button>
+              </h3>
+              <div id="collapseFaq2" class="accordion-collapse collapse" data-bs-parent="#accordionContactFaq">
+                <div class="accordion-body">
+                  We specialize in pure HTML5, CSS3 design tokens, and highly performance-optimized vanilla JavaScript. We also deliver highly polished assets within modern SPA architectures such as React and Vite when requested.
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="accordion-item" id="faq-item-3">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaq3" aria-expanded="false" aria-controls="collapseFaq3" id="faq-btn-3">
+                  Do you sign NDA and confidentiality covenants?
+                </button>
+              </h3>
+              <div id="collapseFaq3" class="accordion-collapse collapse" data-bs-parent="#accordionContactFaq">
+                <div class="accordion-body">
+                  Absolutely. Prior to exchanging confidential material or technical schematics, we can execute standard Mutual Non-Disclosure Agreements (NDAs) to guarantee full legal sandbox protection.
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="accordion-item" id="faq-item-4">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFaq4" aria-expanded="false" aria-controls="collapseFaq4" id="faq-btn-4">
+                  What are your typical project payment terms?
+                </button>
+              </h3>
+              <div id="collapseFaq4" class="accordion-collapse collapse" data-bs-parent="#accordionContactFaq">
+                <div class="accordion-body">
+                  Default billing terms comprise a standard 50% initiation deposit, with the remaining 50% settled upon final production validation and IP ownership release. Custom milestone structures are available for larger operations.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         10. CALL TO ACTION (CTA BANNER)
+         ============================================================================ -->
+    <section class="py-section container" id="contact-cta">
+      <div class="service-cta-banner text-center" data-aos="zoom-in" data-aos-duration="1000" id="cta-banner-wrap">
+        <div class="position-relative z-1 mx-auto" style="max-width: 720px;" id="cta-inner">
+          <div class="badge-reeni mx-auto mb-4 d-inline-flex align-items-center gap-2" id="cta-badge">
+            <span class="status-pulse bg-warning" style="width: 8px; height: 8px;"></span>
+            <span>Let's Secure Your Timelines</span>
+          </div>
+
+          <h2 class="display-5 font-display fw-bold text-main mb-3" id="cta-headline">
+            Let's Build Something Amazing Together
+          </h2>
+
+          <p class="lead-reeni mx-auto mb-5 text-muted" style="max-width: 600px;" id="cta-desc">
+            Secure exceptional code delivery, validated design system token mapping, and elite responsiveness. Download Reeni's commercial credentials or start an inquiry now.
+          </p>
+
+          <div class="d-flex flex-wrap align-items-center justify-content-center gap-3" id="cta-buttons">
+            <div class="magnetic-wrap" id="magnetic-hire">
+              <a href="#contact-form-section" class="btn-reeni btn-reeni-primary btn-shine" id="cta-hire-btn">
+                <i class="bi bi-chat-left-text-fill"></i> Hire Me Now
+              </a>
+            </div>
+            <div class="magnetic-wrap" id="magnetic-cv">
+              <a href="resume.html" class="btn-reeni btn-reeni-outline btn-shine" id="cta-cv-btn">
+                <i class="bi bi-file-earmark-arrow-down-fill"></i> Download Commercial CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer-reeni"><div class="container"><div class="footer-bottom mt-0 pt-0 border-0"><div><span>© 2026 Reeni ThemeCore Foundation. Built for ThemeForest.</span></div><div><span>Status: <strong class="text-accent">Contact Core Ready</strong></span></div></div></div></footer>
-  <button id="back-to-top"><svg class="progress-ring" width="52" height="52"><circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" /></svg><i class="bi bi-arrow-up position-relative z-1"></i></button>
+  <!-- ============================================================================
+       11. REUSE SHARED FOOTER ARCHITECTURE
+       ============================================================================ -->
+  <footer class="footer-reeni" id="app-footer">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Footer Brand Widget -->
+        <div class="col-lg-4" id="footer-widget-brand">
+          <a href="index.html" class="navbar-brand-reeni font-display d-block mb-3" id="footer-logo">REENI<span>.</span>CORE</a>
+          <p class="text-muted small mb-4" style="max-width: 320px;">
+            Commercial ThemeForest personal portfolio and agency HTML5 foundation. W3C valid markup, Bootstrap 5 responsive hierarchy, and custom vanilla JavaScript physics.
+          </p>
+          <div class="social-icons" id="footer-brand-socials">
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+            <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+          </div>
+        </div>
+
+        <!-- Footer Navigation Links 1 -->
+        <div class="col-6 col-md-3 col-lg-2" id="footer-widget-links-1">
+          <h4 class="footer-widget-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Foundation Home</a></li>
+            <li><a href="about.html">About Reeni</a></li>
+            <li><a href="services.html">Services & Specialties</a></li>
+            <li><a href="resume.html">Experience & CV</a></li>
+            <li><a href="portfolio.html">Featured Works</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Navigation Links 2 -->
+        <div class="col-6 col-md-3 col-lg-2" id="footer-widget-links-2">
+          <h4 class="footer-widget-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="blog.html">Editorial Journal</a></li>
+            <li><a href="contact.html">Help & Studio FAQ</a></li>
+            <li><a href="contact.html">Privacy Policy</a></li>
+            <li><a href="contact.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Newsletter Subscription -->
+        <div class="col-md-6 col-lg-4" id="footer-widget-newsletter">
+          <h4 class="footer-widget-title">Subscribe Studio</h4>
+          <p class="text-muted small mb-4">Receive monthly dispatches on modern CSS architecture, vanilla JS physics, and ThemeForest releases.</p>
+          <form class="search-box mb-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Reeni Core Dispatches!');" id="footer-newsletter-form">
+            <input type="email" class="form-control-reeni" placeholder="Enter your email..." aria-label="Email Address for Newsletter" required />
+            <button type="submit" class="search-btn" aria-label="Subscribe" id="footer-newsletter-btn"><i class="bi bi-arrow-right-short fs-3"></i></button>
+          </form>
+          <span class="small text-muted d-block" style="font-size: 0.75rem;">🔒 Zero spam guarantee. Unsubscribe at any time.</span>
+        </div>
+
+      </div>
+
+      <!-- Footer Copyright Bottom -->
+      <div class="footer-bottom" id="footer-copyright-row">
+        <div>
+          <span>© 2026 Reeni ThemeCore Foundation. Crafted for commercial ThemeForest distribution.</span>
+        </div>
+        <div class="d-flex align-items-center gap-4" id="footer-legal-links">
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Privacy Policy</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Terms of Service</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Support Studio</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================================
+       12. BACK TO TOP BUTTON (WITH CIRCULAR SCROLL PROGRESS RING)
+       ============================================================================ -->
+  <button id="back-to-top" aria-label="Back to Top of Page">
+    <svg class="progress-ring" width="52" height="52">
+      <circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" />
+    </svg>
+    <i class="bi bi-arrow-up position-relative z-1"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS (Popper Included) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Reeni Core Physics & Interactions JS -->
   <script src="assets/js/main.js"></script>
+  <!-- Reeni Contact Interactive Logic JS -->
+  <script src="assets/js/contact.js"></script>
 </body>
 </html>

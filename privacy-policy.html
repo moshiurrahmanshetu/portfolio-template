@@ -4,52 +4,518 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy | Reeni - Personal Portfolio HTML Template</title>
-  <meta name="description" content="Privacy Policy foundation page for Reeni ThemeForest portfolio template." />
+  <meta name="description" content="Privacy Policy and data security foundation page for Reeni ThemeForest portfolio template." />
+  <meta name="keywords" content="privacy policy, data security, portfolio html template, cv resume template, creative studio" />
+  <meta name="author" content="Reeni ThemeCore" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Privacy Policy | Reeni - Personal Portfolio HTML Template" />
+  <meta property="og:description" content="Privacy Policy and data security foundation page for Reeni ThemeForest portfolio template." />
+  <meta property="og:image" content="assets/images/og-preview.png" />
+  <meta property="og:url" content="https://reeni-studio.com/privacy-policy.html" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Privacy Policy | Reeni - Personal Portfolio HTML Template" />
+  <meta name="twitter:description" content="Privacy Policy and data security foundation page for Reeni ThemeForest portfolio template." />
+  <meta name="twitter:image" content="assets/images/og-preview.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://reeni-studio.com/privacy-policy.html" />
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  
+  <!-- CSS Stylesheets CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- AOS Scroll Animations CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  
+  <!-- Custom Core Design System CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body class="overflow-hidden">
-  <div id="cursor-dot"></div><div id="cursor-outline"></div><div id="reading-progress"></div>
-  <div id="preloader"><div class="preloader-content"><span class="preloader-logo font-display">REENI.LEGAL</span><div class="preloader-bar-wrap"><div class="preloader-bar"></div></div><div class="preloader-percentage">0%</div></div></div>
+<body>
 
+  <!-- Custom Cursor Physics Engine -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-outline"></div>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress"></div>
+
+  <!-- Cinematic Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <span class="preloader-logo font-display">REENI.PRIVACY</span>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar"></div>
+      </div>
+      <div class="preloader-percentage">0%</div>
+    </div>
+  </div>
+
+  <!-- Page Transition Layer -->
+  <div class="page-transition-layer"></div>
+
+  <!-- ============================================================================
+       01. STICKY TOP NAVIGATION BAR
+       ============================================================================ -->
   <header class="navbar-reeni sticky-top">
     <div class="container d-flex align-items-center justify-content-between">
-      <a href="index.html" class="navbar-brand-reeni font-display">REENI<span>.</span></a>
-      <nav class="d-none d-lg-flex align-items-center gap-1"><a href="index.html" class="nav-link-reeni">Foundation</a><a href="about.html" class="nav-link-reeni">About</a><a href="portfolio.html" class="nav-link-reeni">Portfolio</a><a href="contact.html" class="nav-link-reeni">Contact</a></nav>
-      <div class="d-flex align-items-center gap-3"><button class="theme-switch-btn" aria-label="Toggle Theme"><i class="bi bi-sun-fill icon-sun text-warning"></i><i class="bi bi-moon-stars-fill icon-moon text-primary"></i></button><button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni"><i class="bi bi-list fs-1 text-main"></i></button></div>
+      <a href="index.html" class="navbar-brand-reeni font-display">REENI<span>.</span>CORE</a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav class="d-none d-lg-flex align-items-center gap-1">
+        <a href="index.html" class="nav-link-reeni">Foundation</a>
+        <a href="about.html" class="nav-link-reeni">About</a>
+        <a href="services.html" class="nav-link-reeni">Services</a>
+        <a href="resume.html" class="nav-link-reeni">Resume</a>
+        <a href="portfolio.html" class="nav-link-reeni">Portfolio</a>
+        <a href="pricing.html" class="nav-link-reeni">Pricing</a>
+        <a href="blog.html" class="nav-link-reeni">Blog</a>
+        <a href="contact.html" class="nav-link-reeni">Contact</a>
+      </nav>
+
+      <!-- Action & Theme Switcher Controls -->
+      <div class="d-flex align-items-center gap-3">
+        <button class="theme-switch-btn" aria-label="Toggle Dark/Light Mode" title="Switch Theme">
+          <i class="bi bi-sun-fill icon-sun text-warning"></i>
+          <i class="bi bi-moon-stars-fill icon-moon text-primary"></i>
+        </button>
+        <a href="contact.html" class="btn-reeni btn-reeni-primary btn-reeni-sm btn-shine d-none d-md-inline-flex">
+          <i class="bi bi-send-fill"></i> Let's Talk
+        </a>
+        <button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni" aria-label="Toggle Mobile Menu">
+          <i class="bi bi-list fs-1 text-main"></i>
+        </button>
+      </div>
     </div>
   </header>
 
-  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni">
-    <div class="offcanvas-header d-flex align-items-center justify-content-between"><a href="index.html" class="navbar-brand-reeni font-display mb-0">REENI<span>.</span>CORE</a><button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button></div>
-    <div class="offcanvas-body d-flex flex-column justify-content-between"><ul class="mobile-nav-list mb-0"><li><a href="index.html" class="mobile-nav-link">Foundation</a></li><li><a href="privacy-policy.html" class="mobile-nav-link active">Privacy Policy</a></li></ul></div>
+  <!-- ============================================================================
+       02. OFFCANVAS MOBILE NAVIGATION
+       ============================================================================ -->
+  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni" aria-labelledby="offcanvasReeniLabel">
+    <div class="offcanvas-header d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-reeni font-display mb-0" id="offcanvasReeniLabel">REENI<span>.</span>CORE</a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close Mobile Menu"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <ul class="mobile-nav-list mb-0">
+        <li><a href="index.html" class="mobile-nav-link">Foundation Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Me</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services & Specialties</a></li>
+        <li><a href="resume.html" class="mobile-nav-link">Experience & CV</a></li>
+        <li><a href="portfolio.html" class="mobile-nav-link">Portfolio Case Studies</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Pricing Packages</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Editorial Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact Studio</a></li>
+      </ul>
+      <div class="mt-4 pt-4 border-top border-secondary border-opacity-25">
+        <span class="small text-muted text-uppercase fw-bold letter-spacing-1 d-block mb-3">Connect With Me</span>
+        <div class="social-icons">
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+          <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <main>
-    <section class="page-banner grid-lines-bg text-center">
-      <div class="container position-relative z-1 reveal-up">
-        <span class="section-subtitle mb-2">LEGAL COMPLIANCE FOUNDATION</span>
-        <h1 class="page-banner-title font-display">Privacy <span class="text-accent">Policy</span></h1>
-        <ul class="breadcrumb-reeni justify-content-center mt-3"><li><a href="index.html">Foundation</a></li><li class="separator">/</li><li class="active">Privacy</li></ul>
+    <!-- ============================================================================
+         03. SECTION 1: HERO BANNER & BREADCRUMBS
+         ============================================================================ -->
+    <section class="page-banner grid-lines-bg text-center position-relative overflow-hidden">
+      <!-- Ambient Parallax Glowing Orbs & Particles -->
+      <div class="ambient-bg">
+        <div class="blur-glow blur-glow-1"></div>
+        <div class="blur-glow blur-glow-2"></div>
+        <div class="floating-shape" style="top: 15%; left: 8%;"><i class="bi bi-shield-lock-fill fs-2 text-warning opacity-50"></i></div>
+        <div class="floating-shape" style="top: 25%; right: 10%;"><i class="bi bi-eye-fill fs-3 text-accent opacity-50"></i></div>
+        <div class="floating-shape" style="bottom: 15%; left: 12%;"><i class="bi bi-key-fill fs-3 text-muted opacity-30"></i></div>
+      </div>
+
+      <div class="container position-relative z-1 py-5">
+        <div class="reveal-up" data-aos="fade-up" data-aos-duration="1000">
+          <span class="section-subtitle mb-2">Legal Compliance Foundation</span>
+          <h1 class="page-banner-title font-display display-4 fw-extrabold mb-3">Privacy <span class="text-accent">Policy</span></h1>
+          
+          <ul class="breadcrumb-reeni justify-content-center">
+            <li><a href="index.html">Foundation</a></li>
+            <li class="separator">/</li>
+            <li><a href="privacy-policy.html">Legal</a></li>
+            <li class="separator">/</li>
+            <li class="active">Privacy Policy</li>
+          </ul>
+        </div>
       </div>
     </section>
-    <section class="py-section container">
-      <div class="card-reeni p-5 reveal-up mx-auto" style="max-width: 900px;">
-        <h2 class="h4 font-display mb-3">1. Information Collection Architecture</h2>
-        <p>This template is built strictly using static HTML5, CSS3, Bootstrap 5, and Vanilla JavaScript. We do not incorporate unauthorized tracking beacons or covert server telemetry.</p>
-        
-        <h2 class="h4 font-display mb-3 mt-4">2. LocalStorage Usage</h2>
-        <p>The Reeni ThemeCore engine saves your dark/light theme preference inside your web browser's LocalStorage (`reeni_theme`). No personal identifying data is transmitted externally.</p>
 
-        <div class="magnetic-wrap mt-4"><a href="index.html" class="btn-reeni btn-reeni-primary btn-shine"><i class="bi bi-arrow-left"></i> Return To Foundation</a></div>
+    <!-- ============================================================================
+         04. SECTION 2: LEGAL READING SUITE
+         ============================================================================ -->
+    <section class="pb-section position-relative z-1 overflow-hidden">
+      <div class="container">
+        <div class="row g-5">
+          
+          <!-- Sticky Table of Contents Sidebar Column -->
+          <div class="col-lg-4 d-none d-lg-block" data-aos="fade-right" data-aos-duration="1000">
+            <div class="toc-sidebar-container">
+              <div class="toc-card">
+                <h3 class="toc-title">
+                  <i class="bi bi-bookmark-fill text-accent"></i> Policy Directory
+                </h3>
+                <nav class="toc-list">
+                  <a href="#introduction" class="toc-link"><i class="bi bi-info-circle"></i> Introduction</a>
+                  <a href="#information-collect" class="toc-link"><i class="bi bi-database-add"></i> Information We Collect</a>
+                  <a href="#how-we-use" class="toc-link"><i class="bi bi-cpu"></i> How Information Is Used</a>
+                  <a href="#cookies-track" class="toc-link"><i class="bi bi-cookie"></i> Cookies & Trackers</a>
+                  <a href="#third-party-services" class="toc-link"><i class="bi bi-cloud-arrow-up"></i> Third-Party Services</a>
+                  <a href="#data-security" class="toc-link"><i class="bi bi-shield-check"></i> Data Security Measures</a>
+                  <a href="#user-rights" class="toc-link"><i class="bi bi-person-check"></i> Your Legal Rights</a>
+                  <a href="#children-privacy" class="toc-link"><i class="bi bi-emoji-smile"></i> Children's Privacy</a>
+                  <a href="#changes-policy" class="toc-link"><i class="bi bi-arrow-repeat"></i> Policy Amendments</a>
+                  <a href="#contact-info" class="toc-link"><i class="bi bi-envelope-open"></i> Contact Information</a>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <!-- Privacy Document Content Column -->
+          <div class="col-lg-8" data-aos="fade-up" data-aos-duration="1200">
+            
+            <!-- Last Updated Card -->
+            <div class="last-updated-card">
+              <div class="last-updated-info">
+                <div class="last-updated-icon-wrap">
+                  <i class="bi bi-clock-history"></i>
+                </div>
+                <div class="last-updated-details">
+                  <span class="version-tag">Document Version 1.0.4</span>
+                  <p class="date-text">Last Updated: July 2, 2026</p>
+                </div>
+              </div>
+              <div class="last-updated-doc-status">
+                <span class="status-dot-green"></span>
+                <span class="small font-mono text-muted text-uppercase letter-spacing-1">Active Compliant</span>
+              </div>
+            </div>
+
+            <!-- Main Legal Content Panel -->
+            <div class="legal-content-card">
+              
+              <!-- 1. Introduction -->
+              <section id="introduction" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-info-circle"></i> 1. Introduction & Overview
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    Welcome to the <strong>Reeni</strong> Personal Portfolio digital space. Your privacy is a paramount core component of our architectural commitment. This Privacy Policy details the structured procedures, administrative workflows, and compliance guardrails we enforce regarding any potential information processing when you interact with this ThemeForest agency template or subscribe to our newsletter console.
+                  </p>
+                  <p>
+                    By engaging with our portfolio, utilizing the inquiry interfaces, or registering for our launch beacons, you consent to the collection and programmatic utilization of data as outlined in this agreement. If you do not agree with these provisions, please refrain from submitting private parameters through our system consoles.
+                  </p>
+                </div>
+              </section>
+
+              <!-- 2. Information We Collect -->
+              <section id="information-collect" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-database-add"></i> 2. Information We Collect
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    We collect variables through two primary vectors: parameters you supply explicitly and structural metrics recorded by our hosting infrastructure automatically.
+                  </p>
+                  
+                  <div class="legal-callout">
+                    <div class="legal-callout-title">
+                      <i class="bi bi-exclamation-triangle-fill text-accent"></i> Static Template Notice
+                    </div>
+                    <p class="mb-0">
+                      As a valid, premium static HTML5 template, this file itself does not transmit covert background requests. All collection is handled client-side or explicitly routed through configured endpoints.
+                    </p>
+                  </div>
+
+                  <h4 class="h6 text-main font-heading fw-bold mt-4">A. Explicit Personal Data Provided by You:</h4>
+                  <ul class="legal-list">
+                    <li class="legal-list-item"><strong>Contact Information:</strong> Full names, secure email addresses, corporate telephone numbers, and individual project variables transmitted via the studio's inquiry forms.</li>
+                    <li class="legal-list-item"><strong>Subscription Parameters:</strong> Names and email coordinates supplied during the coming-soon launch countdown beacon registrations.</li>
+                  </ul>
+
+                  <h4 class="h6 text-main font-heading fw-bold mt-4">B. Automated Technical & Diagnostic Metadata:</h4>
+                  <ul class="legal-list">
+                    <li class="legal-list-item"><strong>Diagnostic Parameters:</strong> Client browser specifications, IP addresses, operating system environments, and referring routing coordinates.</li>
+                    <li class="legal-list-item"><strong>Local Configuration State:</strong> Your preferred visual interface theme (light or dark mode) and countdown values stored locally.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <!-- 3. How Information Is Used -->
+              <section id="how-we-use" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-cpu"></i> 3. How Information Is Used
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    We strictly process the collected variables for legitimate business operations, responsive system maintenance, and authorized communications:
+                  </p>
+                  <ul class="legal-list">
+                    <li class="legal-list-item"><strong>Form Processing:</strong> To compile, validate, and respond to your direct design inquiries or service requests.</li>
+                    <li class="legal-list-item"><strong>Launch Dispatching:</strong> To send beta testing alerts, countdown reminders, or new design systems launched for Reeni on ThemeForest.</li>
+                    <li class="legal-list-item"><strong>Performance Optimization:</strong> Analyzing server logs to guarantee rapid load times and resolve responsive layout rendering issues.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <!-- 4. Cookies & Trackers -->
+              <section id="cookies-track" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-cookie"></i> 4. Cookies & Trackers
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    Reeni respects a minimal cookie blueprint. We do not deploy intrusive cross-site tracking systems or commercial advertising trackers.
+                  </p>
+                  
+                  <div class="legal-accent-box">
+                    <h5>Cookie Classifications We Employ:</h5>
+                    <p class="small text-muted mb-0">
+                      We prioritize <strong>LocalStorage</strong> over tracking cookies. The key <code>reeni_theme</code> stores your visual interface mode, and <code>reeni_launch_time</code> stores your custom countdown target, completely local to your device.
+                    </p>
+                  </div>
+                  
+                  <p class="mt-3">
+                    You can restrict or delete local storage parameters and cookies directly through your browser's security panel. Doing so will reset your custom user configurations on our next preloader boot.
+                  </p>
+                </div>
+              </section>
+
+              <!-- 5. Third-Party Services -->
+              <section id="third-party-services" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-cloud-arrow-up"></i> 5. Third-Party Services & CDNs
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    For visual polish and high performance, Reeni loads essential assets via secure, globally distributed CDN networks. These external nodes may log diagnostic IP requests during file transmissions:
+                  </p>
+                  <ul class="legal-list">
+                    <li class="legal-list-item"><strong>Google Fonts API:</strong> Immersive typography rendering.</li>
+                    <li class="legal-list-item"><strong>Bootstrap CDN:</strong> Performance stylesheets and grid configurations.</li>
+                    <li class="legal-list-item"><strong>AOS Library CDN:</strong> Scroll-triggered anim layers.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <!-- 6. Data Security Measures -->
+              <section id="data-security" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-shield-check"></i> 6. Data Security Measures
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    We enforce strict security protocols to shield your personal data. All communication channels are protected via active Secure Socket Layer (SSL) or Transport Layer Security (TLS) encryption.
+                  </p>
+                  <p>
+                    However, please be advised that no transmission of data over the global internet or electronic storage infrastructure is guaranteed to be completely secure. We continuously optimize our firewalls, but encourage you to use caution when distributing credentials.
+                  </p>
+                </div>
+              </section>
+
+              <!-- 7. Your Legal Rights -->
+              <section id="user-rights" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-person-check"></i> 7. Your Legal Rights (GDPR & CCPA)
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    Depending on your physical operating jurisdiction, you possess the following protected legal rights regarding your private data:
+                  </p>
+                  <ul class="legal-list">
+                    <li class="legal-list-item"><strong>The Right of Access:</strong> To request a structured copy of any parameters we hold about your profile.</li>
+                    <li class="legal-list-item"><strong>The Right of Rectification:</strong> To correct incorrect or outdated contact variables.</li>
+                    <li class="legal-list-item"><strong>The Right of Erasure:</strong> To request the permanent deletion of your email from our beta newsletter launch maps.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <!-- 8. Children's Privacy -->
+              <section id="children-privacy" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-emoji-smile"></i> 8. Children's Privacy
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    Our digital portfolio, specialized design systems, and commercial ThemeForest offerings are not engineered for or directed at children under the age of 13. We do not knowingly compile or archive parameters from minors. If you believe a minor has supplied their email through our forms, please contact us immediately to purge the record.
+                  </p>
+                </div>
+              </section>
+
+              <!-- 9. Policy Amendments -->
+              <section id="changes-policy" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-arrow-repeat"></i> 9. Policy Amendments
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    We reserve the right to revise this Privacy Policy at our discretion to align with updated HTML5 guidelines, browser privacy policies, or ThemeForest licensing revisions. 
+                  </p>
+                  <p>
+                    When amendments are compiled, we will revise the <strong>Last Updated</strong> indicator displayed at the top of this document card. We advise periodic reviews of this container.
+                  </p>
+                </div>
+              </section>
+
+              <!-- 10. Contact Information -->
+              <section id="contact-info" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-envelope-open"></i> 10. Contact Information
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    If you have questions regarding this Privacy Policy, your rights under local jurisdictions, or wish to request data purging, please contact us:
+                  </p>
+                  <div class="legal-accent-box">
+                    <p class="mb-1"><strong>Studio Address:</strong> Reeni Creative Labs, Silicon District, NY 10001</p>
+                    <p class="mb-1"><strong>Secure Desk Email:</strong> support@reeni-studio.com</p>
+                    <p class="mb-0"><strong>Inquiry Hours:</strong> Monday – Friday, 09:00 – 17:00 EST</p>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         05. SECTION 3: INQUIRY CTA CARD
+         ============================================================================ -->
+    <section class="py-section position-relative overflow-hidden border-top border-secondary border-opacity-10 grid-lines-bg">
+      <div class="container position-relative z-1 text-center">
+        <div class="row justify-content-center">
+          <div class="col-lg-8" data-aos="zoom-in" data-aos-duration="1000">
+            <span class="badge-reeni mb-3"><i class="bi bi-patch-question-fill text-accent"></i> Have Privacy Inquiries?</span>
+            <h3 class="h2 font-heading fw-bold text-main mb-3">Encountered Policy Ambiguities?</h3>
+            <p class="text-muted mb-5 mx-auto" style="max-width: 580px;">
+              Our dedicated legal compliance desk is prepared to review and clarify any data processing questions you may have. Let's start a secure conversation.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <div class="magnetic-wrap">
+                <a href="contact.html" class="btn-reeni btn-reeni-primary btn-shine btn-reeni-lg">
+                  <i class="bi bi-envelope-fill"></i> Secure Contact Desk
+                </a>
+              </div>
+              <div class="magnetic-wrap">
+                <a href="terms-condition.html" class="btn-reeni btn-reeni-outline btn-shine btn-reeni-lg">
+                  <i class="bi bi-file-earmark-text-fill"></i> Review Terms
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer-reeni"><div class="container"><div class="footer-bottom mt-0 pt-0 border-0"><div><span>© 2026 Reeni ThemeCore Foundation. Built for ThemeForest.</span></div></div></div></footer>
-  <button id="back-to-top"><svg class="progress-ring" width="52" height="52"><circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" /></svg><i class="bi bi-arrow-up position-relative z-1"></i></button>
+  <!-- ============================================================================
+       06. REUSE SHARED FOOTER ARCHITECTURE
+       ============================================================================ -->
+  <footer class="footer-reeni">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Footer Brand Widget -->
+        <div class="col-lg-4">
+          <a href="index.html" class="navbar-brand-reeni font-display d-block mb-3">REENI<span>.</span>CORE</a>
+          <p class="text-muted small mb-4" style="max-width: 320px;">
+            Commercial ThemeForest personal portfolio and agency HTML5 foundation. W3C valid markup, Bootstrap 5 responsive hierarchy, and custom vanilla JavaScript physics.
+          </p>
+          <div class="social-icons">
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+            <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+          </div>
+        </div>
+
+        <!-- Footer Navigation Links 1 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Foundation Home</a></li>
+            <li><a href="about.html">About Reeni</a></li>
+            <li><a href="services.html">Services & Specialties</a></li>
+            <li><a href="resume.html">Experience & CV</a></li>
+            <li><a href="portfolio.html">Featured Works</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Navigation Links 2 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="blog.html">Editorial Journal</a></li>
+            <li><a href="faq.html">Help & FAQ</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-condition.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Newsletter Subscription -->
+        <div class="col-md-6 col-lg-4">
+          <h4 class="footer-widget-title">Subscribe Studio</h4>
+          <p class="text-muted small mb-4">Receive monthly dispatches on modern CSS architecture, vanilla JS physics, and ThemeForest releases.</p>
+          <form class="search-box mb-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Reeni Core Dispatches!');">
+            <input type="email" class="form-control-reeni" placeholder="Enter your email..." aria-label="Email Address for Newsletter" required />
+            <button type="submit" class="search-btn" aria-label="Subscribe"><i class="bi bi-arrow-right-short fs-3"></i></button>
+          </form>
+          <span class="small text-muted d-block" style="font-size: 0.75rem;">🔒 Zero spam guarantee. Unsubscribe at any time.</span>
+        </div>
+
+      </div>
+
+      <!-- Footer Copyright Bottom -->
+      <div class="footer-bottom">
+        <div>
+          <span>© 2026 Reeni ThemeCore Foundation. Crafted for commercial ThemeForest distribution.</span>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+          <a href="privacy-policy.html" class="text-muted text-decoration-none small hover-accent">Privacy Policy</a>
+          <a href="terms-condition.html" class="text-muted text-decoration-none small hover-accent">Terms of Service</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Support Studio</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================================
+       07. BACK TO TOP BUTTON (WITH CIRCULAR SCROLL PROGRESS RING)
+       ============================================================================ -->
+  <button id="back-to-top" aria-label="Back to Top of Page">
+    <svg class="progress-ring" width="52" height="52">
+      <circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" />
+    </svg>
+    <i class="bi bi-arrow-up position-relative z-1"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS (Popper Included) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Reeni Core Physics & Interactions JS -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>

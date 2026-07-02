@@ -3,51 +3,767 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Article Reading | Reeni - Personal Portfolio HTML Template</title>
-  <meta name="description" content="Blog details reading foundation page for Reeni ThemeForest portfolio template." />
+  <title>Decoupled Design Tokens Guide | Editorial Blog | Reeni Portfolio</title>
+  <meta name="description" content="Read Reeni's expert guidelines on managing design tokens, performance assertions, and CSS variables across scalable Bootstrap 5 architectures." />
+  <meta name="keywords" content="design tokens, bootstrap 5, css architecture, web performance, portfolio blog, front-end developer" />
+  <meta name="author" content="Reeni ThemeCore" />
+
+  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <!-- Reeni Design System CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body class="overflow-hidden">
-  <div id="cursor-dot"></div><div id="cursor-outline"></div><div id="reading-progress"></div>
-  <div id="preloader"><div class="preloader-content"><span class="preloader-logo font-display">REENI.POST</span><div class="preloader-bar-wrap"><div class="preloader-bar"></div></div><div class="preloader-percentage">0%</div></div></div>
 
+  <!-- Custom Cursor Physics Engine -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-outline"></div>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress"></div>
+
+  <!-- Cinematic Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <span class="preloader-logo font-display">REENI.JOURNAL</span>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar"></div>
+      </div>
+      <div class="preloader-percentage">0%</div>
+    </div>
+  </div>
+
+  <!-- Page Transition Layer -->
+  <div class="page-transition-layer"></div>
+
+  <!-- ============================================================================
+       01. STICKY TOP NAVIGATION BAR
+       ============================================================================ -->
   <header class="navbar-reeni sticky-top">
     <div class="container d-flex align-items-center justify-content-between">
-      <a href="index.html" class="navbar-brand-reeni font-display">REENI<span>.</span></a>
-      <nav class="d-none d-lg-flex align-items-center gap-1"><a href="index.html" class="nav-link-reeni">Foundation</a><a href="about.html" class="nav-link-reeni">About</a><a href="services.html" class="nav-link-reeni">Services</a><a href="portfolio.html" class="nav-link-reeni">Portfolio</a><a href="blog.html" class="nav-link-reeni active">Blog</a><a href="contact.html" class="nav-link-reeni">Contact</a></nav>
-      <div class="d-flex align-items-center gap-3"><button class="theme-switch-btn" aria-label="Toggle Theme"><i class="bi bi-sun-fill icon-sun text-warning"></i><i class="bi bi-moon-stars-fill icon-moon text-primary"></i></button><button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni"><i class="bi bi-list fs-1 text-main"></i></button></div>
+      <a href="index.html" class="navbar-brand-reeni font-display">REENI<span>.</span>CORE</a>
+      
+      <!-- Desktop Navigation Menu (Multi-Page Architecture) -->
+      <nav class="d-none d-lg-flex align-items-center gap-1">
+        <a href="index.html" class="nav-link-reeni">Foundation</a>
+        <a href="about.html" class="nav-link-reeni">About</a>
+        <a href="services.html" class="nav-link-reeni">Services</a>
+        <a href="resume.html" class="nav-link-reeni">Resume</a>
+        <a href="portfolio.html" class="nav-link-reeni">Portfolio</a>
+        <a href="pricing.html" class="nav-link-reeni">Pricing</a>
+        <a href="blog.html" class="nav-link-reeni active">Blog</a>
+        <a href="contact.html" class="nav-link-reeni">Contact</a>
+      </nav>
+
+      <!-- Action & Theme Switcher Controls -->
+      <div class="d-flex align-items-center gap-3">
+        <button class="theme-switch-btn" aria-label="Toggle Dark/Light Mode" title="Switch Theme">
+          <i class="bi bi-sun-fill icon-sun text-warning"></i>
+          <i class="bi bi-moon-stars-fill icon-moon text-primary"></i>
+        </button>
+        <a href="contact.html" class="btn-reeni btn-reeni-primary btn-reeni-sm btn-shine d-none d-md-inline-flex">
+          <i class="bi bi-send-fill"></i> Let's Talk
+        </a>
+        <button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni" aria-label="Toggle Mobile Menu">
+          <i class="bi bi-list fs-1 text-main"></i>
+        </button>
+      </div>
     </div>
   </header>
 
-  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni">
-    <div class="offcanvas-header d-flex align-items-center justify-content-between"><a href="index.html" class="navbar-brand-reeni font-display mb-0">REENI<span>.</span>CORE</a><button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button></div>
-    <div class="offcanvas-body d-flex flex-column justify-content-between"><ul class="mobile-nav-list mb-0"><li><a href="index.html" class="mobile-nav-link">Foundation</a></li><li><a href="blog.html" class="mobile-nav-link">Blog Page</a></li><li><a href="blog-details.html" class="mobile-nav-link active">Blog Details</a></li></ul></div>
+  <!-- ============================================================================
+       02. OFFCANVAS MOBILE NAVIGATION
+       ============================================================================ -->
+  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni" aria-labelledby="offcanvasReeniLabel">
+    <div class="offcanvas-header d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-reeni font-display mb-0" id="offcanvasReeniLabel">REENI<span>.</span>CORE</a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close Mobile Menu"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <ul class="mobile-nav-list mb-0">
+        <li><a href="index.html" class="mobile-nav-link">Foundation Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Me</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services & Specialties</a></li>
+        <li><a href="resume.html" class="mobile-nav-link">Experience & CV</a></li>
+        <li><a href="portfolio.html" class="mobile-nav-link">Portfolio Case Studies</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Pricing Packages</a></li>
+        <li><a href="blog.html" class="mobile-nav-link active">Editorial Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact Studio</a></li>
+      </ul>
+      <div class="mt-4 pt-4 border-top border-secondary border-opacity-25">
+        <span class="small text-muted text-uppercase fw-bold letter-spacing-1 d-block mb-3">Connect With Me</span>
+        <div class="social-icons">
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+          <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <main>
-    <section class="page-banner grid-lines-bg text-center">
-      <div class="container position-relative z-1 reveal-up">
-        <span class="section-subtitle mb-2">ARTICLE SPECIMEN FOUNDATION</span>
-        <h1 class="page-banner-title font-display">Designing For <span class="text-accent">2026</span></h1>
-        <ul class="breadcrumb-reeni justify-content-center mt-3"><li><a href="index.html">Foundation</a></li><li class="separator">/</li><li><a href="blog.html">Blog</a></li><li class="separator">/</li><li class="active">Article</li></ul>
+    <!-- ============================================================================
+         03. SECTION 1: HERO BANNER (ARTICLE IDENTITY)
+         ============================================================================ -->
+    <section class="page-banner pt-section pb-5 position-relative overflow-hidden grid-lines-bg text-center" id="blog-hero">
+      <div class="ambient-bg">
+        <div class="blur-glow blur-glow-1"></div>
+        <div class="blur-glow blur-glow-2"></div>
+      </div>
+
+      <div class="container position-relative z-1" data-aos="fade-up" data-aos-duration="1000">
+        <!-- Breadcrumb -->
+        <ul class="breadcrumb-reeni justify-content-center mb-4">
+          <li><a href="index.html">Foundation</a></li>
+          <li class="separator">/</li>
+          <li><a href="blog.html">Editorial Journal</a></li>
+          <li class="separator">/</li>
+          <li class="active">Design Tokens Guide</li>
+        </ul>
+
+        <!-- Category & Read Time Badge -->
+        <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
+          <span class="badge-reeni text-accent">Engineering & Design</span>
+          <span class="text-muted small">•</span>
+          <span class="text-muted small font-mono"><i class="bi bi-clock me-1"></i> 9 MIN READ</span>
+        </div>
+
+        <!-- Blog Title -->
+        <h1 class="display-5 fw-bold font-display tracking-tight text-main mb-4" style="max-width: 900px; margin-left: auto; margin-right: auto;">
+          Decoupled Architectural Design Tokens in Bootstrap 5 & Vanilla JS
+        </h1>
+
+        <!-- Author & Date Meta -->
+        <div class="d-flex align-items-center justify-content-center gap-3">
+          <div class="d-flex align-items-center gap-2">
+            <div class="rounded-circle overflow-hidden border border-secondary" style="width: 32px; height: 32px;">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Reeni ThemeCore Avatar" class="w-100 h-100 object-fit-cover" referrerPolicy="no-referrer" />
+            </div>
+            <span class="fw-bold text-main small">Reeni ThemeCore</span>
+          </div>
+          <span class="text-muted">•</span>
+          <span class="text-muted small font-mono"><i class="bi bi-calendar3 me-1"></i> March 15, 2026</span>
+        </div>
       </div>
     </section>
-    <section class="py-section container">
-      <div class="card-reeni p-5 text-center reveal-scale mx-auto" style="max-width: 800px;">
-        <div class="card-icon-wrap mx-auto"><i class="bi bi-feather"></i></div>
-        <span class="badge-reeni mx-auto mb-3"><i class="bi bi-check2-circle"></i> Design System Inherited</span>
-        <h2 class="h3 font-display mb-3">Blog Details Foundation Ready</h2>
-        <p class="lead-reeni mb-4">Complete foundation architecture supporting rich text typography, blockquote styling, author bio cards, comment forms, and social share buttons.</p>
-        <div class="magnetic-wrap mx-auto"><a href="blog.html" class="btn-reeni btn-reeni-primary btn-shine"><i class="bi bi-arrow-left"></i> Back To All Articles</a></div>
+
+    <!-- ============================================================================
+         04. MAIN GRID LAYOUT: ARTICLE CONTENT & STICKY SIDEBAR
+         ============================================================================ -->
+    <section class="pb-section container" id="blog-details-grid">
+      <div class="row g-5">
+        
+        <!-- Left Column: Article Core Layout -->
+        <div class="col-lg-8" data-aos="fade-right" data-aos-duration="1000">
+          
+          <!-- ============================================================================
+               05. SECTION 2: FEATURED IMAGE
+               ============================================================================ -->
+          <div class="position-relative overflow-hidden rounded-4 border border-secondary border-opacity-10 shadow-lg mb-5" style="max-height: 480px;">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80" alt="Decoupled Codebase Structure" class="w-100 h-100 object-fit-cover hover-scale" style="transition: transform var(--transition-slow); min-height: 320px;" referrerPolicy="no-referrer" />
+          </div>
+
+          <!-- ============================================================================
+               06. SECTION 3: RICH ARTICLE CONTENT
+               ============================================================================ -->
+          <article class="blog-details-content">
+            <p class="lead-reeni text-main mb-4" style="font-size: 1.25rem; line-height: 1.8;">
+              Modern front-end performance demands strict orchestration. By decoupling design tokens from structural stylesheets, developers can govern visual layouts globally without introducing heavy library layers. In this deep dive, we investigate how custom CSS variables map directly into Bootstrap 5 contexts and vanilla JavaScript engines seamlessly.
+            </p>
+
+            <p>
+              When architecting high-frequency web templates, styling rigidity stands as the primary bottleneck. Legacy approaches usually embed theme variations directly within compiled sass rules, bloating stylesheet sizes and resulting in unnecessary render-blocking delays. By separating variables into a dynamic token repository, we can alter typography styles, colors, and layout configurations at runtime with zero processing overhead.
+            </p>
+
+            <h2>Understanding Design Tokens as System Boundaries</h2>
+            <p>
+              Design tokens represent the absolute atomic units of a visual identity system. They are the names given to specific colors, sizing intervals, fonts, shadows, and animation parameters. When declared as standard CSS custom properties at the <code>:root</code> level of a document, they establish clean systemic boundaries that any independent component can access directly.
+            </p>
+
+            <!-- Bullet List (Premium Styled) -->
+            <p>Our decentralized architecture isolates design tokens into four discrete layers:</p>
+            <ul>
+              <li><strong>Global Context Tokens:</strong> Base constants such as raw color hex codes and absolute system font families.</li>
+              <li><strong>Component Level Tokens:</strong> Explicit assignments linking a global token to a specific visual layout (e.g., <code>--surface-card</code>).</li>
+              <li><strong>Interactivity Tokens:</strong> Rules governing hover transformations, transition speeds, and active scale thresholds.</li>
+              <li><strong>Animation Tokens:</strong> Bezier curve declarations and timing durations synchronized across layout transition triggers.</li>
+            </ul>
+
+            <!-- Info Box Component -->
+            <div class="blog-info-box">
+              <div class="blog-info-icon">
+                <i class="bi bi-info-circle-fill"></i>
+              </div>
+              <div class="blog-info-content">
+                <h5 class="fw-bold text-main mb-1" style="font-size: 1rem;">System Architectural Recommendation</h5>
+                <p class="mb-0">Always declare design tokens with human-readable prefixes to avoid variable collision. For instance, using <code>--reeni-accent</code> ensures your template is fully sandboxed against external CSS dependencies.</p>
+              </div>
+            </div>
+
+            <p>
+              Let’s examine how this integration operates in practice. Under standard scenarios, custom properties are mapped inside a unified theme stylesheet that adapts automatically depending on user configuration parameters or system-level preferences.
+            </p>
+
+            <h2>Mapping Custom CSS Variables to Bootstrap 5 Frameworks</h2>
+            <p>
+              Bootstrap 5 represents a monumental step forward for CSS system design because it drops jQuery and integrates native custom properties into its utility maps. This allows us to override standard utility utilities on the fly without having to rebuild entire SCSS files.
+            </p>
+
+            <h3>The CSS Integration Code</h3>
+            <p>The following syntax demonstrates how to bind structural tokens cleanly inside your document scope, supporting dynamic dark and light rendering modes:</p>
+
+            <!-- Code Block with Language & Copy Action -->
+            <div class="blog-code-block-wrap">
+              <div class="blog-code-header">
+                <span class="blog-code-lang">CSS</span>
+                <button type="button" class="blog-code-copy-btn">
+                  <i class="bi bi-clipboard2"></i>
+                  <span class="copy-text">Copy Code</span>
+                </button>
+              </div>
+              <pre class="blog-code-block"><code>@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --accent: #d4af37;
+  --accent-rgb: 212, 175, 55;
+  --border: rgba(255, 255, 255, 0.1);
+  --surface-card: #14151f;
+}
+
+html[data-theme="light"] {
+  --accent: #b48a1d;
+  --accent-rgb: 180, 138, 29;
+  --border: rgba(0, 0, 0, 0.08);
+  --surface-card: #ffffff;
+}</code></pre>
+            </div>
+
+            <p>
+              By declaring these properties, standard Bootstrap utility variables (e.g., background utility overrides) can use our custom properties transparently. This means a container styled with <code>.bg-subtle-section</code> dynamically resolves its correct colors instantly when the theme switcher alters the parent <code>data-theme</code> attribute.
+            </p>
+
+            <!-- Quote Block (Premium Styled) -->
+            <blockquote class="blog-details-blockquote">
+              <p>"Decoupled styling tokens don't just optimize rendering speed; they liberate the frontend developer from compiling assets repeatedly, turning styling systems into live API-like configurations."</p>
+              <cite>— Reeni Core Dev Team</cite>
+            </blockquote>
+
+            <h2>Runtime Interactivity and Physics Controllers</h2>
+            <p>
+              Static code structures are merely half of the equation. To craft a premium digital experience, design tokens must integrate with runtime javascript loops to orchestrate visual micro-interactions. For instance, updating mouse-tracking position variables on hover allows cards to render modern glowing orbs that trace user inputs fluidly.
+            </p>
+
+            <!-- Image Inside Content -->
+            <figure class="blog-content-figure">
+              <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" alt="UI Design Wireframe Layout" />
+              <figcaption class="blog-content-figcaption">Figure 1.2: Orchestrating layout tokens with precise design system wireframes to maximize rendering consistency.</figcaption>
+            </figure>
+
+            <p>
+              Let's explore how to achieve responsive hover interactions cleanly. On standard device screens, cursor tracking calculations are ignored automatically to prevent draining hardware batteries unnecessarily. On desktop displays, however, we capture interaction coordinates and write them directly into the document container, allowing the CSS layout engine to render soft glows in real-time.
+            </p>
+
+            <!-- Highlight Box (Gradient Premium Style) -->
+            <div class="blog-highlight-box">
+              <div class="blog-highlight-title">
+                <i class="bi bi-star-fill"></i>
+                <span>Premium Performance Check</span>
+              </div>
+              <p>
+                When reading and writing coordinates under high mouse frequencies, always bundle updates in <code>requestAnimationFrame</code> loops. Writing raw layouts directly inside active mouse scroll triggers or hover intervals leads to heavy layout thrashing and reduces frame rates drastically below 60fps.
+              </p>
+            </div>
+
+            <p>
+              In conclusion, decoupled design tokens turn your web layout into a highly composable design engine. It creates a robust structure, optimizes asset rendering, ensures light/dark compatibility, and scales beautifully across diverse responsive targets.
+            </p>
+          </article>
+
+          <!-- ============================================================================
+               07. SECTION 5: AUTHOR BOX
+               ============================================================================ -->
+          <div class="blog-author-box" data-aos="fade-up">
+            <div class="blog-author-avatar-wrap">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Author Reeni ThemeCore" referrerPolicy="no-referrer" />
+            </div>
+            <div class="blog-author-info">
+              <h4 class="blog-author-title">Reeni ThemeCore</h4>
+              <span class="blog-author-role">Senior UI Architect & Founder</span>
+              <p class="blog-author-bio">
+                Reeni is a specialist in crafting premium HTML5 templates, front-end design token frameworks, and high-performance vanilla JS interactive interfaces. Over the last decade, they have designed dozens of top-selling products for developers globally.
+              </p>
+              <div class="social-icons">
+                <a href="#" class="social-icon-btn" aria-label="Author Dribbble"><i class="bi bi-dribbble"></i></a>
+                <a href="#" class="social-icon-btn" aria-label="Author GitHub"><i class="bi bi-github"></i></a>
+                <a href="#" class="social-icon-btn" aria-label="Author LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="social-icon-btn" aria-label="Author Twitter"><i class="bi bi-twitter-x"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============================================================================
+               08. SECTION 6: POST NAVIGATION
+               ============================================================================ -->
+          <div class="post-navigation-container">
+            <div class="row g-4">
+              <!-- Previous Post Card -->
+              <div class="col-md-6" data-aos="fade-right">
+                <a href="blog.html" class="post-nav-card">
+                  <span class="post-nav-label">
+                    <i class="bi bi-arrow-left"></i> Previous Post
+                  </span>
+                  <h4 class="post-nav-title">Optimizing Web Performance in Decoupled Node.js Server Contexts</h4>
+                </a>
+              </div>
+              <!-- Next Post Card -->
+              <div class="col-md-6" data-aos="fade-left">
+                <a href="blog.html" class="post-nav-card text-md-end">
+                  <span class="post-nav-label justify-content-md-end">
+                    Next Post <i class="bi bi-arrow-right"></i>
+                  </span>
+                  <h4 class="post-nav-title">Advanced SVG Canvas Charting without Third-Party Dependencies</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============================================================================
+               09. SECTION 8: COMMENTS SECTION (NESTED COMMENTS)
+               ============================================================================ -->
+          <div class="comments-container" id="comments-section">
+            <div class="comments-title-wrap">
+              <h3 class="comments-count-title">03 Comments on This Article</h3>
+            </div>
+
+            <ul class="comment-list-premium">
+              <!-- Comment 1 -->
+              <li class="comment-item-premium" data-aos="fade-up">
+                <div class="comment-card-premium">
+                  <div class="comment-avatar-wrap">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Marcus Vance Avatar" referrerPolicy="no-referrer" />
+                  </div>
+                  <div class="comment-body-wrap">
+                    <div class="comment-header-meta">
+                      <span class="commenter-name">Marcus Vance</span>
+                      <span class="comment-date-meta">March 16, 2026 @ 09:14 AM</span>
+                    </div>
+                    <p class="comment-text">
+                      This article is a complete masterclass on design token decoupling! I implemented your requestAnimationFrame suggestion on my project's cursor halo, and layout latency issues disappeared instantly. Brilliant write-up.
+                    </p>
+                    <a href="#comment-form-target" class="comment-reply-btn" data-commenter="Marcus Vance">
+                      <i class="bi bi-reply-fill"></i> Reply
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Nested Comment Reply Tree -->
+                <ul class="comment-replies-list">
+                  <li class="comment-item-premium" data-aos="fade-up">
+                    <div class="comment-card-premium">
+                      <div class="comment-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Sophia Chen Avatar" referrerPolicy="no-referrer" />
+                      </div>
+                      <div class="comment-body-wrap">
+                        <div class="comment-header-meta">
+                          <span class="commenter-name">Sophia Chen</span>
+                          <span class="comment-date-meta">March 16, 2026 @ 10:45 AM</span>
+                        </div>
+                        <p class="comment-text">
+                          <span class="text-accent fw-bold">@Marcus Vance</span> Agree completely! I also discovered that bundling these tokens inside standard CSS variables helps with modular web components inside isolated shadow roots.
+                        </p>
+                        <a href="#comment-form-target" class="comment-reply-btn" data-commenter="Sophia Chen">
+                          <i class="bi bi-reply-fill"></i> Reply
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Comment 2 -->
+              <li class="comment-item-premium" data-aos="fade-up">
+                <div class="comment-card-premium">
+                  <div class="comment-avatar-wrap">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Derrick Sterling Avatar" referrerPolicy="no-referrer" />
+                  </div>
+                  <div class="comment-body-wrap">
+                    <div class="comment-header-meta">
+                      <span class="commenter-name">Derrick Sterling</span>
+                      <span class="comment-date-meta">March 17, 2026 @ 02:22 PM</span>
+                    </div>
+                    <p class="comment-text">
+                      How would you recommend managing design token overrides when third-party libraries (e.g., date pickers) inject inline styles? Is it better to enforce !important rules inside custom wrapper files, or alter their libraries directly?
+                    </p>
+                    <a href="#comment-form-target" class="comment-reply-btn" data-commenter="Derrick Sterling">
+                      <i class="bi bi-reply-fill"></i> Reply
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ============================================================================
+               10. SECTION 9: LEAVE A COMMENT FORM
+               ============================================================================ -->
+          <div class="comment-form-container" id="leave-comment" data-aos="fade-up">
+            <h3 class="comment-form-title">Leave a Comment</h3>
+            <p class="comment-form-subtitle">Your email address will not be published. Required fields are marked *</p>
+
+            <form id="comment-form-target" class="needs-validation" novalidate>
+              <div class="row g-4">
+                <!-- Name Field -->
+                <div class="col-md-6">
+                  <div class="form-group-reeni">
+                    <label for="comment-name" class="form-label-reeni">Full Name *</label>
+                    <input type="text" class="form-control-reeni py-3" id="comment-name" placeholder="John Doe" required />
+                    <div class="invalid-feedback text-danger mt-1 small">Please provide your name.</div>
+                  </div>
+                </div>
+                <!-- Email Field -->
+                <div class="col-md-6">
+                  <div class="form-group-reeni">
+                    <label for="comment-email" class="form-label-reeni">Email Address *</label>
+                    <input type="email" class="form-control-reeni py-3" id="comment-email" placeholder="john@example.com" required />
+                    <div class="invalid-feedback text-danger mt-1 small">Please provide a valid email address.</div>
+                  </div>
+                </div>
+                <!-- Website Field -->
+                <div class="col-12">
+                  <div class="form-group-reeni">
+                    <label for="comment-website" class="form-label-reeni">Website (Optional)</label>
+                    <input type="url" class="form-control-reeni py-3" id="comment-website" placeholder="https://mywebsite.com" />
+                    <div class="invalid-feedback text-danger mt-1 small">Please enter a valid URL.</div>
+                  </div>
+                </div>
+                <!-- Message Field -->
+                <div class="col-12">
+                  <div class="form-group-reeni">
+                    <label for="comment-message" class="form-label-reeni">Your Message *</label>
+                    <textarea class="form-control-reeni py-3" id="comment-message" rows="6" placeholder="Type your comment or reply here..." required></textarea>
+                    <div class="invalid-feedback text-danger mt-1 small">Please type your comment message.</div>
+                  </div>
+                </div>
+                <!-- Submit Action Button -->
+                <div class="col-12">
+                  <div class="magnetic-wrap">
+                    <button type="submit" class="btn-reeni btn-reeni-primary btn-shine px-5 py-3 d-inline-flex align-items-center gap-2">
+                      <i class="bi bi-chat-left-dots-fill"></i> Post Comment
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Sticky Sidebar -->
+        <div class="col-lg-4">
+          <!-- ============================================================================
+               11. SECTION 4: STICKY SIDEBAR
+               ============================================================================ -->
+          <aside class="sidebar-reeni position-sticky" style="top: 100px;">
+            
+            <!-- Widget 1: Search -->
+            <div class="sidebar-widget-premium mb-4" data-aos="fade-up">
+              <h4 class="sidebar-widget-title-premium">Search Articles</h4>
+              <form class="search-box" onsubmit="event.preventDefault(); alert('Search functionality simulated!');">
+                <input type="text" class="form-control-reeni" placeholder="Type keywords..." aria-label="Search articles" required />
+                <button type="submit" class="search-btn" aria-label="Search"><i class="bi bi-search fs-5"></i></button>
+              </form>
+            </div>
+
+            <!-- Widget 2: Share Buttons (Integrated top) -->
+            <div class="sidebar-widget-premium mb-4" data-aos="fade-up" data-aos-delay="100">
+              <h4 class="sidebar-widget-title-premium">Share This Article</h4>
+              <div class="share-buttons-list">
+                <a href="https://facebook.com" target="_blank" rel="noopener" class="share-btn-item" title="Share on Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener" class="share-btn-item" title="Share on X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="share-btn-item" title="Share on LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://reddit.com" target="_blank" rel="noopener" class="share-btn-item" title="Share on Reddit"><i class="bi bi-reddit"></i></a>
+                <a href="#" class="share-btn-item" title="Copy Link" onclick="event.preventDefault(); navigator.clipboard.writeText(window.location.href); alert('Article URL copied to clipboard!');"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+
+            <!-- Widget 3: Categories -->
+            <div class="sidebar-widget-premium mb-4" data-aos="fade-up" data-aos-delay="150">
+              <h4 class="sidebar-widget-title-premium">Categories</h4>
+              <ul class="sidebar-categories">
+                <li><a href="blog.html"><span>Engineering</span> <span class="badge-count">12</span></a></li>
+                <li><a href="blog.html"><span>CSS Architecture</span> <span class="badge-count">8</span></a></li>
+                <li><a href="blog.html"><span>UI/UX Interface Design</span> <span class="badge-count">14</span></a></li>
+                <li><a href="blog.html"><span>SaaS Consulting</span> <span class="badge-count">5</span></a></li>
+                <li><a href="blog.html"><span>Vanilla JavaScript</span> <span class="badge-count">9</span></a></li>
+              </ul>
+            </div>
+
+            <!-- Widget 4: Recent Posts -->
+            <div class="sidebar-widget-premium mb-4" data-aos="fade-up" data-aos-delay="200">
+              <h4 class="sidebar-widget-title-premium">Recent Posts</h4>
+              <div class="recent-posts-list">
+                <!-- Recent Post 1 -->
+                <a href="blog-details.html" class="recent-post-item">
+                  <div class="recent-post-thumb">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=120&q=80" alt="Recent post thumbnail" />
+                  </div>
+                  <div class="recent-post-info">
+                    <span class="recent-post-date"><i class="bi bi-calendar3 me-1"></i> March 12, 2026</span>
+                    <h5 class="recent-post-title">Refactoring Complex CSS Selectors for Speed</h5>
+                  </div>
+                </a>
+                <!-- Recent Post 2 -->
+                <a href="blog-details.html" class="recent-post-item">
+                  <div class="recent-post-thumb">
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=120&q=80" alt="Recent post thumbnail" />
+                  </div>
+                  <div class="recent-post-info">
+                    <span class="recent-post-date"><i class="bi bi-calendar3 me-1"></i> March 08, 2026</span>
+                    <h5 class="recent-post-title">Creating ThemeForest-Compliant HTML Templates</h5>
+                  </div>
+                </a>
+                <!-- Recent Post 3 -->
+                <a href="blog-details.html" class="recent-post-item">
+                  <div class="recent-post-thumb">
+                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=120&q=80" alt="Recent post thumbnail" />
+                  </div>
+                  <div class="recent-post-info">
+                    <span class="recent-post-date"><i class="bi bi-calendar3 me-1"></i> Feb 28, 2026</span>
+                    <h5 class="recent-post-title">Mapping Scalable SVG Icons without Performance Loss</h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Widget 5: Popular Tags -->
+            <div class="sidebar-widget-premium mb-4" data-aos="fade-up" data-aos-delay="250">
+              <h4 class="sidebar-widget-title-premium">Popular Tags</h4>
+              <div class="tags-cloud">
+                <a href="blog.html" class="tag-link">#tokens</a>
+                <a href="blog.html" class="tag-link">#bootstrap5</a>
+                <a href="blog.html" class="tag-link">#vanillajs</a>
+                <a href="blog.html" class="tag-link">#performance</a>
+                <a href="blog.html" class="tag-link">#css3</a>
+                <a href="blog.html" class="tag-link">#architecture</a>
+                <a href="blog.html" class="tag-link">#ui-ux</a>
+                <a href="blog.html" class="tag-link">#speed</a>
+              </div>
+            </div>
+
+            <!-- Widget 6: Sidebar Newsletter Card -->
+            <div class="sidebar-widget-premium sidebar-newsletter-card text-center" data-aos="fade-up" data-aos-delay="300" style="background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.08) 0%, rgba(0,0,0,0) 100%); border-color: rgba(var(--accent-rgb), 0.2) !important;">
+              <div class="mb-3 text-accent fs-1"><i class="bi bi-mailbox2"></i></div>
+              <h4 class="font-display fw-bold text-main" style="font-size: 1.2rem;">Subscribe to Journal</h4>
+              <p class="text-muted small mb-4">Receive expert front-end architecture digests directly in your inbox monthly.</p>
+              <form class="search-box flex-column gap-2" onsubmit="event.preventDefault(); alert('Subscribed to Reeni Core newsletter!');">
+                <input type="email" class="form-control-reeni w-100 py-3 mb-2" placeholder="john@example.com" aria-label="Newsletter email" required />
+                <button type="submit" class="btn-reeni btn-reeni-primary btn-shine w-100 py-3 d-flex align-items-center justify-content-center gap-2" style="font-size: 0.8rem; height: auto;">
+                  <i class="bi bi-envelope-check"></i> Subscribe
+                </button>
+              </form>
+            </div>
+
+          </aside>
+        </div>
+
       </div>
     </section>
+
+    <!-- ============================================================================
+         12. SECTION 7: RELATED ARTICLES (3 PREMIUM BLOG CARDS)
+         ============================================================================ -->
+    <section class="py-section bg-subtle-section border-top border-bottom border-secondary border-opacity-10" id="related-articles">
+      <div class="container text-center mb-5">
+        <span class="section-subtitle justify-content-center">DISCOVER MORE</span>
+        <h2 class="display-5 font-display fw-bold text-main mb-3">Related Journal Entries</h2>
+        <p class="text-muted mx-auto" style="max-width: 600px;">Explore additional technical articles centered around modern code performance, typography systems, and web standards.</p>
+      </div>
+
+      <div class="container">
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="blog-card-premium">
+              <div class="blog-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=600&q=80" alt="Code Refactoring Process" class="w-100 h-100 object-fit-cover" referrerPolicy="no-referrer" />
+                <span class="blog-card-category-badge">Engineering</span>
+              </div>
+              <div class="blog-card-body">
+                <span class="blog-card-date-meta"><i class="bi bi-calendar3 me-1"></i> March 12, 2026 • 7 MIN READ</span>
+                <h3 class="blog-card-title">Refactoring Complex CSS Selectors for Speed</h3>
+                <p class="blog-card-desc">Investigating selectors specificity, browser rendering loops, and how to write clean stylesheet overrides without triggering heavy paint events.</p>
+                <a href="blog-details.html" class="blog-card-link-btn">
+                  <span>Read Article</span> <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="blog-card-premium">
+              <div class="blog-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="ThemeForest standards" class="w-100 h-100 object-fit-cover" referrerPolicy="no-referrer" />
+                <span class="blog-card-category-badge">CSS Architecture</span>
+              </div>
+              <div class="blog-card-body">
+                <span class="blog-card-date-meta"><i class="bi bi-calendar3 me-1"></i> March 08, 2026 • 12 MIN READ</span>
+                <h3 class="blog-card-title">Creating ThemeForest-Compliant HTML Templates</h3>
+                <p class="blog-card-desc">An extensive checklists covering strict layout requirements, W3C asset compliance, responsive grids, and standard documentation conventions.</p>
+                <a href="blog-details.html" class="blog-card-link-btn">
+                  <span>Read Article</span> <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-lg-4 col-md-6 d-md-none d-lg-block" data-aos="fade-up" data-aos-delay="300">
+            <div class="blog-card-premium">
+              <div class="blog-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80" alt="SVG Map performance" class="w-100 h-100 object-fit-cover" referrerPolicy="no-referrer" />
+                <span class="blog-card-category-badge">UI/UX Design</span>
+              </div>
+              <div class="blog-card-body">
+                <span class="blog-card-date-meta"><i class="bi bi-calendar3 me-1"></i> Feb 28, 2026 • 8 MIN READ</span>
+                <h3 class="blog-card-title">Mapping Scalable SVG Icons without Performance Loss</h3>
+                <p class="blog-card-desc">Why heavy library structures like FontAwesome delay rendering paint operations, and how directly mapping custom inline SVG coordinates preserves browser frame rates.</p>
+                <a href="blog-details.html" class="blog-card-link-btn">
+                  <span>Read Article</span> <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         13. SECTION 10: NEWSLETTER CTA (ANIMATED GRADIENT BANNER)
+         ============================================================================ -->
+    <section class="py-section container" id="blog-cta">
+      <div class="service-cta-banner text-center" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="position-relative z-1 mx-auto" style="max-width: 720px;">
+          <div class="badge-reeni mx-auto mb-4 d-inline-flex align-items-center gap-2">
+            <span class="status-pulse"></span>
+            <span>Join 12,000+ Subscribers</span>
+          </div>
+
+          <h2 class="display-5 font-display fw-bold text-main mb-3">
+            Subscribe to the Reeni Journal
+          </h2>
+
+          <p class="lead-reeni mx-auto mb-5" style="max-width: 600px;">
+            Get monthly technical publications covering advanced vanilla JavaScript performance loops, CSS token variables, and responsive layout standards directly in your inbox.
+          </p>
+
+          <form class="search-box mx-auto mb-4" style="max-width: 500px;" onsubmit="event.preventDefault(); alert('Subscribed to the Reeni Journal newsletter!');">
+            <input type="email" class="form-control-reeni" placeholder="john@example.com" aria-label="Email Address for newsletter" required />
+            <button type="submit" class="search-btn btn-shine" aria-label="Subscribe" style="background-color: var(--accent); color: #000000; padding: 0 1.5rem; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm);"><i class="bi bi-send-fill fs-5"></i></button>
+          </form>
+          <span class="small text-muted d-block" style="font-size: 0.75rem;">🔒 Secure storage guaranteed. No advertisement emails or unsolicited distributions.</span>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer-reeni"><div class="container"><div class="footer-bottom mt-0 pt-0 border-0"><div><span>© 2026 Reeni ThemeCore Foundation. Built for ThemeForest.</span></div><div><span>Status: <strong class="text-accent">Blog Details Ready</strong></span></div></div></div></footer>
-  <button id="back-to-top"><svg class="progress-ring" width="52" height="52"><circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" /></svg><i class="bi bi-arrow-up position-relative z-1"></i></button>
+  <!-- ============================================================================
+       14. SECTION 11: REUSE SHARED FOOTER ARCHITECTURE
+       ============================================================================ -->
+  <footer class="footer-reeni">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Footer Brand Widget -->
+        <div class="col-lg-4">
+          <a href="index.html" class="navbar-brand-reeni font-display d-block mb-3">REENI<span>.</span>CORE</a>
+          <p class="text-muted small mb-4" style="max-width: 320px;">
+            Commercial ThemeForest personal portfolio and agency HTML5 foundation. W3C valid markup, Bootstrap 5 responsive hierarchy, and custom vanilla JavaScript physics.
+          </p>
+          <div class="social-icons">
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+            <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+          </div>
+        </div>
+
+        <!-- Footer Navigation Links 1 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Foundation Home</a></li>
+            <li><a href="about.html">About Reeni</a></li>
+            <li><a href="services.html">Services & Specialties</a></li>
+            <li><a href="resume.html">Experience & CV</a></li>
+            <li><a href="portfolio.html">Featured Works</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Navigation Links 2 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="blog.html">Editorial Journal</a></li>
+            <li><a href="contact.html">Help & Studio FAQ</a></li>
+            <li><a href="contact.html">Privacy Policy</a></li>
+            <li><a href="contact.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Newsletter Subscription -->
+        <div class="col-md-6 col-lg-4">
+          <h4 class="footer-widget-title">Subscribe Studio</h4>
+          <p class="text-muted small mb-4">Receive monthly dispatches on modern CSS architecture, vanilla JS physics, and ThemeForest releases.</p>
+          <form class="search-box mb-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Reeni Core Dispatches!');">
+            <input type="email" class="form-control-reeni" placeholder="Enter your email..." aria-label="Email Address for Newsletter" required />
+            <button type="submit" class="search-btn" aria-label="Subscribe"><i class="bi bi-arrow-right-short fs-3"></i></button>
+          </form>
+          <span class="small text-muted d-block" style="font-size: 0.75rem;">🔒 Zero spam guarantee. Unsubscribe at any time.</span>
+        </div>
+
+      </div>
+
+      <!-- Footer Copyright Bottom -->
+      <div class="footer-bottom">
+        <div>
+          <span>© 2026 Reeni ThemeCore Foundation. Crafted for commercial ThemeForest distribution.</span>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Privacy Policy</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Terms of Service</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Support Studio</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================================
+       15. BACK TO TOP BUTTON (WITH CIRCULAR SCROLL PROGRESS RING)
+       ============================================================================ -->
+  <button id="back-to-top" aria-label="Back to Top of Page">
+    <svg class="progress-ring" width="52" height="52">
+      <circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" />
+    </svg>
+    <i class="bi bi-arrow-up position-relative z-1"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS (Popper Included) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Reeni Core Physics & Interactions JS -->
   <script src="assets/js/main.js"></script>
+  <!-- Reeni Blog Details Interactive Logic JS -->
+  <script src="assets/js/blog-details.js"></script>
 </body>
 </html>

@@ -3,51 +3,605 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frequently Asked Questions | Reeni - Personal Portfolio HTML Template</title>
-  <meta name="description" content="FAQ foundation page for Reeni ThemeForest portfolio template." />
+  <title>Help & FAQ | Reeni Portfolio</title>
+  <meta name="description" content="Explore frequently asked questions about Reeni ThemeCore. Find quick details about custom web design contracts, front-end development, pricing plans, and support options." />
+  <meta name="keywords" content="frequently asked questions, portfolio help, template support, figma code cost, web developer faq" />
+  <meta name="author" content="Reeni ThemeCore" />
+
+  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <!-- Reeni Design System CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body class="overflow-hidden">
-  <div id="cursor-dot"></div><div id="cursor-outline"></div><div id="reading-progress"></div>
-  <div id="preloader"><div class="preloader-content"><span class="preloader-logo font-display">REENI.FAQ</span><div class="preloader-bar-wrap"><div class="preloader-bar"></div></div><div class="preloader-percentage">0%</div></div></div>
 
-  <header class="navbar-reeni sticky-top">
+  <!-- Custom Cursor Physics Engine -->
+  <div id="cursor-dot" class="d-none d-lg-block"></div>
+  <div id="cursor-outline" class="d-none d-lg-block"></div>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress"></div>
+
+  <!-- Cinematic Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <span class="preloader-logo font-display">REENI.STUDIO</span>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar"></div>
+      </div>
+      <div class="preloader-percentage">0%</div>
+    </div>
+  </div>
+
+  <!-- Page Transition Layer -->
+  <div class="page-transition-layer"></div>
+
+  <!-- ============================================================================
+       01. STICKY TOP NAVIGATION BAR
+       ============================================================================ -->
+  <header class="navbar-reeni sticky-top" id="main-header">
     <div class="container d-flex align-items-center justify-content-between">
-      <a href="index.html" class="navbar-brand-reeni font-display">REENI<span>.</span></a>
-      <nav class="d-none d-lg-flex align-items-center gap-1"><a href="index.html" class="nav-link-reeni">Foundation</a><a href="about.html" class="nav-link-reeni">About</a><a href="services.html" class="nav-link-reeni">Services</a><a href="portfolio.html" class="nav-link-reeni">Portfolio</a><a href="faq.html" class="nav-link-reeni active">FAQ</a><a href="contact.html" class="nav-link-reeni">Contact</a></nav>
-      <div class="d-flex align-items-center gap-3"><button class="theme-switch-btn" aria-label="Toggle Theme"><i class="bi bi-sun-fill icon-sun text-warning"></i><i class="bi bi-moon-stars-fill icon-moon text-primary"></i></button><button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni"><i class="bi bi-list fs-1 text-main"></i></button></div>
+      <a href="index.html" class="navbar-brand-reeni font-display" id="nav-logo">REENI<span>.</span>CORE</a>
+      
+      <!-- Desktop Navigation Menu (Multi-Page Architecture) -->
+      <nav class="d-none d-lg-flex align-items-center gap-1" id="desktop-nav">
+        <a href="index.html" class="nav-link-reeni">Foundation</a>
+        <a href="about.html" class="nav-link-reeni">About</a>
+        <a href="services.html" class="nav-link-reeni">Services</a>
+        <a href="resume.html" class="nav-link-reeni">Resume</a>
+        <a href="portfolio.html" class="nav-link-reeni">Portfolio</a>
+        <a href="pricing.html" class="nav-link-reeni">Pricing</a>
+        <a href="blog.html" class="nav-link-reeni">Blog</a>
+        <a href="contact.html" class="nav-link-reeni">Contact</a>
+      </nav>
+
+      <!-- Action & Theme Switcher Controls -->
+      <div class="d-flex align-items-center gap-3" id="header-actions">
+        <button class="theme-switch-btn" aria-label="Toggle Dark/Light Mode" title="Switch Theme" id="theme-toggler">
+          <i class="bi bi-sun-fill icon-sun text-warning"></i>
+          <i class="bi bi-moon-stars-fill icon-moon text-primary"></i>
+        </button>
+        <a href="contact.html" class="btn-reeni btn-reeni-primary btn-reeni-sm btn-shine d-none d-md-inline-flex" id="header-cta-btn">
+          <i class="bi bi-send-fill"></i> Let's Talk
+        </a>
+        <button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni" aria-label="Toggle Mobile Menu" id="mobile-menu-btn">
+          <i class="bi bi-list fs-1 text-main"></i>
+        </button>
+      </div>
     </div>
   </header>
 
-  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni">
-    <div class="offcanvas-header d-flex align-items-center justify-content-between"><a href="index.html" class="navbar-brand-reeni font-display mb-0">REENI<span>.</span>CORE</a><button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button></div>
-    <div class="offcanvas-body d-flex flex-column justify-content-between"><ul class="mobile-nav-list mb-0"><li><a href="index.html" class="mobile-nav-link">Foundation</a></li><li><a href="faq.html" class="mobile-nav-link active">FAQ Page</a></li><li><a href="contact.html" class="mobile-nav-link">Contact Page</a></li></ul></div>
+  <!-- ============================================================================
+       02. OFFCANVAS MOBILE NAVIGATION
+       ============================================================================ -->
+  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni" aria-labelledby="offcanvasReeniLabel">
+    <div class="offcanvas-header d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-reeni font-display mb-0" id="offcanvasReeniLabel">REENI<span>.</span>CORE</a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close Mobile Menu" id="offcanvas-close-btn"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between" id="offcanvas-body-content">
+      <ul class="mobile-nav-list mb-0" id="mobile-nav-menu">
+        <li><a href="index.html" class="mobile-nav-link">Foundation Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Me</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services & Specialties</a></li>
+        <li><a href="resume.html" class="mobile-nav-link">Experience & CV</a></li>
+        <li><a href="portfolio.html" class="mobile-nav-link">Portfolio Case Studies</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Pricing Packages</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Editorial Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact Studio</a></li>
+      </ul>
+      <div class="mt-4 pt-4 border-top border-secondary border-opacity-25" id="offcanvas-social-section">
+        <span class="small text-muted text-uppercase fw-bold letter-spacing-1 d-block mb-3">Connect With Me</span>
+        <div class="social-icons" id="offcanvas-social-icons">
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+          <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <main>
-    <section class="page-banner grid-lines-bg text-center">
-      <div class="container position-relative z-1 reveal-up">
-        <span class="section-subtitle mb-2">QUESTIONS & ANSWERS FOUNDATION</span>
-        <h1 class="page-banner-title font-display">Help & <span class="text-accent">FAQ</span></h1>
-        <ul class="breadcrumb-reeni justify-content-center mt-3"><li><a href="index.html">Foundation</a></li><li class="separator">/</li><li class="active">FAQ</li></ul>
+    <!-- ============================================================================
+         03. HERO BANNER
+         ============================================================================ -->
+    <section class="page-banner pt-section pb-5 position-relative overflow-hidden grid-lines-bg text-center" id="faq-hero">
+      <div class="ambient-bg" id="hero-ambient-lights">
+        <div class="blur-glow blur-glow-1"></div>
+        <div class="blur-glow blur-glow-2"></div>
+      </div>
+
+      <div class="container position-relative z-1" data-aos="fade-up" data-aos-duration="1000" id="hero-content-wrap">
+        <!-- Breadcrumb -->
+        <ul class="breadcrumb-reeni justify-content-center mb-4" id="hero-breadcrumb">
+          <li><a href="index.html">Foundation</a></li>
+          <li class="separator">/</li>
+          <li class="active">Help Center FAQ</li>
+        </ul>
+
+        <!-- Category Badge -->
+        <div class="d-flex align-items-center justify-content-center gap-2 mb-3" id="hero-status-badges">
+          <span class="badge-reeni text-accent"><i class="bi bi-patch-question-fill me-1"></i> Knowledge Base & QA Engine</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="display-4 fw-bold font-display tracking-tight text-main mb-4" style="max-width: 900px; margin-left: auto; margin-right: auto;" id="hero-main-title">
+          Frequently Asked Questions Hub
+        </h1>
+        <p class="lead text-muted mx-auto" style="max-width: 680px; font-size: 1.15rem;" id="hero-lead-text">
+          Explore comprehensive answers detailing our creative capabilities, commercial terms, production pipelines, code compliance, and support systems.
+        </p>
       </div>
     </section>
-    <section class="py-section container">
-      <div class="card-reeni p-5 text-center reveal-scale mx-auto" style="max-width: 800px;">
-        <div class="card-icon-wrap mx-auto"><i class="bi bi-question-diamond"></i></div>
-        <span class="badge-reeni mx-auto mb-3"><i class="bi bi-check2-circle"></i> Design System Inherited</span>
-        <h2 class="h3 font-display mb-3">FAQ Accordion Foundation Ready</h2>
-        <p class="lead-reeni mb-4">Architecture configured for Bootstrap 5 accordion structures, categorized question groups, and support search bars.</p>
-        <div class="magnetic-wrap mx-auto"><a href="contact.html" class="btn-reeni btn-reeni-primary btn-shine"><i class="bi bi-headset"></i> Ask A Direct Question</a></div>
+
+    <!-- ============================================================================
+         04. FAQ INTERACTIVE LIVE SEARCH BOX
+         ============================================================================ -->
+    <section class="py-4 bg-subtle-section border-top border-bottom border-secondary border-opacity-10" id="faq-search-section">
+      <div class="container">
+        <div class="faq-search-wrapper" data-aos="zoom-in" id="search-input-wrap">
+          <input type="text" class="faq-search-box" id="faq-search-input" placeholder="Type terms to search 20+ questions (e.g. wire, figma, support)..." aria-label="Search FAQs" />
+          <i class="bi bi-search faq-search-icon"></i>
+          <button type="button" class="faq-search-clear" id="faq-search-clear-btn" aria-label="Clear Search"><i class="bi bi-x-circle-fill"></i></button>
+        </div>
       </div>
     </section>
+
+    <!-- ============================================================================
+         05. FAQ CATEGORIES & DETAILED ACCORDION (20 QUESTIONS)
+         ============================================================================ -->
+    <section class="py-section" id="faq-interactive-grid">
+      <div class="container">
+        
+        <!-- Category Filter Chips -->
+        <div class="faq-filter-group" data-aos="fade-up" id="faq-chips-container">
+          <button type="button" class="faq-filter-btn active" data-filter="all">All Questions</button>
+          <button type="button" class="faq-filter-btn" data-filter="general">General</button>
+          <button type="button" class="faq-filter-btn" data-filter="services">Services</button>
+          <button type="button" class="faq-filter-btn" data-filter="pricing">Pricing</button>
+          <button type="button" class="faq-filter-btn" data-filter="support">Support</button>
+          <button type="button" class="faq-filter-btn" data-filter="development">Development</button>
+        </div>
+
+        <div class="row justify-content-center" id="faq-accordions-row">
+          <div class="col-lg-9" data-aos="fade-up" data-aos-duration="1000" id="faq-accordion-col">
+            
+            <div class="accordion accordion-reeni" id="mainFaqSuite">
+              
+              <!-- ================= GENERAL CATEGORY ================= -->
+              
+              <!-- Q1 -->
+              <div class="accordion-item accordion-item-faq" data-category="general" id="faq-g-1">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseG1" aria-expanded="false" aria-controls="collapseG1" id="faq-btn-g1">
+                    What is Reeni ThemeCore Foundation exactly?
+                  </button>
+                </h3>
+                <div id="collapseG1" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    Reeni ThemeCore is a highly optimized, responsive personal portfolio and creative agency HTML5 template structure built strictly on Bootstrap 5 and performance-driven vanilla JavaScript. It is designed to be highly extensible for developers and ready for ThemeForest commercial listings.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q2 -->
+              <div class="accordion-item accordion-item-faq" data-category="general" id="faq-g-2">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseG2" aria-expanded="false" aria-controls="collapseG2" id="faq-btn-g2">
+                    Can I use this template for commercial client operations?
+                  </button>
+                </h3>
+                <div id="collapseG2" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    Absolutely. The commercial license released with this framework allows full utilization across personal platforms, startup websites, creative portfolio agencies, and direct client delivery systems without attribution limits.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q3 -->
+              <div class="accordion-item accordion-item-faq" data-category="general" id="faq-g-3">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseG3" aria-expanded="false" aria-controls="collapseG3" id="faq-btn-g3">
+                    Is there a Figma file available with the markup files?
+                  </button>
+                </h3>
+                <div id="collapseG3" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    Yes. All core layout models, color matrices, typographic variables, and responsive grid layouts are fully aligned with our centralized Figma Design Tokens kit which is included in the package download.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q4 -->
+              <div class="accordion-item accordion-item-faq" data-category="general" id="faq-g-4">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseG4" aria-expanded="false" aria-controls="collapseG4" id="faq-btn-g4">
+                    Do you support multi-page template routing systems?
+                  </button>
+                </h3>
+                <div id="collapseG4" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    Yes, this project uses a standard multi-page, client-side, zero-dependency HTML architecture. All pages are physically decoupled (index.html, services.html, portfolio.html, pricing.html, faq.html) to optimize SEO crawl scores and rendering pipelines.
+                  </div>
+                </div>
+              </div>
+
+              <!-- ================= SERVICES CATEGORY ================= -->
+
+              <!-- Q5 -->
+              <div class="accordion-item accordion-item-faq" data-category="services" id="faq-s-1">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseS1" aria-expanded="false" aria-controls="collapseS1" id="faq-btn-s1">
+                    What type of customized service contracts are supported?
+                  </button>
+                </h3>
+                <div id="collapseS1" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    We specialize in three primary contract vectors: high-fidelity UI/UX interactive prototyping in Figma, pixel-perfect clean-code Bootstrap 5 front-end conversions, and custom vanilla JavaScript physics engine development.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q6 -->
+              <div class="accordion-item accordion-item-faq" data-category="services" id="faq-s-2">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseS2" aria-expanded="false" aria-controls="collapseS2" id="faq-btn-s2">
+                    How are design system tokens mapped into the code?
+                  </button>
+                </h3>
+                <div id="collapseS2" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    We establish CSS custom properties (`--accent`, `--surface-card`, `--radius-lg`) directly inside a unified variables block within the stylesheet. This enables global aesthetic modifications within minutes.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q7 -->
+              <div class="accordion-item accordion-item-faq" data-category="services" id="faq-s-3">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseS3" aria-expanded="false" aria-controls="collapseS3" id="faq-btn-s3">
+                    Do you offer legacy code migration services?
+                  </button>
+                </h3>
+                <div id="collapseS3" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    Yes. We can safely wrap existing web architectures or refactor legacy styles into our clean, lightweight Bootstrap 5 grids, converting inline styles to performance-optimized utility classes.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q8 -->
+              <div class="accordion-item accordion-item-faq" data-category="services" id="faq-s-4">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseS4" aria-expanded="false" aria-controls="collapseS4" id="faq-btn-s4">
+                    How do we initiate a project contract for custom work?
+                  </button>
+                </h3>
+                <div id="collapseS4" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    Simply navigate to our Contact page, input your parameters via our Interactive Project Brief Form, specify your budget bracket, and our review system will initiate contract negotiations within 12 hours.
+                  </div>
+                </div>
+              </div>
+
+              <!-- ================= PRICING CATEGORY ================= -->
+
+              <!-- Q9 -->
+              <div class="accordion-item accordion-item-faq" data-category="pricing" id="faq-p-1">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseP1" aria-expanded="false" aria-controls="collapseP1" id="faq-btn-p1">
+                    What is included in the Professional contract plan?
+                  </button>
+                </h3>
+                <div id="collapseP1" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    Our signature Professional Tier includes up to 15 fully responsive custom HTML pages, a complete interactive UX prototype matching the final code, ThemeForest-compliant structure checkouts, and a 90-day SLA support window.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q10 -->
+              <div class="accordion-item accordion-item-faq" data-category="pricing" id="faq-p-2">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseP2" aria-expanded="false" aria-controls="collapseP2" id="faq-btn-p2">
+                    Are annual rates billed monthly or in a single payment?
+                  </button>
+                </h3>
+                <div id="collapseP2" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    Annual rates are billed as a single upfront retainer payment, which yields a flat 20% discount across the 12-month development and support cycle.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q11 -->
+              <div class="accordion-item accordion-item-faq" data-category="pricing" id="faq-p-3">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseP3" aria-expanded="false" aria-controls="collapseP3" id="faq-btn-p3">
+                    Can I pay using corporate wire transfers?
+                  </button>
+                </h3>
+                <div id="collapseP3" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    Yes. We support international wire transfers (including SWIFT and SEPA networks), direct electronic credit card sweeps, secure Stripe billing links, and secure digital assets (BTC, ETH, USDC).
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q12 -->
+              <div class="accordion-item accordion-item-faq" data-category="pricing" id="faq-p-4">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseP4" aria-expanded="false" aria-controls="collapseP4" id="faq-btn-p4">
+                    Do you offer refund covenants if a project is canceled?
+                  </button>
+                </h3>
+                <div id="collapseP4" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    Retainer deposits are tied directly to active production milestones. Work that has been delivered, reviewed, and validated in active staging environments is non-refundable, while incomplete future milestones are returned immediately.
+                  </div>
+                </div>
+              </div>
+
+              <!-- ================= SUPPORT CATEGORY ================= -->
+
+              <!-- Q13 -->
+              <div class="accordion-item accordion-item-faq" data-category="support" id="faq-sup-1">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSup1" aria-expanded="false" aria-controls="collapseSup1" id="faq-btn-sup1">
+                    What is the average response SLA under the VIP contract?
+                  </button>
+                </h3>
+                <div id="collapseSup1" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    Clients on the Enterprise Tier receive 24/7 priority support with guaranteed SLA email responses within 4 hours, alongside direct messaging access on our secure Discord workspace channels.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q14 -->
+              <div class="accordion-item accordion-item-faq" data-category="support" id="faq-sup-2">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSup2" aria-expanded="false" aria-controls="collapseSup2" id="faq-btn-sup2">
+                    Does standard support include design asset additions?
+                  </button>
+                </h3>
+                <div id="collapseSup2" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    Standard 30-day support covers code debugging, responsive alignments, and general troubleshooting of existing layouts. Adding new page concepts or expanding components requires custom milestone scope adjustments.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q15 -->
+              <div class="accordion-item accordion-item-faq" data-category="support" id="faq-sup-3">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSup3" aria-expanded="false" aria-controls="collapseSup3" id="faq-btn-sup3">
+                    How do I submit a code bug report?
+                  </button>
+                </h3>
+                <div id="collapseSup3" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    You can submit bug reports directly through the support interface or email support@reeni-design.com. Please include screen captures, browser console logs, and step-by-step reproduction instructions.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q16 -->
+              <div class="accordion-item accordion-item-faq" data-category="support" id="faq-sup-4">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSup4" aria-expanded="false" aria-controls="collapseSup4" id="faq-btn-sup4">
+                    Are template updates provided free of charge?
+                  </button>
+                </h3>
+                <div id="collapseSup4" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    Yes. All commercial template upgrades, including minor Bootstrap version updates, style stabilization patches, and feature additions, are delivered free to licensed owners indefinitely.
+                  </div>
+                </div>
+              </div>
+
+              <!-- ================= DEVELOPMENT CATEGORY ================= -->
+
+              <!-- Q17 -->
+              <div class="accordion-item accordion-item-faq" data-category="development" id="faq-d-1">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseD1" aria-expanded="false" aria-controls="collapseD1" id="faq-btn-d1">
+                    Is the template compatible with frameworks like React or Vue?
+                  </button>
+                </h3>
+                <div id="collapseD1" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    Yes. Because our structure is modular and written in valid, standard HTML5/CSS3/ES6+, you can easily migrate the HTML sections and Tailwind-free CSS variables into JSX/TSX component files.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q18 -->
+              <div class="accordion-item accordion-item-faq" data-category="development" id="faq-d-2">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseD2" aria-expanded="false" aria-controls="collapseD2" id="faq-btn-d2">
+                    Why do you avoid using jQuery or GSAP libraries?
+                  </button>
+                </h3>
+                <div id="collapseD2" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    To maximize performance scores (aiming for 100/100 on Google PageSpeed Insights), we use only native vanilla JS Web APIs and CSS transition engines, reducing layout reflow overhead and package size.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q19 -->
+              <div class="accordion-item accordion-item-faq" data-category="development" id="faq-d-3">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseD3" aria-expanded="false" aria-controls="collapseD3" id="faq-btn-d3">
+                    How does the custom preloader and page transitions work?
+                  </button>
+                </h3>
+                <div id="collapseD3" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    The preloader tracks document loading states asynchronously. Once completed, a high-performance CSS clip-path animation is fired to slide away the preloader and reveal the page layout, preventing FOUC (Flash of Unstyled Content).
+                  </div>
+                </div>
+              </div>
+
+              <!-- Q20 -->
+              <div class="accordion-item accordion-item-faq" data-category="development" id="faq-d-4">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseD4" aria-expanded="false" aria-controls="collapseD4" id="faq-btn-d4">
+                    Is the CSS compliant with ThemeForest validation requirements?
+                  </button>
+                </h3>
+                <div id="collapseD4" class="accordion-collapse collapse" data-bs-parent="#mainFaqSuite">
+                  <div class="accordion-body">
+                    Yes. The stylesheet uses standard modular architecture, respects theme-agnostic naming constraints, operates entirely without inline styles, and compiles flawlessly under automated lint checks.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Dynamic Search No Results State -->
+            <div id="faq-no-results" class="text-center py-5 border border-secondary border-opacity-10 rounded-3 bg-subtle" style="display: none;">
+              <div class="fs-1 text-muted mb-3"><i class="bi bi-search-heart"></i></div>
+              <h4 class="font-display fw-bold text-main h5">No Matching Parameters Found</h4>
+              <p class="text-muted small mb-0">Adjust your search criteria or clear the filter to view all 20+ questions.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         06. CONTACT SUPPORT WIDGET CARD
+         ============================================================================ -->
+    <section class="py-5" id="faq-support-card-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9" data-aos="zoom-in" data-aos-duration="1000" id="support-widget-col">
+            <div class="support-premium-card text-center" id="support-widget-card">
+              <span class="badge-reeni text-accent mb-3 mx-auto"><i class="bi bi-headset"></i> STACK OVERFLOW ESCAPE LOOP</span>
+              
+              <h3 class="display-6 font-display fw-bold text-main mb-3">Still Searching For System Alignment?</h3>
+              <p class="text-muted mx-auto mb-5" style="max-width: 600px;">
+                If your specific project configuration, API schema, or custom feature requirement remains unresolved, connect with Reeni ThemeCore directly.
+              </p>
+
+              <div class="d-flex flex-wrap align-items-center justify-content-center gap-3" id="support-buttons">
+                <div class="magnetic-wrap" id="magnetic-contact">
+                  <a href="contact.html" class="btn-reeni btn-reeni-primary btn-shine px-4 py-3" id="support-contact-btn">
+                    <i class="bi bi-chat-dots-fill"></i> Contact Me Directly
+                  </a>
+                </div>
+                <div class="magnetic-wrap" id="magnetic-hire">
+                  <a href="contact.html#contact-form-section" class="btn-reeni btn-reeni-outline btn-shine px-4 py-3" id="support-hire-btn">
+                    <i class="bi bi-patch-check-fill"></i> Hire Reeni
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer-reeni"><div class="container"><div class="footer-bottom mt-0 pt-0 border-0"><div><span>© 2026 Reeni ThemeCore Foundation. Built for ThemeForest.</span></div><div><span>Status: <strong class="text-accent">FAQ Core Ready</strong></span></div></div></div></footer>
-  <button id="back-to-top"><svg class="progress-ring" width="52" height="52"><circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" /></svg><i class="bi bi-arrow-up position-relative z-1"></i></button>
+  <!-- ============================================================================
+       07. REUSE SHARED FOOTER ARCHITECTURE
+       ============================================================================ -->
+  <footer class="footer-reeni" id="app-footer">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Footer Brand Widget -->
+        <div class="col-lg-4" id="footer-widget-brand">
+          <a href="index.html" class="navbar-brand-reeni font-display d-block mb-3" id="footer-logo">REENI<span>.</span>CORE</a>
+          <p class="text-muted small mb-4" style="max-width: 320px;">
+            Commercial ThemeForest personal portfolio and agency HTML5 foundation. W3C valid markup, Bootstrap 5 responsive hierarchy, and custom vanilla JavaScript physics.
+          </p>
+          <div class="social-icons" id="footer-brand-socials">
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+            <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+          </div>
+        </div>
+
+        <!-- Footer Navigation Links 1 -->
+        <div class="col-6 col-md-3 col-lg-2" id="footer-widget-links-1">
+          <h4 class="footer-widget-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Foundation Home</a></li>
+            <li><a href="about.html">About Reeni</a></li>
+            <li><a href="services.html">Services & Specialties</a></li>
+            <li><a href="resume.html">Experience & CV</a></li>
+            <li><a href="portfolio.html">Featured Works</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Navigation Links 2 -->
+        <div class="col-6 col-md-3 col-lg-2" id="footer-widget-links-2">
+          <h4 class="footer-widget-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="faq.html">Editorial Journal</a></li>
+            <li><a href="contact.html">Help & Studio FAQ</a></li>
+            <li><a href="contact.html">Privacy Policy</a></li>
+            <li><a href="contact.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Newsletter Subscription -->
+        <div class="col-md-6 col-lg-4" id="footer-widget-newsletter">
+          <h4 class="footer-widget-title">Subscribe Studio</h4>
+          <p class="text-muted small mb-4">Receive monthly dispatches on modern CSS architecture, vanilla JS physics, and ThemeForest releases.</p>
+          <form class="search-box mb-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Reeni Core Dispatches!');" id="footer-newsletter-form">
+            <input type="email" class="form-control-reeni" placeholder="Enter your email..." aria-label="Email Address for Newsletter" required />
+            <button type="submit" class="search-btn" aria-label="Subscribe" id="footer-newsletter-btn"><i class="bi bi-arrow-right-short fs-3"></i></button>
+          </form>
+          <span class="small text-muted d-block" style="font-size: 0.75rem;">🔒 Zero spam guarantee. Unsubscribe at any time.</span>
+        </div>
+
+      </div>
+
+      <!-- Footer Copyright Bottom -->
+      <div class="footer-bottom" id="footer-copyright-row">
+        <div>
+          <span>© 2026 Reeni ThemeCore Foundation. Crafted for commercial ThemeForest distribution.</span>
+        </div>
+        <div class="d-flex align-items-center gap-4" id="footer-legal-links">
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Privacy Policy</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Terms of Service</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Support Studio</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================================
+       08. BACK TO TOP BUTTON (WITH CIRCULAR SCROLL PROGRESS RING)
+       ============================================================================ -->
+  <button id="back-to-top" aria-label="Back to Top of Page">
+    <svg class="progress-ring" width="52" height="52">
+      <circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" />
+    </svg>
+    <i class="bi bi-arrow-up position-relative z-1"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS (Popper Included) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Reeni Core Physics & Interactions JS -->
   <script src="assets/js/main.js"></script>
+  <!-- Reeni FAQ Interactive Logic JS -->
+  <script src="assets/js/faq.js"></script>
 </body>
 </html>

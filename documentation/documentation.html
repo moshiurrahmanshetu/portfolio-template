@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation | Reeni - Personal Portfolio HTML Template</title>
+  <meta name="description" content="Technical documentation and customization guide for Reeni ThemeForest portfolio template." />
+  
+  <!-- CSS Stylesheets CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- AOS Scroll Animations CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  
+  <!-- Custom Core Design System CSS (linked relatively) -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <style>
+    /* Documentation-specific structural refinements */
+    pre {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    code {
+      font-family: var(--font-mono);
+      color: var(--accent);
+      background-color: rgba(var(--accent-rgb), 0.1);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+    }
+    pre code {
+      background-color: transparent;
+      padding: 0;
+      color: inherit;
+    }
+    .doc-step-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      color: var(--bg-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Cursor Physics Engine -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-outline"></div>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress"></div>
+
+  <!-- Cinematic Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <span class="preloader-logo font-display">REENI.DOCS</span>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar"></div>
+      </div>
+      <div class="preloader-percentage">0%</div>
+    </div>
+  </div>
+
+  <!-- Page Transition Layer -->
+  <div class="page-transition-layer"></div>
+
+  <!-- ============================================================================
+       01. STICKY TOP NAVIGATION BAR
+       ============================================================================ -->
+  <header class="navbar-reeni sticky-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="navbar-brand-reeni font-display">REENI<span>.</span>CORE</a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav class="d-none d-lg-flex align-items-center gap-1">
+        <a href="../index.html" class="nav-link-reeni">Foundation Home</a>
+        <a href="../about.html" class="nav-link-reeni">About</a>
+        <a href="../services.html" class="nav-link-reeni">Services</a>
+        <a href="../resume.html" class="nav-link-reeni">Resume</a>
+        <a href="../portfolio.html" class="nav-link-reeni">Portfolio</a>
+        <a href="../pricing.html" class="nav-link-reeni">Pricing</a>
+        <a href="../blog.html" class="nav-link-reeni">Blog</a>
+        <a href="../contact.html" class="nav-link-reeni">Contact</a>
+      </nav>
+
+      <!-- Action & Theme Switcher Controls -->
+      <div class="d-flex align-items-center gap-3">
+        <button class="theme-switch-btn" aria-label="Toggle Dark/Light Mode" title="Switch Theme">
+          <i class="bi bi-sun-fill icon-sun text-warning"></i>
+          <i class="bi bi-moon-stars-fill icon-moon text-primary"></i>
+        </button>
+        <a href="../contact.html" class="btn-reeni btn-reeni-primary btn-reeni-sm btn-shine d-none d-md-inline-flex">
+          <i class="bi bi-send-fill"></i> Let's Talk
+        </a>
+        <button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni" aria-label="Toggle Mobile Menu">
+          <i class="bi bi-list fs-1 text-main"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================================
+       02. OFFCANVAS MOBILE NAVIGATION
+       ============================================================================ -->
+  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni" aria-labelledby="offcanvasReeniLabel">
+    <div class="offcanvas-header d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="navbar-brand-reeni font-display mb-0" id="offcanvasReeniLabel">REENI<span>.</span>CORE</a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close Mobile Menu"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <ul class="mobile-nav-list mb-0">
+        <li><a href="../index.html" class="mobile-nav-link">Foundation Home</a></li>
+        <li><a href="../about.html" class="mobile-nav-link">About Me</a></li>
+        <li><a href="../services.html" class="mobile-nav-link">Services & Specialties</a></li>
+        <li><a href="../resume.html" class="mobile-nav-link">Experience & CV</a></li>
+        <li><a href="../portfolio.html" class="mobile-nav-link">Portfolio Case Studies</a></li>
+        <li><a href="../pricing.html" class="mobile-nav-link">Pricing Packages</a></li>
+        <li><a href="../blog.html" class="mobile-nav-link">Editorial Blog</a></li>
+        <li><a href="../contact.html" class="mobile-nav-link">Contact Studio</a></li>
+      </ul>
+      <div class="mt-4 pt-4 border-top border-secondary border-opacity-25">
+        <span class="small text-muted text-uppercase fw-bold letter-spacing-1 d-block mb-3">Connect With Me</span>
+        <div class="social-icons">
+          <a href="../portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+          <a href="../portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+          <a href="../contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+          <a href="../portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================================
+         03. HERO BANNER & BREADCRUMBS
+         ============================================================================ -->
+    <section class="page-banner grid-lines-bg text-center position-relative overflow-hidden">
+      <!-- Ambient Parallax Glowing Orbs & Particles -->
+      <div class="ambient-bg">
+        <div class="blur-glow blur-glow-1"></div>
+        <div class="blur-glow blur-glow-2"></div>
+        <div class="floating-shape" style="top: 15%; left: 8%;"><i class="bi bi-file-code-fill fs-2 text-warning opacity-50"></i></div>
+        <div class="floating-shape" style="top: 25%; right: 10%;"><i class="bi bi-gear-wide-connected fs-3 text-accent opacity-50"></i></div>
+        <div class="floating-shape" style="bottom: 15%; left: 12%;"><i class="bi bi-terminal-fill fs-3 text-muted opacity-30"></i></div>
+      </div>
+
+      <div class="container position-relative z-1 py-5">
+        <div class="reveal-up" data-aos="fade-up" data-aos-duration="1000">
+          <span class="section-subtitle mb-2">Developer & Customization Blueprint</span>
+          <h1 class="page-banner-title font-display display-4 fw-extrabold mb-3">Technical <span class="text-accent">Documentation</span></h1>
+          
+          <ul class="breadcrumb-reeni justify-content-center">
+            <li><a href="../index.html">Foundation</a></li>
+            <li class="separator">/</li>
+            <li><a href="documentation.html">Resources</a></li>
+            <li class="separator">/</li>
+            <li class="active">Documentation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         04. LEGAL DOCUMENTATION SUITE
+         ============================================================================ -->
+    <section class="pb-section position-relative z-1 overflow-hidden">
+      <div class="container">
+        <div class="row g-5">
+          
+          <!-- Sticky Table of Contents Sidebar Column -->
+          <div class="col-lg-4 d-none d-lg-block" data-aos="fade-right" data-aos-duration="1000">
+            <div class="toc-sidebar-container">
+              <div class="toc-card">
+                <h3 class="toc-title">
+                  <i class="bi bi-bookmark-fill text-accent"></i> Documentation
+                </h3>
+                <nav class="toc-list">
+                  <a href="#introduction" class="toc-link"><i class="bi bi-info-circle"></i> Introduction</a>
+                  <a href="#folder-structure" class="toc-link"><i class="bi bi-folder-fill"></i> Folder Structure</a>
+                  <a href="#html-customization" class="toc-link"><i class="bi bi-filetype-html"></i> HTML Best Practices</a>
+                  <a href="#css-variables" class="toc-link"><i class="bi bi-palette-fill"></i> CSS Variables</a>
+                  <a href="#javascript-modules" class="toc-link"><i class="bi bi-filetype-js"></i> JavaScript Physics</a>
+                  <a href="#dark-light-mode" class="toc-link"><i class="bi bi-circle-half"></i> Theme Engine</a>
+                  <a href="#seo-guide" class="toc-link"><i class="bi bi-search"></i> SEO Configuration</a>
+                  <a href="#contact-forms" class="toc-link"><i class="bi bi-envelope-open-fill"></i> Interactive Forms</a>
+                  <a href="#browser-support" class="toc-link"><i class="bi bi-globe"></i> Support & Standard</a>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <!-- Documentation Content Column -->
+          <div class="col-lg-8" data-aos="fade-up" data-aos-duration="1200">
+            
+            <!-- Welcome Info Card -->
+            <div class="last-updated-card">
+              <div class="last-updated-info">
+                <div class="last-updated-icon-wrap">
+                  <i class="bi bi-check-circle-fill"></i>
+                </div>
+                <div class="last-updated-details">
+                  <span class="version-tag">Commercial Developer Blueprint v1.0.4</span>
+                  <p class="date-text">Last Compiled: July 2, 2026</p>
+                </div>
+              </div>
+              <div class="last-updated-doc-status">
+                <span class="status-dot-green"></span>
+                <span class="small font-mono text-muted text-uppercase letter-spacing-1">Production Ready</span>
+              </div>
+            </div>
+
+            <!-- Main Documentation Content Panel -->
+            <div class="legal-content-card">
+              
+              <!-- Introduction -->
+              <section id="introduction" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-info-circle"></i> 1. Introduction & Overview
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    Reeni is a commercial-quality, modern, fully semantic personal portfolio, resume, and creative studio landing HTML5 template. Crafted explicitly for elite markets such as Envato ThemeForest, Reeni utilizes modular structural layouts, smooth CSS3 micro-interactions, responsive grids, and vanilla JavaScript physics to establish an uncompromising premium impression.
+                  </p>
+                  <p>
+                    This technical guide serves as an operational roadmap for customization, styles overriding, JavaScript variables optimization, and deployment best practices.
+                  </p>
+                </div>
+              </section>
+
+              <!-- Folder Structure -->
+              <section id="folder-structure" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-folder-fill"></i> 2. Folder Structure
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    The template codebase follows a clean, standardized architectural structure:
+                  </p>
+                  <pre><code>├── assets/
+│   ├── css/
+│   │   └── style.css            # Custom Core Design System & Theme Styles
+│   ├── js/
+│   │   ├── main.js              # Vanilla JS Physics & Core UI Functions
+│   │   ├── blog-details.js      # Blog article detail controller
+│   │   ├── coming-soon.js       # Countdown clock & launch newsletter script
+│   │   ├── contact.js           # Secure inquiry form validator
+│   │   ├── faq.js               # Accordion expand/collapse engine
+│   │   ├── pricing.js           # Monthly/yearly pricing toggle module
+│   │   └── service-details.js   # Service interactive gallery controller
+│   ├── fonts/                   # Local Typography Cache
+│   └── images/                  # Media mockups, background grids, logo elements
+├── documentation/
+│   └── documentation.html       # This beautiful developer guide page
+├── index.html                   # Homepage foundation
+├── [other pages]...             # HTML modules for services, portfolios, resume, contact
+└── README.md                    # Technical readme overview</code></pre>
+                </div>
+              </section>
+
+              <!-- HTML Customization -->
+              <section id="html-customization" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-filetype-html"></i> 3. HTML Best Practices
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    Reeni's HTML pages are structured with full W3C validity and semantic layout tags. When modifying the HTML structures, maintain these core patterns:
+                  </p>
+                  <ul class="legal-list">
+                    <li class="legal-list-item"><strong>Cinematic Preloader:</strong> Every page must contain the <code>#preloader</code> element immediately inside the opening <code>&lt;body&gt;</code> tag to ensure smooth asset loading animations.</li>
+                    <li class="legal-list-item"><strong>Cursor Dots:</strong> To support the custom magnetic mouse effect on large viewports, keep <code>#cursor-dot</code> and <code>#cursor-outline</code> elements active.</li>
+                    <li class="legal-list-item"><strong>Breadcrumbs:</strong> Support legal navigation using <code>.breadcrumb-reeni</code> nested lists.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <!-- CSS Variables -->
+              <section id="css-variables" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-palette-fill"></i> 4. CSS Design System Variables
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    Reeni utilizes modern CSS custom variables inside <code>/assets/css/style.css</code>. To modify accents, borders, or layout margins across the entire template instantly, override these variables:
+                  </p>
+                  <pre><code>:root {
+  /* Design system custom properties */
+  --accent: #d4af37;             /* Luxury Gold accent */
+  --accent-rgb: 212, 175, 55;
+  --bg-dark: #0f1012;            /* Cinematic twilight background */
+  --surface-card: #18191c;       /* Glassmorphic overlay cards */
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --radius-lg: 16px;             /* Corner curve smoothing */
+}</code></pre>
+                </div>
+              </section>
+
+              <!-- JavaScript Physics -->
+              <section id="javascript-modules" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-filetype-js"></i> 5. JavaScript Physics & Micro-Interactions
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    Our core script <code>assets/js/main.js</code> manages interactive physics models including magnetic nodes, cursor acceleration (Lerp), and circular progress bars completely using pure vanilla JavaScript.
+                  </p>
+                  <p>
+                    To activate the magnetic attraction physics on any custom button, wrapper, or image container, wrap the target element inside a container with the class <code>.magnetic-wrap</code>:
+                  </p>
+                  <pre><code>&lt;div class="magnetic-wrap"&gt;
+  &lt;a href="#" class="btn-reeni btn-reeni-primary"&gt;Interactive Node&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+              </section>
+
+              <!-- Dark/Light Theme Engine -->
+              <section id="dark-light-mode" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-circle-half"></i> 6. Persistent Dark/Light Theme Engine
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    The template handles themes elegantly via <code>data-theme</code> attributes on the <code>&lt;html&gt;</code> tag. Persistent preferences are cached inside client-side <code>localStorage</code>.
+                  </p>
+                  <p>
+                    To change the template's default load style from Dark to Light, edit the opening HTML tag:
+                  </p>
+                  <pre><code>&lt;!-- Change data-theme value to "light" for light-mode fallback --&gt;
+&lt;html lang="en" data-theme="light"&gt;</code></pre>
+                </div>
+              </section>
+
+              <!-- SEO Configuration -->
+              <section id="seo-guide" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-search"></i> 7. SEO & Open Graph Meta Customization
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    Every page is ready for advanced search engine visibility and social media preview embedding. Replace the template placeholders with authentic meta descriptors in your HTML page head:
+                  </p>
+                  <pre><code>&lt;!-- SEO Meta --&gt;
+&lt;meta name="description" content="Your custom meta details here" /&gt;
+&lt;meta name="keywords" content="portfolio, agency, creative, custom resume" /&gt;
+
+&lt;!-- Open Graph / Facebook --&gt;
+&lt;meta property="og:type" content="website" /&gt;
+&lt;meta property="og:title" content="Reeni - Personal Portfolio" /&gt;
+&lt;meta property="og:description" content="Commercial ThemeForest Portfolio" /&gt;
+&lt;meta property="og:image" content="assets/images/og-preview.png" /&gt;
+
+&lt;!-- Twitter Card --&gt;
+&lt;meta name="twitter:card" content="summary_large_image" /&gt;
+&lt;meta name="twitter:title" content="Reeni - Portfolio" /&gt;</code></pre>
+                </div>
+              </section>
+
+              <!-- Interactive Forms -->
+              <section id="contact-forms" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-envelope-open-fill"></i> 8. Inquiry & Newsletter Forms Verification
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    Form verification occurs serverless inside <code>assets/js/contact.js</code> and <code>assets/js/coming-soon.js</code>. They perform complete client-side checks and structure feedback alerts with elegant glassmorphic alert cards.
+                  </p>
+                  <p>
+                    To wire these forms to an active email distribution gateway, replace the submit trigger inside the script files or use third-party serverless form services like Formspree, Web3Forms, or custom PHP routing.
+                  </p>
+                </div>
+              </section>
+
+              <!-- Browser Support -->
+              <section id="browser-support" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-globe"></i> 9. Browser Support & Valid Codebase
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    Reeni has been meticulously validated using direct HTML5 checkers, local CSS structure audits, and cross-browser emulators. The template supports 60FPS animations on the following modern web browser platforms:
+                  </p>
+                  <ul class="legal-list">
+                    <li class="legal-list-item"><strong>Google Chrome:</strong> Version 100+</li>
+                    <li class="legal-list-item"><strong>Apple Safari:</strong> Version 15+</li>
+                    <li class="legal-list-item"><strong>Mozilla Firefox:</strong> Version 98+</li>
+                    <li class="legal-list-item"><strong>Microsoft Edge & Opera:</strong> Latest desktop & mobile builds</li>
+                  </ul>
+                </div>
+              </section>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         05. INQUIRY CTA CARD
+         ============================================================================ -->
+    <section class="py-section overflow-hidden border-top border-secondary border-opacity-10 grid-lines-bg text-center">
+      <div class="container position-relative z-1">
+        <div class="row justify-content-center">
+          <div class="col-lg-8" data-aos="zoom-in" data-aos-duration="1000">
+            <span class="badge-reeni mb-3"><i class="bi bi-bug-fill text-accent"></i> Code Support Desk</span>
+            <h3 class="h2 font-heading fw-bold text-main mb-3">Encountering Coding Complexities?</h3>
+            <p class="text-muted mb-5 mx-auto" style="max-width: 580px;">
+              Our dedicated development team provides premier customization support, responsive layout adjustments, and premium feature integrations for theme buyers.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <div class="magnetic-wrap">
+                <a href="../contact.html" class="btn-reeni btn-reeni-primary btn-shine btn-reeni-lg">
+                  <i class="bi bi-headset"></i> Access Developer Support
+                </a>
+              </div>
+              <div class="magnetic-wrap">
+                <a href="../index.html" class="btn-reeni btn-reeni-outline btn-shine btn-reeni-lg">
+                  <i class="bi bi-house-door-fill"></i> Back to Foundation Home
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================================
+       06. REUSE SHARED FOOTER ARCHITECTURE
+       ============================================================================ -->
+  <footer class="footer-reeni">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Footer Brand Widget -->
+        <div class="col-lg-4">
+          <a href="../index.html" class="navbar-brand-reeni font-display d-block mb-3">REENI<span>.</span>CORE</a>
+          <p class="text-muted small mb-4" style="max-width: 320px;">
+            Commercial ThemeForest personal portfolio and agency HTML5 foundation. W3C valid markup, Bootstrap 5 responsive hierarchy, and custom vanilla JavaScript physics.
+          </p>
+          <div class="social-icons">
+            <a href="../portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+            <a href="../portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+            <a href="../contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+            <a href="../portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+          </div>
+        </div>
+
+        <!-- Footer Navigation Links 1 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Foundation Home</a></li>
+            <li><a href="../about.html">About Reeni</a></li>
+            <li><a href="../services.html">Services & Specialties</a></li>
+            <li><a href="../resume.html">Experience & CV</a></li>
+            <li><a href="../portfolio.html">Featured Works</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Navigation Links 2 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="../pricing.html">Pricing Packages</a></li>
+            <li><a href="../blog.html">Editorial Journal</a></li>
+            <li><a href="../faq.html">Help & FAQ</a></li>
+            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../terms-condition.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Newsletter Subscription -->
+        <div class="col-md-6 col-lg-4">
+          <h4 class="footer-widget-title">Subscribe Studio</h4>
+          <p class="text-muted small mb-4">Receive monthly dispatches on modern CSS architecture, vanilla JS physics, and ThemeForest releases.</p>
+          <form class="search-box mb-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Reeni Core Dispatches!');">
+            <input type="email" class="form-control-reeni" placeholder="Enter your email..." aria-label="Email Address for Newsletter" required />
+            <button type="submit" class="search-btn" aria-label="Subscribe"><i class="bi bi-arrow-right-short fs-3"></i></button>
+          </form>
+          <span class="small text-muted d-block" style="font-size: 0.75rem;">🔒 Zero spam guarantee. Unsubscribe at any time.</span>
+        </div>
+
+      </div>
+
+      <!-- Footer Copyright Bottom -->
+      <div class="footer-bottom">
+        <div>
+          <span>© 2026 Reeni ThemeCore Foundation. Crafted for commercial ThemeForest distribution.</span>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+          <a href="../privacy-policy.html" class="text-muted text-decoration-none small hover-accent">Privacy Policy</a>
+          <a href="../terms-condition.html" class="text-muted text-decoration-none small hover-accent">Terms of Service</a>
+          <a href="../contact.html" class="text-muted text-decoration-none small hover-accent">Support Studio</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================================
+       07. BACK TO TOP BUTTON (WITH CIRCULAR SCROLL PROGRESS RING)
+       ============================================================================ -->
+  <button id="back-to-top" aria-label="Back to Top of Page">
+    <svg class="progress-ring" width="52" height="52">
+      <circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" />
+    </svg>
+    <i class="bi bi-arrow-up position-relative z-1"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS (Popper Included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Reeni Core Physics & Interactions JS (linked relatively) -->
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

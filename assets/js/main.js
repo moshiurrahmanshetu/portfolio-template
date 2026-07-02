@@ -461,9 +461,94 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  /* ==========================================================================
+     14. PHASE 05: PORTFOLIO FILTER SYSTEM
+     ========================================================================== */
+  const initPortfolioFilter = () => {
+    const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
+    const gridItems = document.querySelectorAll('.portfolio-grid-item');
+
+    if (filterBtns.length === 0 || gridItems.length === 0) return;
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        gridItems.forEach(item => {
+          const itemCategories = item.getAttribute('data-categories').split(' ');
+
+          if (filterValue === 'all' || itemCategories.includes(filterValue)) {
+            item.classList.remove('hide');
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'scale(1) translateY(0)';
+              item.style.pointerEvents = 'auto';
+            }, 50);
+          } else {
+            item.classList.add('hide');
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.85) translateY(20px)';
+            item.style.pointerEvents = 'none';
+          }
+        });
+
+        // Refresh Animate On Scroll to recalculate positions of elements
+        if (typeof AOS !== 'undefined') {
+          setTimeout(() => {
+            AOS.refresh();
+          }, 400);
+        }
+      });
+    });
+  };
+
+  /* ==========================================================================
+     15. PHASE 07: TABLE OF CONTENTS SCROLLSPY (LEGAL PAGES)
+     ========================================================================== */
+  const initLegalScrollspy = () => {
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = document.querySelectorAll('.legal-section');
+    
+    if (tocLinks.length === 0 || sections.length === 0) return;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-15% 0px -65% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const activeId = entry.target.getAttribute('id');
+          
+          tocLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === `#${activeId}`) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+  };
+
   initTypingEngine();
   initSkillsEngine();
   initStatsCounters();
+  initPortfolioFilter();
+  initLegalScrollspy();
   initAOS();
 
 });

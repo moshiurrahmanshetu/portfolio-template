@@ -4,52 +4,513 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms & Conditions | Reeni - Personal Portfolio HTML Template</title>
-  <meta name="description" content="Terms and Conditions foundation page for Reeni ThemeForest portfolio template." />
+  <meta name="description" content="Terms and Conditions agreement foundation page for Reeni ThemeForest portfolio template." />
+  <meta name="keywords" content="terms and conditions, legal agreement, licensing, portfolio html template, cv resume template, creative studio" />
+  <meta name="author" content="Reeni ThemeCore" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Terms & Conditions | Reeni - Personal Portfolio HTML Template" />
+  <meta property="og:description" content="Terms and Conditions agreement foundation page for Reeni ThemeForest portfolio template." />
+  <meta property="og:image" content="assets/images/og-preview.png" />
+  <meta property="og:url" content="https://reeni-studio.com/terms-condition.html" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Terms & Conditions | Reeni - Personal Portfolio HTML Template" />
+  <meta name="twitter:description" content="Terms and Conditions agreement foundation page for Reeni ThemeForest portfolio template." />
+  <meta name="twitter:image" content="assets/images/og-preview.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://reeni-studio.com/terms-condition.html" />
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  
+  <!-- CSS Stylesheets CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- AOS Scroll Animations CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  
+  <!-- Custom Core Design System CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body class="overflow-hidden">
-  <div id="cursor-dot"></div><div id="cursor-outline"></div><div id="reading-progress"></div>
-  <div id="preloader"><div class="preloader-content"><span class="preloader-logo font-display">REENI.TERMS</span><div class="preloader-bar-wrap"><div class="preloader-bar"></div></div><div class="preloader-percentage">0%</div></div></div>
+<body>
 
+  <!-- Custom Cursor Physics Engine -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-outline"></div>
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress"></div>
+
+  <!-- Cinematic Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <span class="preloader-logo font-display">REENI.TERMS</span>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar"></div>
+      </div>
+      <div class="preloader-percentage">0%</div>
+    </div>
+  </div>
+
+  <!-- Page Transition Layer -->
+  <div class="page-transition-layer"></div>
+
+  <!-- ============================================================================
+       01. STICKY TOP NAVIGATION BAR
+       ============================================================================ -->
   <header class="navbar-reeni sticky-top">
     <div class="container d-flex align-items-center justify-content-between">
-      <a href="index.html" class="navbar-brand-reeni font-display">REENI<span>.</span></a>
-      <nav class="d-none d-lg-flex align-items-center gap-1"><a href="index.html" class="nav-link-reeni">Foundation</a><a href="about.html" class="nav-link-reeni">About</a><a href="portfolio.html" class="nav-link-reeni">Portfolio</a><a href="contact.html" class="nav-link-reeni">Contact</a></nav>
-      <div class="d-flex align-items-center gap-3"><button class="theme-switch-btn" aria-label="Toggle Theme"><i class="bi bi-sun-fill icon-sun text-warning"></i><i class="bi bi-moon-stars-fill icon-moon text-primary"></i></button><button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni"><i class="bi bi-list fs-1 text-main"></i></button></div>
+      <a href="index.html" class="navbar-brand-reeni font-display">REENI<span>.</span>CORE</a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav class="d-none d-lg-flex align-items-center gap-1">
+        <a href="index.html" class="nav-link-reeni">Foundation</a>
+        <a href="about.html" class="nav-link-reeni">About</a>
+        <a href="services.html" class="nav-link-reeni">Services</a>
+        <a href="resume.html" class="nav-link-reeni">Resume</a>
+        <a href="portfolio.html" class="nav-link-reeni">Portfolio</a>
+        <a href="pricing.html" class="nav-link-reeni">Pricing</a>
+        <a href="blog.html" class="nav-link-reeni">Blog</a>
+        <a href="contact.html" class="nav-link-reeni">Contact</a>
+      </nav>
+
+      <!-- Action & Theme Switcher Controls -->
+      <div class="d-flex align-items-center gap-3">
+        <button class="theme-switch-btn" aria-label="Toggle Dark/Light Mode" title="Switch Theme">
+          <i class="bi bi-sun-fill icon-sun text-warning"></i>
+          <i class="bi bi-moon-stars-fill icon-moon text-primary"></i>
+        </button>
+        <a href="contact.html" class="btn-reeni btn-reeni-primary btn-reeni-sm btn-shine d-none d-md-inline-flex">
+          <i class="bi bi-send-fill"></i> Let's Talk
+        </a>
+        <button class="btn btn-outline-secondary d-lg-none border-0 p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasReeni" aria-label="Toggle Mobile Menu">
+          <i class="bi bi-list fs-1 text-main"></i>
+        </button>
+      </div>
     </div>
   </header>
 
-  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni">
-    <div class="offcanvas-header d-flex align-items-center justify-content-between"><a href="index.html" class="navbar-brand-reeni font-display mb-0">REENI<span>.</span>CORE</a><button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button></div>
-    <div class="offcanvas-body d-flex flex-column justify-content-between"><ul class="mobile-nav-list mb-0"><li><a href="index.html" class="mobile-nav-link">Foundation</a></li><li><a href="terms-condition.html" class="mobile-nav-link active">Terms & Conditions</a></li></ul></div>
+  <!-- ============================================================================
+       02. OFFCANVAS MOBILE NAVIGATION
+       ============================================================================ -->
+  <div class="offcanvas offcanvas-end offcanvas-reeni" tabindex="-1" id="offcanvasReeni" aria-labelledby="offcanvasReeniLabel">
+    <div class="offcanvas-header d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-reeni font-display mb-0" id="offcanvasReeniLabel">REENI<span>.</span>CORE</a>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close Mobile Menu"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <ul class="mobile-nav-list mb-0">
+        <li><a href="index.html" class="mobile-nav-link">Foundation Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Me</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services & Specialties</a></li>
+        <li><a href="resume.html" class="mobile-nav-link">Experience & CV</a></li>
+        <li><a href="portfolio.html" class="mobile-nav-link">Portfolio Case Studies</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Pricing Packages</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Editorial Blog</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact Studio</a></li>
+      </ul>
+      <div class="mt-4 pt-4 border-top border-secondary border-opacity-25">
+        <span class="small text-muted text-uppercase fw-bold letter-spacing-1 d-block mb-3">Connect With Me</span>
+        <div class="social-icons">
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+          <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+          <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <main>
-    <section class="page-banner grid-lines-bg text-center">
-      <div class="container position-relative z-1 reveal-up">
-        <span class="section-subtitle mb-2">COMMERCIAL LICENSING FOUNDATION</span>
-        <h1 class="page-banner-title font-display">Terms & <span class="text-accent">Conditions</span></h1>
-        <ul class="breadcrumb-reeni justify-content-center mt-3"><li><a href="index.html">Foundation</a></li><li class="separator">/</li><li class="active">Terms</li></ul>
+    <!-- ============================================================================
+         03. SECTION 1: HERO BANNER & BREADCRUMBS
+         ============================================================================ -->
+    <section class="page-banner grid-lines-bg text-center position-relative overflow-hidden">
+      <!-- Ambient Parallax Glowing Orbs & Particles -->
+      <div class="ambient-bg">
+        <div class="blur-glow blur-glow-1"></div>
+        <div class="blur-glow blur-glow-2"></div>
+        <div class="floating-shape" style="top: 15%; left: 10%;"><i class="bi bi-shield-check fs-2 text-warning opacity-50"></i></div>
+        <div class="floating-shape" style="top: 22%; right: 8%;"><i class="bi bi-journal-check fs-3 text-accent opacity-50"></i></div>
+        <div class="floating-shape" style="bottom: 18%; right: 15%;"><i class="bi bi-gear-fill fs-3 text-muted opacity-30"></i></div>
+      </div>
+
+      <div class="container position-relative z-1 py-5">
+        <div class="reveal-up" data-aos="fade-up" data-aos-duration="1000">
+          <span class="section-subtitle mb-2">Commercial Licensing Foundation</span>
+          <h1 class="page-banner-title font-display display-4 fw-extrabold mb-3">Terms of <span class="text-accent">Service</span></h1>
+          
+          <ul class="breadcrumb-reeni justify-content-center">
+            <li><a href="index.html">Foundation</a></li>
+            <li class="separator">/</li>
+            <li><a href="terms-condition.html">Legal</a></li>
+            <li class="separator">/</li>
+            <li class="active">Terms & Conditions</li>
+          </ul>
+        </div>
       </div>
     </section>
-    <section class="py-section container">
-      <div class="card-reeni p-5 reveal-up mx-auto" style="max-width: 900px;">
-        <h2 class="h4 font-display mb-3">1. ThemeForest Licensing Guidelines</h2>
-        <p>This item is prepared in accordance with Envato ThemeForest standard Regular and Extended license terms. Redistribution or reselling raw source code without proper licensing is prohibited.</p>
-        
-        <h2 class="h4 font-display mb-3 mt-4">2. W3C Valid Static Code Foundation</h2>
-        <p>All HTML documents are formatted to pass W3C markup validation standards. Code modification should respect semantic tag integrity.</p>
 
-        <div class="magnetic-wrap mt-4"><a href="index.html" class="btn-reeni btn-reeni-primary btn-shine"><i class="bi bi-arrow-left"></i> Return To Foundation Core</a></div>
+    <!-- ============================================================================
+         04. SECTION 2: LEGAL READING SUITE
+         ============================================================================ -->
+    <section class="pb-section position-relative z-1 overflow-hidden">
+      <div class="container">
+        <div class="row g-5">
+          
+          <!-- Sticky Table of Contents Sidebar Column -->
+          <div class="col-lg-4 d-none d-lg-block" data-aos="fade-right" data-aos-duration="1000">
+            <div class="toc-sidebar-container">
+              <div class="toc-card">
+                <h3 class="toc-title">
+                  <i class="bi bi-bookmark-fill text-accent"></i> Terms Directory
+                </h3>
+                <nav class="toc-list">
+                  <a href="#acceptance" class="toc-link"><i class="bi bi-check2-circle"></i> Acceptance of Terms</a>
+                  <a href="#responsibilities" class="toc-link"><i class="bi bi-people"></i> User Responsibilities</a>
+                  <a href="#intellectual-prop" class="toc-link"><i class="bi bi-shield-shaded"></i> Intellectual Property</a>
+                  <a href="#licensing" class="toc-link"><i class="bi bi-file-earmark-lock"></i> Licensing Guidelines</a>
+                  <a href="#payments" class="toc-link"><i class="bi bi-credit-card"></i> Payments & Billing</a>
+                  <a href="#service-avail" class="toc-link"><i class="bi bi-cloud-check"></i> Service Availability</a>
+                  <a href="#liability-limit" class="toc-link"><i class="bi bi-exclamation-triangle"></i> Limitation of Liability</a>
+                  <a href="#termination" class="toc-link"><i class="bi bi-slash-circle"></i> Account Termination</a>
+                  <a href="#governing-law" class="toc-link"><i class="bi bi-bank"></i> Governing Law</a>
+                  <a href="#contact-support" class="toc-link"><i class="bi bi-envelope-open"></i> Contact & Support</a>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terms Document Content Column -->
+          <div class="col-lg-8" data-aos="fade-up" data-aos-duration="1200">
+            
+            <!-- Last Updated Card -->
+            <div class="last-updated-card">
+              <div class="last-updated-info">
+                <div class="last-updated-icon-wrap">
+                  <i class="bi bi-clock-history"></i>
+                </div>
+                <div class="last-updated-details">
+                  <span class="version-tag">Document Version 1.0.4</span>
+                  <p class="date-text">Last Updated: July 2, 2026</p>
+                </div>
+              </div>
+              <div class="last-updated-doc-status">
+                <span class="status-dot-green"></span>
+                <span class="small font-mono text-muted text-uppercase letter-spacing-1">Active Compliant</span>
+              </div>
+            </div>
+
+            <!-- Main Legal Content Panel -->
+            <div class="legal-content-card">
+              
+              <!-- 1. Acceptance of Terms -->
+              <section id="acceptance" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-check2-circle"></i> 1. Acceptance of Terms
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    By accessing, browsing, downloading assets from, or programmatically executing the digital architectures hosted inside the <strong>Reeni Personal Portfolio Template</strong> ("Service"), you explicitly agree to be legally bound by these Terms & Conditions and all applicable statutory ordinances.
+                  </p>
+                  <p>
+                    These terms constitute a binding bilateral contractual agreement between you and the Reeni Creative Labs team. If you do not agree to all provisions within this framework, you are strictly prohibited from utilizing our resources or submitting contact inquiries.
+                  </p>
+                </div>
+              </section>
+
+              <!-- 2. User Responsibilities -->
+              <section id="responsibilities" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-people"></i> 2. User Responsibilities
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    As an authorized user of our digital resources, you agree to utilize the interfaces responsibly and in accordance with valid internet usage rules:
+                  </p>
+                  <ul class="legal-list">
+                    <li class="legal-list-item"><strong>Authenticity of Details:</strong> You guarantee that all communication credentials, email addresses, and project brief variables submitted through our forms are authentic and current.</li>
+                    <li class="legal-list-item"><strong>Lawful Execution:</strong> You agree not to upload, transmit, or inject malicious scripts, command-line exploits, SQL payloads, or malware that compromises the integrity of our front-end or backend server layers.</li>
+                    <li class="legal-list-item"><strong>Prohibited Mining:</strong> Scraping, harvesting, or automated data mining of portfolio items and editorial source materials is strictly prohibited without written consent.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <!-- 3. Intellectual Property -->
+              <section id="intellectual-prop" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-shield-shaded"></i> 3. Intellectual Property Rights
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    All graphic styles, CSS visual rules, responsive layouts, vector schematics, typing scripts, page transition scripts, logos, and editorial blog articles compiled inside Reeni are the exclusive intellectual property of <strong>Reeni Creative Labs</strong>, unless otherwise indicated.
+                  </p>
+                  <p>
+                    These digital assets are protected by international copyright laws, trademark declarations, and trade secret statutes. Unlicensed reproduction, mirroring, or direct commercial packaging of Reeni's aesthetic layouts or custom JavaScript animations is fully prohibited.
+                  </p>
+                </div>
+              </section>
+
+              <!-- 4. Licensing Guidelines -->
+              <section id="licensing" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-file-earmark-lock"></i> 4. Licensing Guidelines
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    Reeni is distributed commercially through the <strong>Envato ThemeForest Market</strong>. Your usage of this template is strictly subject to the licensing tiers defined by Envato:
+                  </p>
+                  
+                  <div class="legal-accent-box">
+                    <h5>Regular License:</h5>
+                    <p class="small text-muted mb-0">
+                      Grants you an ongoing, non-exclusive license to use the item to create one single end product for yourself or for one client. The end product must not be sold or redistributed.
+                    </p>
+                  </div>
+
+                  <div class="legal-accent-box mt-3">
+                    <h5>Extended License:</h5>
+                    <p class="small text-muted mb-0">
+                      Grants you the same rights as the Regular License, but allows you to charge end users for the final customized product or service created with this template.
+                    </p>
+                  </div>
+                  
+                  <p class="mt-3">
+                    Redistributing the template as a standalone theme package, or packaging its customized components into a competing commercial theme system is a direct breach of copyright.
+                  </p>
+                </div>
+              </section>
+
+              <!-- 5. Payments & Billing -->
+              <section id="payments" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-credit-card"></i> 5. Payments & Billing
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    Any transaction conducted for Reeni design packages, support extensions, or commercial custom design licenses is processed securely through authorized Envato systems or third-party payment gateways.
+                  </p>
+                  <p>
+                    You agree to supply accurate credit card or banking details and authorize the processing of the declared price including applicable licensing taxes. All sales of static digital template files are subject to Envato's Standard Refund Policy.
+                  </p>
+                </div>
+              </section>
+
+              <!-- 6. Service Availability -->
+              <section id="service-avail" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-cloud-check"></i> 6. Service Availability & Maintenance
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    While we strive to maintain uninterrupted online access to Reeni's live templates, portfolios, and support portals, we do not warrant that our servers will be continuously online or error-free.
+                  </p>
+                  <p>
+                    We reserve the right to temporarily suspend services, modify site contents, or deploy server patches at our discretion without prior notification to compile new layouts or upgrade our backend security systems.
+                  </p>
+                </div>
+              </section>
+
+              <!-- 7. Limitation of Liability -->
+              <section id="liability-limit" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-exclamation-triangle"></i> 7. Limitation of Liability
+                </h2>
+                <div class="legal-text">
+                  
+                  <div class="legal-callout">
+                    <div class="legal-callout-title text-danger">
+                      <i class="bi bi-exclamation-octagon-fill"></i> CRITICAL WARRANTY DISCLAIMER
+                    </div>
+                    <p class="mb-0">
+                      IN NO EVENT SHALL REENI CREATIVE LABS, ITS DEVELOPERS, OR AFFILIATED DIRECTORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, OR EXEMPLARY DAMAGES ARISEN FROM USING OR LACK OF ACCESSIBILITY TO THE SERVICE, EVEN IF ADVISED OF THEIR POSSIBLE OCCURRENCE.
+                    </p>
+                  </div>
+
+                  <p>
+                    Reeni is supplied "AS IS" and "AS AVAILABLE" without warranties of any kind, whether explicit or implied, including fitness for a specific commercial deployment, merchantability, or non-infringement. You assume full architectural and operational responsibility for any codebase customizations you deploy in your commercial end products.
+                  </p>
+                </div>
+              </section>
+
+              <!-- 8. Account & Service Termination -->
+              <section id="termination" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-slash-circle"></i> 8. Service Termination
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    We reserve the absolute right to terminate or suspend your access to our support resources, newsletter lists, or live preview platforms immediately and without prior warning, if you are found to be in breach of these Terms & Conditions.
+                  </p>
+                  <p>
+                    Any provisions of these Terms which by their nature must survive termination shall remain active, including ownership covenants, warranty disclaimers, and liability limits.
+                  </p>
+                </div>
+              </section>
+
+              <!-- 9. Governing Law -->
+              <section id="governing-law" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-bank"></i> 9. Governing Law & Jurisdiction
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    These Terms and Conditions shall be interpreted, governed, and enforced in accordance with the laws of the <strong>State of New York</strong>, United States, excluding its conflict of law provisions.
+                  </p>
+                  <p>
+                    Any formal legal action or judicial dispute arising from your usage of our template code or services must be initiated exclusively in the federal or state courts located in New York County, New York, and you hereby consent to their personal jurisdiction.
+                  </p>
+                </div>
+              </section>
+
+              <!-- 10. Contact & Support -->
+              <section id="contact-support" class="legal-section">
+                <h2 class="legal-section-title">
+                  <i class="bi bi-envelope-open"></i> 10. Contact & Support Desk
+                </h2>
+                <div class="legal-text">
+                  <p>
+                    If you have questions regarding these Terms & Conditions, license limitations, or wish to report code plagiarism or abuse of our designs, please reach out:
+                  </p>
+                  <div class="legal-accent-box">
+                    <p class="mb-1"><strong>Licensing Desk:</strong> Reeni Creative Labs, Silicon District, NY 10001</p>
+                    <p class="mb-1"><strong>Secure Email:</strong> licensing@reeni-studio.com</p>
+                    <p class="mb-0"><strong>Inquiry Hours:</strong> Monday – Friday, 09:00 – 17:00 EST</p>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================================
+         05. SECTION 3: INQUIRY CTA CARD
+         ============================================================================ -->
+    <section class="py-section overflow-hidden border-top border-secondary border-opacity-10 grid-lines-bg">
+      <div class="container position-relative z-1 text-center">
+        <div class="row justify-content-center">
+          <div class="col-lg-8" data-aos="zoom-in" data-aos-duration="1000">
+            <span class="badge-reeni mb-3"><i class="bi bi-shield-lock-fill text-accent"></i> Commercial Agreements</span>
+            <h3 class="h2 font-heading fw-bold text-main mb-3">Require Special Design Licenses?</h3>
+            <p class="text-muted mb-5 mx-auto" style="max-width: 580px;">
+              For custom agency contracts, multi-seat corporate licenses, or custom developer support scopes, contact our business desk to initiate an elite customized structure.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <div class="magnetic-wrap">
+                <a href="contact.html" class="btn-reeni btn-reeni-primary btn-shine btn-reeni-lg">
+                  <i class="bi bi-send-fill"></i> Initiate Business Brief
+                </a>
+              </div>
+              <div class="magnetic-wrap">
+                <a href="privacy-policy.html" class="btn-reeni btn-reeni-outline btn-shine btn-reeni-lg">
+                  <i class="bi bi-file-earmark-lock-fill"></i> Review Privacy
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer-reeni"><div class="container"><div class="footer-bottom mt-0 pt-0 border-0"><div><span>© 2026 Reeni ThemeCore Foundation. Built for ThemeForest.</span></div></div></div></footer>
-  <button id="back-to-top"><svg class="progress-ring" width="52" height="52"><circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" /></svg><i class="bi bi-arrow-up position-relative z-1"></i></button>
+  <!-- ============================================================================
+       06. REUSE SHARED FOOTER ARCHITECTURE
+       ============================================================================ -->
+  <footer class="footer-reeni">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Footer Brand Widget -->
+        <div class="col-lg-4">
+          <a href="index.html" class="navbar-brand-reeni font-display d-block mb-3">REENI<span>.</span>CORE</a>
+          <p class="text-muted small mb-4" style="max-width: 320px;">
+            Commercial ThemeForest personal portfolio and agency HTML5 foundation. W3C valid markup, Bootstrap 5 responsive hierarchy, and custom vanilla JavaScript physics.
+          </p>
+          <div class="social-icons">
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Dribbble Profile"><i class="bi bi-dribbble"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="GitHub Profile"><i class="bi bi-github"></i></a>
+            <a href="contact.html" class="social-icon-btn" aria-label="LinkedIn Profile"><i class="bi bi-linkedin"></i></a>
+            <a href="portfolio.html" class="social-icon-btn" aria-label="Behance Profile"><i class="bi bi-behance"></i></a>
+          </div>
+        </div>
+
+        <!-- Footer Navigation Links 1 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Foundation Home</a></li>
+            <li><a href="about.html">About Reeni</a></li>
+            <li><a href="services.html">Services & Specialties</a></li>
+            <li><a href="resume.html">Experience & CV</a></li>
+            <li><a href="portfolio.html">Featured Works</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Navigation Links 2 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-widget-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Packages</a></li>
+            <li><a href="blog.html">Editorial Journal</a></li>
+            <li><a href="faq.html">Help & FAQ</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-condition.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Newsletter Subscription -->
+        <div class="col-md-6 col-lg-4">
+          <h4 class="footer-widget-title">Subscribe Studio</h4>
+          <p class="text-muted small mb-4">Receive monthly dispatches on modern CSS architecture, vanilla JS physics, and ThemeForest releases.</p>
+          <form class="search-box mb-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Reeni Core Dispatches!');">
+            <input type="email" class="form-control-reeni" placeholder="Enter your email..." aria-label="Email Address for Newsletter" required />
+            <button type="submit" class="search-btn" aria-label="Subscribe"><i class="bi bi-arrow-right-short fs-3"></i></button>
+          </form>
+          <span class="small text-muted d-block" style="font-size: 0.75rem;">🔒 Zero spam guarantee. Unsubscribe at any time.</span>
+        </div>
+
+      </div>
+
+      <!-- Footer Copyright Bottom -->
+      <div class="footer-bottom">
+        <div>
+          <span>© 2026 Reeni ThemeCore Foundation. Crafted for commercial ThemeForest distribution.</span>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+          <a href="privacy-policy.html" class="text-muted text-decoration-none small hover-accent">Privacy Policy</a>
+          <a href="terms-condition.html" class="text-muted text-decoration-none small hover-accent">Terms of Service</a>
+          <a href="contact.html" class="text-muted text-decoration-none small hover-accent">Support Studio</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================================
+       07. BACK TO TOP BUTTON (WITH CIRCULAR SCROLL PROGRESS RING)
+       ============================================================================ -->
+  <button id="back-to-top" aria-label="Back to Top of Page">
+    <svg class="progress-ring" width="52" height="52">
+      <circle class="progress-ring__circle" stroke="#d4af37" stroke-width="2.5" fill="transparent" r="25" cx="26" cy="26" />
+    </svg>
+    <i class="bi bi-arrow-up position-relative z-1"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS (Popper Included) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Reeni Core Physics & Interactions JS -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>
