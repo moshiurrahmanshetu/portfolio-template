@@ -1206,8 +1206,8 @@ body.is-exiting .page-transition-layer {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background-color: var(--surface);
   border: 1px solid var(--border);
