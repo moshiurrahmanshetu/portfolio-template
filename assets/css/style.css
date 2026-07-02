@@ -593,8 +593,8 @@ html[data-theme="light"] .offcanvas-reeni .btn-close {
   transform: translateY(-3px);
 }
 
-.btn-reeni-lg { padding: 1.25rem 3rem; font-size: 1rem; }
-.btn-reeni-sm { padding: 0.65rem 1.5rem; font-size: 0.75rem; }
+.btn-reeni-lg { padding: 1.25rem 2rem; font-size: 0.85rem; }
+.btn-reeni-sm { padding: 0.65rem 1rem; font-size: 0.75rem; }
 
 /* Button Shine Effect */
 .btn-shine::before {
