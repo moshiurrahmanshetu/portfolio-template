@@ -41,7 +41,7 @@
   --accent-hover: #e5c158;
   --accent-rgb: 212, 175, 55;
   --text-main: #ffffff;
-  --text-muted: #888888;
+  --text-muted: #afafaf;
   --text-inverse: #000000;
 
   /* Glassmorphism Tokens */
@@ -193,7 +193,9 @@ p {
   margin-bottom: 4rem;
   position: relative;
 }
-
+.text-muted{
+  color: var(--text-muted) !important;
+}
 .section-subtitle {
   display: inline-flex;
   align-items: center;
@@ -1223,7 +1225,12 @@ body.is-exiting .page-transition-layer {
   transition: all var(--transition-normal);
   box-shadow: var(--shadow-md);
 }
-
+.theme-switch-btn{
+  position: fixed;
+  bottom: 112px;
+  z-index: 99;
+  right: 40px;
+}
 #back-to-top.is-visible {
   opacity: 1;
   visibility: visible;
