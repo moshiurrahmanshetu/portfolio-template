@@ -1276,15 +1276,17 @@ body.is-exiting .page-transition-layer {
   .cta-box {
     padding: 2.5rem 1.5rem;
   }
-  
   .card-reeni {
     padding: 1.75rem;
   }
-  
   #back-to-top {
     bottom: 24px;
     right: 24px;
   }
+  .theme-switch-btn {
+    bottom: 99px;
+    right: 23px;
+}
 }
 
 @media (max-width: 767.98px) {
